@@ -1,0 +1,6 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+scripts/PREPARE_DATA_FOR_REPO_PUBLICATION.R
+.DS_Store
