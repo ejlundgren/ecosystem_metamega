@@ -107,6 +107,7 @@ m1$dfs
 m1$ddf # not sure what this refers to
 sub.dat <- dat[eval(parse(text = guide[774, ]$exclusion))]
 sub.dat[, .(n_studies = uniqueN(Citation)), by = .(Invasive)]
+sub.dat[, .(n_studies = uniqueN(Citation))]
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 1. Extract model level information ----------------------------------------------
