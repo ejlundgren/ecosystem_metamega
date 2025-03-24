@@ -99,6 +99,15 @@ m1
 
 I2(m1)
 
+
+#' [Testing df extraction @itchysin]
+#' 
+names(m1)
+
+
+
+
+
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 1. Extract model level information ----------------------------------------------
 # Extract I2, BIC, min_sigma (to flag overfitting)
@@ -182,16 +191,6 @@ guide.wide
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 3. Extract posthoc comparisons ------------------------------------------
-
-
-#' [Testing df extraction @itchysin]
-#' 
-m <- readRDS(guide.wide[1, ]$model_path_nativeness)
-names(m)
-
-
-
-
 #
 guide.wide
 
