@@ -156,8 +156,6 @@ guide.wide <- guide.wide[!is.na(formula_null), ]
 guide.wide
 
 # >>> Check for overfit models, if min sigma is 0 -------------------------------------------
-#' [@Shinichi, I was told this by someone in person but I don't have a reference...Is this good practice?]
-#' [and is there a good citation?]
 
 guide.wide[, overfit := ifelse(min_sigma_nativeness == 0 | min_sigma_null == 0,
                                "yes", "no")]
@@ -185,6 +183,16 @@ guide.wide
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 3. Extract posthoc comparisons ------------------------------------------
 
+
+#' [Testing df extraction @itchysin]
+#' 
+m <- readRDS(guide.wide[1, ]$model_path_nativeness)
+names(m)
+
+
+
+
+#
 guide.wide
 
 m <- c()
