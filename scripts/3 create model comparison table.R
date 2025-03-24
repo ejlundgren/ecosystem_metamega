@@ -94,7 +94,7 @@ length(list.files("outputs/main_text/models/"))
 guide <- guide[file.exists(model_path), ]
 
 # test:
-m1 <- readRDS(guide[1, ]$model_path)
+m1 <- readRDS(guide[774, ]$model_path)
 m1
 
 I2(m1)
@@ -103,10 +103,10 @@ I2(m1)
 #' [Testing df extraction @itchysin]
 #' 
 names(m1)
-
-
-
-
+m1$dfs
+m1$ddf # not sure what this refers to
+sub.dat <- dat[eval(parse(text = guide[774, ]$exclusion))]
+sub.dat[, .(n_studies = uniqueN(Citation)), by = .(Invasive)]
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 1. Extract model level information ----------------------------------------------
