@@ -94,21 +94,11 @@ length(list.files("outputs/main_text/models/"))
 guide <- guide[file.exists(model_path), ]
 
 # test:
-m1 <- readRDS(guide[774, ]$model_path)
+m1 <- readRDS(guide[400, ]$model_path)
 m1
 
 I2(m1)
 
-
-#' [Testing df extraction @itchysin]
-#' 
-names(m1)
-m1$df
-m1$dfs
-m1$ddf # not sure what this refers to
-sub.dat <- dat[eval(parse(text = guide[774, ]$exclusion))]
-sub.dat[, .(n_studies = uniqueN(Citation)), by = .(Invasive)]
-sub.dat[, .(n_studies = uniqueN(Citation))]
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 1. Extract model level information ----------------------------------------------
@@ -213,11 +203,16 @@ posthoc_comp_out <- foreach(i = 1:nrow(guide.wide),
                               
         # Load model
         m <- readRDS(guide.wide[i, ]$model_path_nativeness)
+        #
+        dfs <- m$ddf
         
+        #
         out <- m %>%
           tidy_with_CIs() %>%
           filter(term != "intercept") %>%
-          mutate(model_id_nativeness = guide.wide[i, ]$model_id_nativeness,
+          mutate(intercept_df = dfs["intrcpt"],
+                 contrast_df = dfs[!names(dfs) %in% "intrcpt"],
+                 model_id_nativeness = guide.wide[i, ]$model_id_nativeness,
                  model_path_nativeness = guide.wide[i, ]$model_path_nativeness,
                  preferred_model = guide.wide[i, ]$preferred_model,
                  nativeness_var = guide.wide[i, ]$nativeness_var,
@@ -242,6 +237,8 @@ unique(guide.wide$nativeness_var)
 posthoc_final[preferred_model == "yes" & p.value < 0.05, ]
 
 posthoc_final
+
+posthoc_final[intercept_df != contrast_df, ]
 
 # >>> Flip signs of estimates ---------------------------------------------
 #' *Let's make it so positive values mean a more positive effect of introduced/invasive megafauna*

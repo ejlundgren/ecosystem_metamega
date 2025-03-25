@@ -158,6 +158,15 @@ nrow(master_guide)
 
 master_guide[, mods := gsub("yi_smd", "", formula_nativeness)]
 
+master_guide[, three_mean_path := paste0("outputs/influence_analysis/models/",
+                                         model_id_nativeness, 
+                                         "__3_mean_exclusion.Rds")]
+
+master_guide[, four_n_path := paste0("outputs/influence_analysis/models/",
+                                     model_id_nativeness, 
+                                     "__4_N_exclusion.Rds")]
+
+
 # ~~~~~~~~~~~~~~~~~ -------------------------------------------------------
 
 # Calculate Cook's distance and rerun models ------------------------------
@@ -196,15 +205,7 @@ if(rerun){
 
   # >>> Run locally -------------------------------------------------------------
   #' [This will be time consuming]
-  master_guide[, three_mean_path := paste0("outputs/influence_analysis/models/",
-                                          model_id_nativeness, 
-                                          "__3_mean_exclusion.Rds")]
-  
-  master_guide[, four_n_path := paste0("outputs/influence_analysis/models/",
-                                          model_id_nativeness, 
-                                          "__4_N_exclusion.Rds")]
 
-  
   clust_out <- prepare_cluster(n=nrow(master_guide))
   
   i <- 1
@@ -313,11 +314,14 @@ if(rerun){
                                 
                                 # Load model
                                 m <- readRDS(outlier_guide[i, ]$model_path)
-                                
+                                dfs <- m$ddf
+
                                 out <- m %>%
                                   tidy_with_CIs() %>%
                                   filter(term != "intercept") %>%
-                                  mutate(model_id_nativeness = outlier_guide[i, ]$model_id_nativeness,
+                                  mutate(intercept_df = dfs["intrcpt"],
+                                         contrast_df = dfs[!names(dfs) %in% "intrcpt"],
+                                         model_id_nativeness = outlier_guide[i, ]$model_id_nativeness,
                                          model_path_nativeness = outlier_guide[i, ]$model_path_nativeness,
                                          outlier_threshold = outlier_guide[i, ]$outlier_threshold,
                                          outlier_path = outlier_guide[i, ]$model_path,
@@ -382,11 +386,16 @@ posthocs <- posthocs[preferred_model == "yes"]
 posthocs[p.value < 0.05 & analysis_group_category == "Vertebrates" &
            nativeness_var != "Africa_Comparison", 
          .(analysis_group, outlier_threshold, contrast, estimate, 
-            statistic, ci.lb, ci.ub, p.value)]
+            statistic, contrast_df, ci.lb, ci.ub, p.value)]
+
 range(posthocs[p.value < 0.05 & analysis_group_category == "Vertebrates" &
            nativeness_var != "Africa_Comparison", 
          .(analysis_group, outlier_threshold, contrast, estimate, 
            statistic, ci.lb, ci.ub, p.value)]$statistic)
+range(posthocs[p.value < 0.05 & analysis_group_category == "Vertebrates" &
+                 nativeness_var != "Africa_Comparison", 
+               .(analysis_group, outlier_threshold,contrast_df, contrast, estimate, 
+                 statistic, ci.lb, ci.ub, p.value)]$contrast_df)
 range(posthocs[p.value < 0.05 & analysis_group_category == "Vertebrates" &
                  nativeness_var != "Africa_Comparison", 
                .(analysis_group, outlier_threshold, contrast, estimate, 
@@ -401,25 +410,24 @@ posthocs[p.value < 0.05 & analysis_group_category == "Invertebrates" &
 
 posthocs[p.value < 0.05 & analysis_group_category == "Ecosystem" &
            nativeness_var != "Africa_Comparison", 
-         .(analysis_group, outlier_threshold, contrast, estimate, 
+         .(analysis_group, outlier_threshold, contrast, contrast_df, estimate, 
            statistic, ci.lb, ci.ub, p.value)]
-
 
 
 posthocs[p.value < 0.05 & #analysis_group_category == "Ecosystem" &
            nativeness_var == "Africa_Comparison", 
          .(analysis_group, outlier_threshold, contrast, estimate, 
-           statistic, ci.lb, ci.ub, p.value)]
+           statistic, contrast_df, ci.lb, ci.ub, p.value)]
 
 
 posthocs[p.value < 0.05 & #analysis_group_category == "Ecosystem" &
            nativeness_var == "Africa_Comparison", .(min_stat = min(statistic),
                                                     max_stat = max(statistic),
                                                     min_p = min(p.value),
-                                                    max_p = max(p.value)),
+                                                    max_p = max(p.value),
+                                                    min_df = min(contrast_df),
+                                                    max_df = max(contrast_df)),
          by = .(analysis_group)]
-
-
 
 # >>> Prepare to plot -----------------------------------------------------
 

@@ -1071,21 +1071,25 @@ unique(sub_guide$analysis_group_category)
 
 length(unique(sub_guide$analysis_group))
 
-posthocs[analysis_group_category != "Ecosystems" &
+posthocs[analysis_group_category != "Ecosystem" &
            p.value < 0.05 
          & nativeness_var != "Africa_Comparison", ]
 
-unique(sub_guide[analysis_group_category != "Ecosystems" 
+unique(sub_guide[analysis_group_category != "Ecosystem" 
                  & nativeness_var != "Africa_Comparison"]$analysis_group)
 
-range(posthocs[analysis_group_category != "Ecosystems"
+range(posthocs[analysis_group_category != "Ecosystem"
                & nativeness_var != "Africa_Comparison", ]$statistic)
-range(posthocs[analysis_group_category != "Ecosystems"
+
+range(posthocs[analysis_group_category != "Ecosystem"
+               & nativeness_var != "Africa_Comparison", ]$contrast_df)
+
+range(posthocs[analysis_group_category != "Ecosystem"
                & nativeness_var != "Africa_Comparison", ]$p.value)
 
-range(sub_guide[analysis_group_category != "Ecosystems"
+range(sub_guide[analysis_group_category != "Ecosystem"
                 & nativeness_var != "Africa_Comparison", ]$LRT)
-range(sub_guide[analysis_group_category != "Ecosystems"
+range(sub_guide[analysis_group_category != "Ecosystem"
                 & nativeness_var != "Africa_Comparison", ]$LRT_pval)
 
 
@@ -1105,7 +1109,9 @@ range(posthocs[analysis_group_category == "Vertebrates"
                & nativeness_var != "Africa_Comparison", ]$statistic)
 range(posthocs[analysis_group_category == "Vertebrates"
                & nativeness_var != "Africa_Comparison", ]$p.value)
-
+#
+range(posthocs[analysis_group_category == "Vertebrates"
+               & nativeness_var != "Africa_Comparison", ]$contrast_df)
 range(sub_guide[analysis_group_category == "Vertebrates"
                 & nativeness_var != "Africa_Comparison", ]$LRT)
 range(sub_guide[analysis_group_category == "Vertebrates"
@@ -1117,6 +1123,10 @@ unique(sub_guide$analysis_group_category)
 length(unique(sub_guide$analysis_group))
 range(posthocs[analysis_group_category == "Invertebrates"
                & nativeness_var != "Africa_Comparison", ]$statistic)
+
+range(posthocs[analysis_group_category == "Invertebrates"
+               & nativeness_var != "Africa_Comparison", ]$contrast_df)
+
 range(posthocs[analysis_group_category == "Invertebrates"
                & nativeness_var != "Africa_Comparison", ]$p.value)
 
@@ -1130,6 +1140,10 @@ length(unique(sub_guide$analysis_group))
 
 range(posthocs[analysis_group_category == "Ecosystem"
                & nativeness_var != "Africa_Comparison", ]$statistic)
+
+range(posthocs[analysis_group_category == "Ecosystem"
+               & nativeness_var != "Africa_Comparison", ]$contrast_df)
+
 range(posthocs[analysis_group_category == "Ecosystem"
                & nativeness_var != "Africa_Comparison", ]$p.value)
 
