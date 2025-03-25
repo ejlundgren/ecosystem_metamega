@@ -103,6 +103,7 @@ I2(m1)
 #' [Testing df extraction @itchysin]
 #' 
 names(m1)
+m1$df
 m1$dfs
 m1$ddf # not sure what this refers to
 sub.dat <- dat[eval(parse(text = guide[774, ]$exclusion))]
