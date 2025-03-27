@@ -1065,7 +1065,6 @@ sub_guide[LRT_pval < 0.05 & nativeness_var != "Africa_Comparison", ]
 
 posthocs[p.value < 0.05 & nativeness_var != "Africa_Comparison", ]
 
-
 # ------------  All animals ------------------------------------------------!
 unique(sub_guide$analysis_group_category)
 
@@ -1080,10 +1079,8 @@ unique(sub_guide[analysis_group_category != "Ecosystem"
 
 range(posthocs[analysis_group_category != "Ecosystem"
                & nativeness_var != "Africa_Comparison", ]$statistic)
-
 range(posthocs[analysis_group_category != "Ecosystem"
                & nativeness_var != "Africa_Comparison", ]$contrast_df)
-
 range(posthocs[analysis_group_category != "Ecosystem"
                & nativeness_var != "Africa_Comparison", ]$p.value)
 
@@ -1153,6 +1150,34 @@ range(sub_guide[analysis_group_category == "Ecosystem"
                 & nativeness_var != "Africa_Comparison", ]$LRT_pval)
 
 
+ # ----------- AFRICA -----------------------------------------!
+
+range(posthocs[nativeness_var == "Africa_Comparison" &
+                 p.value > 0.05, ]$statistic)
+range(posthocs[nativeness_var == "Africa_Comparison" &
+                 p.value > 0.05, ]$contrast_df)
+range(posthocs[nativeness_var == "Africa_Comparison" &
+                 p.value > 0.05, ]$p.value)
+range(sub_guide[nativeness_var == "Africa_Comparison" &
+                  LRT_pval > 0.05, ]$LRT)
+range(sub_guide[nativeness_var == "Africa_Comparison" &
+                  LRT_pval > 0.05, ]$LRT_pval)
+
+
+
+posthocs[nativeness_var == "Africa_Comparison" &
+           p.value <= 0.05, ]
+range(posthocs[nativeness_var == "Africa_Comparison" &
+                 p.value <= 0.05, ]$statistic)
+range(posthocs[nativeness_var == "Africa_Comparison" &
+                 p.value <= 0.05, ]$contrast_df)
+range(posthocs[nativeness_var == "Africa_Comparison" &
+                 p.value <= 0.05, ]$p.value)
+range(sub_guide[nativeness_var == "Africa_Comparison" &
+                  LRT_pval <= 0.05, ]$LRT)
+range(sub_guide[nativeness_var == "Africa_Comparison" &
+                  LRT_pval <= 0.05, ]$LRT_pval)
+
 # >>> Overall effects from intercept-only models --------------------------
 paths <- sub_guide[nativeness_var == "Herbivore_nativeness"
                    & nativeness_var != "Africa_Comparison", ]$model_path_null
@@ -1197,4 +1222,150 @@ intercepts[analysis_group_category == "Ecosystem" &
              nativeness_var != "Africa_Comparison"& pval < 0.05, ]
 round(intercepts[analysis_group_category == "Ecosystem" & 
                    nativeness_var != "Africa_Comparison" & pval < 0.05, ]$pval, 5)
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -----------------------------------------
+# Table S1 ----------------------------------------------------------------
+
+sub_guide
+posthocs
+
+table <- sub_guide[, .(model_id_nativeness, model_path_nativeness,
+                       analysis_group_category, analysis_group, nativeness_var,
+                       random_effect, min_obs, max_obs, min_refs, max_refs,
+                       formula_nativeness, formula_null, i2_nativeness,
+                       LRT, LRT_pval, prop_variance_reduced)]
+
+table.m <- merge(table,
+                 posthocs[, .(model_id_nativeness, contrast, estimate, statistic, p.value, ci.lb, ci.ub,
+                          intercept_df, contrast_df)],
+                 by = "model_id_nativeness")
+
+table.m
+
+#
+range(table.m$LRT)
+range(table.m$LRT_pval)
+range(table.m$i2_nativeness)
+range(table.m$prop_variance_reduced)
+range(table.m$estimate)
+range(table.m$p.value)
+
+table.m[, `:=` (LRT = round(LRT, 4),
+                LRT_pval = round(LRT_pval, 2),
+                i2_nativeness = round(i2_nativeness, 3),
+                prop_variance_reduced = round(prop_variance_reduced, 3),
+                estimate = round(estimate, 2),
+                statistic = round(statistic, 2),
+                p.value = round(p.value, 3),
+                ci.lb = round(ci.lb, 2),
+                ci.ub = round(ci.ub, 2))]
+#
+table.m[, fit_string := paste0("LRT=", LRT, ", p=", LRT_pval, 
+                               ", I2=", i2_nativeness, ", prop. variance reduced=", prop_variance_reduced)]
+table.m[, `Contrast±95%CIs` := paste0(estimate, "±[", ci.lb, ",", ci.ub, "]")]
+table.m[, df := paste(intercept_df, contrast_df, sep=",")]
+setnames(table.m, 
+         c("statistic"), 
+         c("t-value"))
+#
+table.m[, random_effect := gsub("list\\(", "", random_effect)]
+table.m[, random_effect := gsub(")", "", random_effect)]
+# table.m[, random_effect := paste0("random effect=", random_effect)]
+table.m
+#
+# Get sample size by actual group...
+sub.dat <- c()
+Ns <- c()
+var <- c()
+i <- 1
+for(i in 1:nrow(table.m)){
+  m <- readRDS(table.m[i, ]$model_path_nativeness)
+  sub.dat <- m$data
+  Ns <- sub.dat[, .(n = .N, refs = uniqueN(Citation)),
+          by = c(table.m[i, ]$nativeness_var)]
+  setnames(Ns, table.m[i, ]$nativeness_var, "nativeness_var")
+  Ns[, string := paste0(nativeness_var, "=", n, "(", refs, ")")]
+  # sort...(annoying)
+  Ns[, order := ifelse(nativeness_var %in% c("Intact_Africa", "Native"),
+                       1, 2)]
+  setorder(Ns, order)
+  Ns <- Ns[, .(string = paste(string, collapse = ", "))]
+  Ns
+  table.m[i, N_string := Ns$string]
+  
+}
+
+table.m
+
+
+table.m <- table.m[, .(analysis_group_category, analysis_group,
+                       nativeness_var, random_effect,
+                       fit_string, N_string, 
+                       `Contrast±95%CIs`, df, `t-value`, p.value)]
+table.m
+
+
+# Set order
+table.m[, nativeness_order := fcase(nativeness_var == "Herbivore_nativeness", 1,
+                                    nativeness_var == "Invasive", 2,
+                                    nativeness_var == "Africa_Comparison", 3)]
+
+
+lvls <- c("Primary_Productivity",
+          "Dead_Vegetation",
+          "Litter_Cover", "Bare_Ground",
+          "Soil_Compaction", "Soil_Moisture",
+          "Soil_Total_C",
+          "Soil_C:N", "Soil_Total_N",
+          "Soil_Labile_N", "Soil_Total_P",
+          "Soil_Total_Ca", "Soil_Total_Mg",
+          
+          
+          "Invertebrate_Diversity", "Invertebrate_Abundance",
+          "Invert_Herbivore_Diversity", "Invert_Herbivore_Abundance",
+          "Invert_Predator_Diversity", "Invert_Predator_Abundance",
+          "Invert_Detritivore_Abundance",
+          
+          "Vertebrate_Diversity", "Vertebrate_Abundance",
+          "Vert_Herb_Diversity", "Vert_Herb_Abundance",
+          "Vert_Carn_Diversity", "Vert_Carn_Abundance",
+          "Small_Mammal_Abundance",
+          "Bird_Diversity", "Bird_Abundance")
+
+table.m$analysis_group <- factor(table.m$analysis_group,
+                                 levels = lvls)
+table.m[, analysis_group_order := as.numeric(analysis_group)]
+table.m[, analysis_group := gsub("_", " ", analysis_group)]
+table.m[, analysis_group := gsub("Invert ", " ", analysis_group)]
+table.m[, analysis_group := gsub("Vert Carn ", "Carnivore ", analysis_group)]
+table.m[, analysis_group := gsub("Vert Herb ", "Herbivore ", analysis_group)]
+unique(table.m$analysis_group)
+table.m[, analysis_group := trimws(analysis_group)]
+
+setorder(table.m, analysis_group_category, analysis_group_order, nativeness_order)
+
+table.m[, nativeness_var := gsub("_", " ", nativeness_var)]
+table.m[, N_string := gsub("_", " ", N_string)]
+
+table.m[, random_effect := gsub("data_point_ID", "Observation ID", random_effect)]
+table.m[, random_effect := gsub("species_response_tag", "Species ID", random_effect)]
+table.m[, random_effect := gsub("time_series_clean", "Time Series", random_effect)]
+table.m[, random_effect := gsub("experiment_id", "Experiment ID", random_effect)]
+
+# Add empty rows to make it easier to clean this up in Excel...
+nrow(table.m)
+table.m[, scaffold := seq(from=1, to=(51*6), by = 6)]
+
+table.m2 <- merge(data.table(scaffold = seq(from = 1, to = max(table.m$scaffold))),
+                  table.m,
+                  by = "scaffold",
+                  all.x = T)
+
+# Going to write this to csv real quick to see what this table can look like...
+fwrite(table.m2[, !c("nativeness_order", "analysis_group_order"), with = F], 
+       na = "",
+       "figures/supplement/Table SX.csv")
+
+
 

@@ -142,7 +142,7 @@ percentiles.mrg <- merge(percentiles,
 percentiles.mrg
 percentiles.mrg[percentile_var_reduced > 97.5, ]
 
-# >>> Get % of randomized models for each randomized model (for a fill aesthetic in plot) -------------
+# >>> Get % of randomized models for each randomized model (for the fill aesthetic in figure) -------------
 
 model_id_i <- c()
 perc <- c()
@@ -435,11 +435,12 @@ left <- p1 + theme(axis.text.x = element_blank(),
 right <- p3 
 right
 
-left & theme(panel.border = element_blank()) | right & theme(panel.border = element_blank())
+left & theme(panel.border = element_blank()) | right & theme(panel.border = element_blank(),
+                                                             legend.position = "none")
 
 # object is too big, too many points to annotate in Inkscape. So save as both PNG and PDF
-ggsave("figures/main_text/Fig 4 raw.png", width = 15, height = 7, dpi = 300)
-ggsave("figures/main_text/Fig 4 raw.pdf", width = 14, height = 6)
+ggsave("figures/main_text/Fig 4 raw.png", width = 9, height = 6, dpi = 300)
+ggsave("figures/main_text/Fig 4 raw.pdf", width = 9, height = 6)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -------------------------------------
 # 4. Summaries for text ---------------------------------------------------
