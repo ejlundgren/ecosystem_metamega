@@ -20,6 +20,8 @@ groundhog.library(libs, groundhog.day)
 
 dat <- fread("data/master_data.csv")
 
+# >>> Check something... --------------------------------------------------
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --------------------------------------------
 # 1. Cross Join  -----------------------------------------------------
 #' *Cross join of analysis groups, nativeness vars (the predictors), and random effects*

@@ -165,6 +165,7 @@ master_guide[, three_mean_path := paste0("outputs/influence_analysis/models/",
 master_guide[, four_n_path := paste0("outputs/influence_analysis/models/",
                                      model_id_nativeness, 
                                      "__4_N_exclusion.Rds")]
+file.remove(list.files("outputs/influence_analysis/models/", full.names = T))
 
 
 # ~~~~~~~~~~~~~~~~~ -------------------------------------------------------
@@ -249,7 +250,7 @@ if(rerun){
                   struct = "AR",
                   data = sub.dat)
       
-      saveRDS(m, file_name)
+      saveRDS(m, master_guide[i, ]$three_mean_path)
       
     }
     
@@ -269,7 +270,7 @@ if(rerun){
                   struct = "AR",
                   data = sub.dat)
       
-      saveRDS(m, file_name)
+      saveRDS(m, master_guide[i, ]$four_n_path)
       
     }
     
@@ -283,6 +284,7 @@ if(rerun){
 master_guide
 master_guide[!file.exists(three_mean_path), ]
 master_guide[file.exists(three_mean_path), ]
+unique(success)
 
 master_guide[!file.exists(four_n_path), ]
 master_guide[file.exists(four_n_path), ]
@@ -441,9 +443,37 @@ posthocs$contrast <- factor(posthocs$contrast,
                                            "Invasive-Native",
                                            "Introduced-Intact_Africa")))
 
-levels(mods$analysis_group)
+
+lvls <- c("Dead_Vegetation",
+          "Litter_Cover", "Bare_Ground",
+          "Soil_Compaction", "Soil_Moisture",
+          "Soil_Total_C",
+          "Soil_C:N", "Soil_Total_N",
+          "Soil_Labile_N", "Soil_Total_P",
+          "Soil_Total_Ca", "Soil_Total_Mg",
+          
+          
+          "Invertebrate_Diversity", "Invertebrate_Abundance",
+          "Invert_Herbivore_Diversity", "Invert_Herbivore_Abundance",
+          "Invert_Predator_Diversity", "Invert_Predator_Abundance",
+          "Invert_Detritivore_Abundance",
+          
+          "Vertebrate_Diversity", "Vertebrate_Abundance",
+          "Vert_Herb_Diversity", "Vert_Herb_Abundance",
+          "Vert_Carn_Diversity", "Vert_Carn_Abundance",
+          "Small_Mammal_Abundance",
+          "Bird_Diversity", "Bird_Abundance")
+
 posthocs$analysis_group <- factor(posthocs$analysis_group,
-                                  levels(mods$analysis_group))
+                                  rev(lvls))
+
+
+group_labels <- unique(posthocs$analysis_group)
+group_labels <- gsub("_", " ", group_labels)
+group_labels <- gsub("Invert ", "", group_labels)
+names(group_labels) <- unique(posthocs$analysis_group)
+group_labels <- gsub("Vert Carn ", "Carnivore ", group_labels)
+group_labels <- gsub("Vert Herb ", "Herbivore ", group_labels)
 
 # >>> Figures -------------------------------------------------------------
 
@@ -593,6 +623,7 @@ p.post.ecos <- ggplot()+
   coord_cartesian(xlim = c(-3, 3), clip = "off")+
   theme_lundy
 p.post.ecos
+
 ggsave("figures/supplement/Ecosystem influential studies excluded.pdf", 
        width = 10, height = 8)
 ggsave("figures/supplement/Ecosystem influential studies excluded.png", 
@@ -647,7 +678,6 @@ p.post.africa.1 <- ggplot()+
   theme(strip.placement = "outside")
 
 p.post.africa.1
-
 
 p.post.africa.2 <- ggplot()+
   geom_vline(xintercept = 0, color = "grey50", linetype = "dashed")+

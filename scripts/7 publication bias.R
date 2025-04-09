@@ -265,10 +265,6 @@ Ns$variable <- factor(Ns$variable,
 quaternary_palette <- c("Introduced" = "#57b7db", "African assemblage" = "#d7a4a3",  
                         "Invasive" = "#faae6b", "Native" = "#a7928c")
 
-# 
-# unique(egger[term == "intercept" &
-#                p.value < 0.05, ]$analysis_group)
-# 
 
 lvls <- c("Primary_Productivity",
           "Dead_Vegetation",
@@ -392,7 +388,7 @@ for(i in 1:length(grps)){
 
 patch + plot_layout(ncol = 4, guides = "collect")
   
-ggsave("figures/supplement/Vertebrate funnel plots raw.pdf", width = 12, height = 12, dpi = 300)
+ggsave("figures/supplement/Vertebrate funnel plots raw.pdf", width = 14, height = 12, dpi = 300)
 
 # >>> Invertebrates -------------------------------------------------------
 

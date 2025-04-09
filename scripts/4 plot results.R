@@ -149,13 +149,6 @@ posthocs <- fread("outputs/main_text/summaries/posthoc_comparisons.csv")
 sub_guide <- master_guide[preferred_model == "yes", ]
 posthocs <- posthocs[preferred_model == "yes", ]
 
-m <- readRDS(sub_guide[analysis_group == "Small_Mammal_Abundance" & nativeness_var == "Herbivore_nativeness", ]$model_path_nativeness)
-m
-
-rma_predictions(m, 
-                newgrid = data.table(Herbivore_nativeness = c("Native", "Introduced")),
-                has_intercept = T)
-
 # *** Set plotting constants ----------------------------------------------
 
 tertiary_palette <- c("Introduced" = "#57b7db",
@@ -1164,7 +1157,6 @@ range(sub_guide[nativeness_var == "Africa_Comparison" &
                   LRT_pval > 0.05, ]$LRT_pval)
 
 
-
 posthocs[nativeness_var == "Africa_Comparison" &
            p.value <= 0.05, ]
 range(posthocs[nativeness_var == "Africa_Comparison" &
@@ -1312,8 +1304,7 @@ table.m[, nativeness_order := fcase(nativeness_var == "Herbivore_nativeness", 1,
                                     nativeness_var == "Africa_Comparison", 3)]
 
 
-lvls <- c("Primary_Productivity",
-          "Dead_Vegetation",
+lvls <- c("Dead_Vegetation",
           "Litter_Cover", "Bare_Ground",
           "Soil_Compaction", "Soil_Moisture",
           "Soil_Total_C",

@@ -65,6 +65,8 @@ working_guide <- working_guide[nativeness_var != "Africa_Comparison"]
 randos <- readRDS("outputs/remote_cluster_randomization_mirror/summaries/final_summarized_model_results.Rds")
 randos
 
+setdiff(working_guide$model_id_nativeness, randos$model_id_nativeness)
+#' [Should be length 0]
 # >>> Calculate CIs for each model ----------------------------------------
 
 randos.sum <- randos[, .(var_reduced_lwr.ci = quantile(prop_variance_explained,
@@ -171,8 +173,7 @@ randos.mrg
 
 # >>> Prepare -------------------------------------------------------------
 
-lvls <- c("Primary_Productivity",
-          "Dead_Vegetation",
+lvls <- c("Dead_Vegetation",
           "Litter_Cover", "Bare_Ground",
           "Soil_Compaction", "Soil_Moisture",
           "Soil_Total_C",
@@ -449,9 +450,15 @@ range(percentiles.mrg$obs_var_reduced)
 median(percentiles.mrg$obs_var_reduced)
 mean(percentiles.mrg$obs_var_reduced)
 
+# So this is the percent of random models that the observed models outperformed...
+range(percentiles.mrg$percentile_var_reduced)
+
+# and this is the % of randomized models that outperformed observed:
 100-range(percentiles.mrg$percentile_var_reduced)
 100-mean(percentiles.mrg$percentile_var_reduced)
+100-mean(percentiles.mrg$percentile_var_reduced)
 
+median(randos.mrg$prop_variance_explained)
 mean(randos.mrg$prop_variance_explained)
 range(randos.mrg$prop_variance_explained)
 

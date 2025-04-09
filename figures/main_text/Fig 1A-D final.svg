@@ -67,7 +67,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.71572584"
-     inkscape:cx="493.20561"
+     inkscape:cx="492.50702"
      inkscape:cy="230.5352"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
@@ -97,7 +97,10 @@
        width="694.4494"
        height="45.44659"
        x="211.76283"
-       y="126.88593" />
+       y="126.88593"
+       inkscape:export-filename="Fig 1A-D final.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <rect
        style="fill:#dfdfdf;fill-opacity:0.533333;stroke-width:1.46892;stroke-linecap:round;stroke-dasharray:2.93714, 1.46859"
        id="rect2"
@@ -7686,12 +7689,12 @@
     <text
        id="text1476"
        xml:space="preserve"
-       x="654.44226"
-       y="34.693333"
+       x="53.711353"
+       y="391.64487"
        style="font-size:16px;stroke-width:1.33333"><tspan
          style="font-variant:normal;font-weight:normal;font-size:17.3333px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000 icc-color(sRGB-IEC61966-2, 0.1, 0, 0, 0);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
-         x="654.44226"
-         y="34.693333"
+         x="53.711353"
+         y="391.64487"
          id="tspan1476">B</tspan></text>
     <path
        id="path1479"
@@ -13238,12 +13241,12 @@
     <text
        id="text2805"
        xml:space="preserve"
-       x="53.508228"
-       y="391.65332"
+       x="654.23914"
+       y="34.701797"
        style="font-size:16px;stroke-width:1.33333"><tspan
          style="font-variant:normal;font-weight:normal;font-size:17.3333px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000 icc-color(sRGB-IEC61966-2, 0.1, 0, 0, 0);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
-         x="53.508228"
-         y="391.65332"
+         x="654.23914"
+         y="34.701797"
          id="tspan2805">C</tspan></text>
     <path
        id="path2808"

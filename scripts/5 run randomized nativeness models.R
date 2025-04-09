@@ -305,7 +305,7 @@ if(rerun){
 }
 
 # >>> Add chunk -----------------------------------------------------------
-working_guide <- dynoChunker(dat=working_guide, no_per_chunk = 1000)
+working_guide <- dynoChunker(dat=working_guide, no_per_chunk = 500)
 
 # Save to remote server:
 saveRDS(working_guide, paste0(remote_path, "/data/master_guide.Rds"))
@@ -321,29 +321,30 @@ updateJob(job_path = paste0(remote_path, "/randomization_job.sh"),
           time = "4:00:00")
 
 #' [submit array shell script in console with 'sbatch submit_array.sh']
-
 # Record some job IDs:
-# 55768922     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768923     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768924     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768925     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768926     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768927     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768928     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768929     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768930     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768931     short randomiz ejlundgr  R       0:19      1 s21n34
-# 55768932     short randomiz ejlundgr  R       0:19      1 s21n64
-# 55768933     short randomiz ejlundgr  R       0:19      1 s21n64
-# 55768934     short randomiz ejlundgr  R       0:19      1 s21n64
-# 55768935     short randomiz ejlundgr  R       0:19      1 s21n64
-# 55768936     short randomiz ejlundgr  R       0:19      1 s21n64
-# 55768937     short randomiz ejlundgr  R       0:19      1 s21n71
-# 55768938     short randomiz ejlundgr  R       0:19      1 s21n71
-# 55768939     short randomiz ejlundgr  R       0:19      1 s21n71
-# 55768940     short randomiz ejlundgr  R       0:19      1 s21n71
+# 57544870 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544869 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544868 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544867 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544866 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544865 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544864 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544863 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544862 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544861 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544860 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544859 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544858 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544857 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544856 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544855 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544854 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544853 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544852 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544851 short,nor randomiz ejlundgr PD       0:00      1 (None)
+# 57544850 short,nor randomiz ejlundgr PD       0:00      1 (None)
 
-#' [Can use 'jobinfo 55768741' to see if job failed from going over time or over memory ]
+#' [Can use 'jobinfo XXXX' to see if and how a job failed]
 #' 
 # Check logs and outfiles for other errors:
 logs <- list.files(paste0(remote_path, "/logs/"), full.names = T)
@@ -386,26 +387,6 @@ updateJob(job_path = paste0(remote_path, "/randomization_job.sh"),
           time = "4:00:00")
 
 #' [submit array shell script in console with 'sbatch submit_array.sh']
-
-# Record some job IDs:
-# 55769013 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769012 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769011 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769010 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769009 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769008 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769007 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769006 short,nor randomiz ejlundgr PD       0:00      1 (None)
-# 55769005 short,nor randomiz ejlundgr PD       0:00      1 (None)
-
-#' [Can use 'jobinfo 55768741' to see if job failed from going over time or over memory ]
-#' 
-# Check logs and outfiles for other errors:
-logs <- list.files(paste0(remote_path, "/logs/"), full.names = T)
-readLines(logs[5])
-
-outs <- list.files(paste0(remote_path, "/outfiles/"), full.names = T)
-readLines(outs[5])
 
 # >>> Check success -----------------------------------------------------------------
 
