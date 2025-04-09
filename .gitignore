@@ -6,3 +6,5 @@ scripts/PREPARE_DATA_FOR_REPO_PUBLICATION.R
 .DS_Store
 ecosystem_metamega.Rproj
 scripts/9.X Figure for Cambridge Prisms.R
+/manuscript
+/manuscript
