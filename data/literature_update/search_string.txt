@@ -1,0 +1,20 @@
+From 19 February 2021 to October 9th 2025:
+
+
+TS=( ungulat* OR herbivor* OR megafauna OR antelope* OR aoudad OR argali OR elephant* OR bison OR banteng OR oryx OR camel* OR deer OR pig OR boar OR hog OR rhino* OR wildebeest OR sheep OR goat OR capybara OR caribou OR chital OR eland OR feral cattle OR gemsbok OR gazelle OR kudu OR hirola OR hartebeest OR addax OR ibex OR tapir OR barasingha OR gaur OR babirua OR impala OR ibex OR guanaco OR kob OR kouprey OR anoa OR moose OR lechwe OR muskox OR tahr OR nilgai OR nyala OR okapi OR huemul OR pronghorn OR hippo* OR puku OR serow OR sambar OR saola OR sitatunga OR tamaraw OR takin OR taruca OR topi OR vacuna OR llama OR wapiti OR elk OR buffalo OR water buffalo OR yak OR duiker OR kangaroo* OR macropod* ) 
+
+AND
+
+TS=(exclosure OR exclusion OR fence* OR natural comparison OR island OR eradication OR reintroduc* OR introduc*)
+
+AND 
+
+TS=( disturb* OR graz* OR brows* OR impact* OR effect OR affect OR disrupt OR facilitate OR invasi* OR ecosystem* OR vegetat* OR plant* OR fauna* OR reptil* OR amphib* OR bird* OR rodent* OR fish* OR invertebrat* OR insect* OR soil* OR carbon OR river* OR riparian OR desert* OR forest* OR tundra OR decomposition OR grassland* OR savanna* OR chaparral OR scrub OR diversity OR heterogeneity OR extinction OR richness OR environment OR ecolog* OR hydrolog* OR disturbance OR density OR biodiversity OR response* OR ecosystem OR herbaceous OR canopy OR germination OR cover OR pollinator* OR tree OR nutrient* OR understory OR erosion OR grass* OR vegetation OR community OR exclosure OR competition )
+
+AND 
+
+WC=( ECOLOGY OR ZOOLOGY OR ENVIRONMENTAL SCIENCES OR BIODIVERSITY CONSERVATION OR EVOLUTIONARY BIOLOGY OR GEOGRAPHY PHYSICAL OR REMOTE SENSING OR PLANT SCIENCES OR MULTIDISCIPLINARY SCIENCE OR FORESTRY OR ENTOMOLOGY OR MARINE & FRESHWATER BIOLOGY OR MYCOLOGY OR BIOLOGY OR OCEANOGRAPHY OR ORNITHOLOGY OR BEHAVIORAL SCIENCES OR FISHERIES )
+
+
+FURTHER FILTERED TO Article, Early Access, Book Chapters, Corrections, Letters, Data Paper
+
