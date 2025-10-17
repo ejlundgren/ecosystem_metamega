@@ -1,0 +1,5 @@
+name,mean_high_megafauna,mean_low_megafauna,sd_high_megafauna,sd_low_megafauna,what
+mounds_per_ha,5.15,4.6,3.61191085161304,0.66007575322837,all herbivores vs exclosures
+n_trees,826,1022,244.301043796378,433.927413284757,all herbivores vs exclosures
+mounds_per_ha,3.19,4.6,1.11772089539384,0.66007575322837,mesoherbivores vs exclosures
+n_trees,826.666666666667,1022,244.150226977845,433.927413284757,mesoherbivores vs exclosures
