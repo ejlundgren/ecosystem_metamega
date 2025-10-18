@@ -1,0 +1,44 @@
+,Site,Name of site with 3 fenced and 3 control plots (4 x 4 m each)
+1,Plot,Plot number
+2,Pair,"Plot pair number, plots within sites that share a pair number represent pairs for calculating differences due to grazing"
+3,Graztrt,"G = Grazed (Unfenced), UG = Ungrazed (Fenced)"
+4,ExtPppm,"Soil extractable (Mehilch's solution) P in ppm, measured in 2000"
+5,ExtNappm,"Soil extractable (Mehlich's solution) Na in ppm, measured in 2000"
+6,Nmin,"Net nitrogen mineralization, mg N.kg-1.month-1, using isolation tube method,  10 cm depth"
+7,ForbBiom,"Biomass of non-legume dicots (forbs) g.m-2 measured in early June, 2016"
+8,PctForb,"Percent cover of upalatable forbs, based on visual cover in four 0.5 x 0.5 m frames placed randomly in each plot"
+9,deltaForbs,"Difference in Forb Biomass, Grazed plot - Ungrazed Plot for plot pair (see 3. Pair above)"
+10,dPctForb,Difference in %cover of unpalatble forbs Grazed plot - Ungrazed plot for plot pair (see 3. Pair above)
+11,GrassBiom,"Biomass of graminoids  g.m-2 , measured in early June 2016"
+12,PctGrass,"Percent cover of graminoids, based on visual cover in four 0.5 x 0.5 m frames placed randomly in each plot"
+13,deltaGrass,"Difference in graminoid biomass, Grazed plot - Ungrazed Plot for plot pair (see 3. Pair above)"
+14,dPctGrass,Difference in %cover of graminoids Grazed plot - Ungrazed plot for plot pair (see 3. Pair above)
+15,dPctNFix,"Difference in % Cover nitrogen fixing grasses+legumes,  early June 2016, Nitrogen-fixing grasses include Themeda triandra, Digitaria macroblephara, Pennisetum mezianum"
+16,LegBiom,"Biomass of dicot legumes  g.m-2 , measured in early June 2016"
+17,LegPctBiom,"Percent cover of legumes, based on visual cover in four 0.5 x 0.5 m frames placed randomly in each plot"
+18,DeltaLeg,"Difference in legume biomass, Grazed plot - Ungrazed Plot for plot pair (see 3. Pair above)"
+19,dPctLeg,Difference in %cover of legumes Grazed plot - Ungrazed plot for plot pair (see 3. Pair above)
+20,TotBiom,"Aboveground biomass, g.m-2, measured in late June, 2016"
+21,GrazIntens,"1 - totBiom(grazed)/TotBiom(ungrazed) for plot pair (see 3. Pair, above) in 2006"
+22,GI 2016,"1 - totBiom(grazed)/TotBiom(ungrazed) for plot pair (see 3. Pair, above) in 2016"
+23,dGI,GI 2016 - GrazIntens
+24,AG PLantN,"N% of aboveground plant biomass, 2016, Grazed plots"
+25,Rainfall,"Mean annual rainfall mm (1995-2006, Anderson et al 2007, Ecology)"
+26,Rain6mo,"Estimated rainfall, mm, in previous six months prior to plant harvest, estimated from CHIRPS data http://chg.geog.ucsb.edu/data/chirps/ "
+27,SOC2001,"Soil Organic Carbon (SOC) Fraction, 30 cm depth, 2001"
+28,SOCtpha2001,"Soil Organic Carbon (SOC)density (Mg/ha), 30 cm depth, 2001"
+29,SOC2008,"Soil Organic Carbon (SOC) Fraction, 30 cm depth, 2008"
+30,SOCtpha2008,"Soil Organic Carbon (SOC)density (Mg/ha), 30 cm depth, 2008"
+31,dSOC01to08,Difference in SOC density 2001 to 2008
+32,SOC2017,"Soil Organic Carbon (SOC) Fraction, 30 cm depth, 2017"
+33,SOCtpha2017,"Soil Organic Carbon (SOC)density (Mg/ha), 30 cm depth, 2017"
+34,dSOC08to17,Difference in SOC density 2008 to 2017
+35,deltaSOC,"Difference in SOC Density Grazed plot - Ungrazed plot, 2008"
+36,Hyphal ingrowth,"Hyphae in 0.04mm mesh bag with sterilized sand, 10 cm depth, 6 months, November 2016 - June 2017, m/g soil"
+37,deltaHyph,Difference in Hyphal ingrowth Grazed - plot - Ungrazed plot for plot pair
+38,RootBiom,"Biomass roots, measured with flotation method, to 40 cm depth, June 2009"
+39,deltaRootB,"Difference in root biomass Grazed plot - Ungrazed plot, for plot pair"
+,,
+,,
+1,,
+2,,

@@ -13,7 +13,6 @@ dat <- read.csv("data/literature_update/raw/rayyan_merged.csv") #using exported 
 dim(dat) #4887 21 - note that many fields get collapsed into the "notes" field
 names(dat)
 
-
 dat$title2 <- str_replace_all(dat$title, "[:punct:]", "") %>% str_replace_all(.,"[ ]+", " ") %>% tolower() # Removing all punctuation and extra white spaces 
 
 dat2 <- distinct(dat, title2, .keep_all = TRUE) # select records with unique titles (removes exact duplicates)
@@ -44,5 +43,35 @@ names(dat4)
 
 write_refs(dat4, format = "bib", file = "data/literature_update/deduplicated/deduplicated.bib") #save into a bib file
 write_refs(dat4, format = "ris", file = "data/literature_update/deduplicated/deduplicated.ris") #save into a ris file
-write.csv(dat4, "Rayyan_merged_deduplicated_SRP_main1_MP.csv", row.names = FALSE) #save as a csv file
+# write.csv(dat4, "Rayyan_merged_deduplicated_SRP_main1_MP.csv", row.names = FALSE) #save as a csv file
 
+
+# >>> Check against articles already included -----------------------------
+dat <- read.csv("data/literature_update/raw/rayyan_merged.csv") #using exported csv file
+dat
+
+dat$title2 <- str_replace_all(dat$title, "[:punct:]", "") %>% 
+  str_replace_all(.,"[ ]+", " ") %>% 
+  tolower() # Removing all punctuation and extra white spaces 
+
+dat
+
+original <- fread("data/Trepel_2024_cleaned/Trepel_2024.csv")
+
+original[grepl("Alston", Citation)]
+
+original$title2 <- str_replace_all(original$Title, "[:punct:]", "") %>% 
+  str_replace_all(.,"[ ]+", " ") %>% 
+  tolower() # Removing all punctuation and extra white spaces 
+
+
+original[title2 == "can grazing by elk and bison stimulate herbaceous plant productivity in semiarid ecosystems", ]
+original[Title == "Ungulates alter plant cover without consistent effect on soil ecosystem functioning"]
+
+dat %>% filter(title2 %in% original$title2) %>%
+  select(title, authors)
+
+
+dat %>% filter(title2 == 'large mammalian herbivores modulate plant growth form diversity in a tropical rainforest')
+original %>% filter(title2 == 'large mammalian herbivores modulate plant growth form diversity in a tropical rainforest')
+original[grepl("Souza", "Citation"), ]

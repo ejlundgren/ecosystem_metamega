@@ -1,0 +1,130 @@
+site,date,set,vegetation,treatment,family,species,num
+boolcoomatta,2020-june,domerock,alectryon bluebush,exclosure,amitermes,Amitermes germanus,1
+boolcoomatta,2020-june,southwest,mulga bluebuesh,control,amitermes,Amitermes obtusidens,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,exclosure,amitermes,Amitermes xylophagus,1
+boolcoomatta,2020-june,southwest,mulga bluebuesh,exclosure,drepanotermes,Drepanotermes sp,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,control,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,control,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,northeast,acacia bluebush sandhill,control,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,northeast,acacia bluebush sandhill,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,northeast,acacia bluebush sandhill,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,northeast,acacia bluebush sandhill,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,northeast,acacia bluebush sandhill,exclosure,heterotermes,Heterotermes ferox,1
+boolcoomatta,2020-june,domerock,alectryon bluebush,control,nasutitermes,Nasutitermes centraliensis,1
+mungo,2019-nov,garnpangpine1,callitris glaucophylla woodland,control,amitermes,Amitermes colonus,1
+mungo,2019-nov,garnpangpine1,callitris glaucophylla woodland,control,amitermes,Amitermes colonus,1
+mungo,2019-nov,garnpangpine1,callitris glaucophylla woodland,exclosure,amitermes,Amitermes colonus,1
+mungo,2019-nov,garnpangpine1,callitris glaucophylla woodland,control,amitermes,Amitermes colonus,1
+mungo,2019-nov,garnpangpine1,callitris glaucophylla woodland,exclosure,amitermes,Amitermes colonus,1
+mungo,2019-nov,garnpangpine2,callitris glaucophylla woodland,exclosure,amitermes,Amitermes colonus,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,exclosure,amitermes,Amitermes exilis,1
+mungo,2020-june,garnpangbluebush1,maireana pyramidata shrubland,exclosure,amitermes,Amitermes germanus,1
+mungo,2020-june,garnpangbluebush1,maireana pyramidata shrubland,exclosure,amitermes,Amitermes germanus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2020-june,mungobluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2020-june,mungobluebush1,maireana pyramidata shrubland,exclosure,amitermes,Amitermes germanus,1
+mungo,2019-nov,garnpangbluebush1,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2019-nov,garnpangbluebush1,maireana pyramidata shrubland,exclosure,amitermes,Amitermes germanus,1
+mungo,2019-nov,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2019-nov,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2019-nov,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2019-nov,mungobluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes germanus,1
+mungo,2019-nov,mungopine1,callitris glaucophylla woodland,control,amitermes,Amitermes germanus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes neogermanus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,exclosure,amitermes,Amitermes neogermanus,1
+mungo,2019-nov,garnpangbluebush1,maireana pyramidata shrubland,exclosure,amitermes,Amitermes neogermanus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes xylophagus,1
+mungo,2019-nov,garnpangbluebush1,maireana pyramidata shrubland,control,amitermes,Amitermes xylophagus,1
+mungo,2019-nov,mungobluebush2,maireana pyramidata shrubland,control,amitermes,Amitermes xylophagus,1
+mungo,2019-nov,mungopine1,callitris glaucophylla woodland,control,amitermes,Amitermes xylophagus,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,garnpangpine2,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,mungopine1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2020-june,mungopine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,mungopine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,mungopine2,callitris glaucophylla woodland,control,heterotermes,Heterotermes ferox,1
+mungo,2020-june,mungopine2,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes ferox,1
+mungo,2019-nov,mungobluebush1,callitris glaucophylla woodland,exclosure,heterotermes,Heterotermes sp,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,microcerotermes,Microcerotermes distinctus,1
+mungo,2020-june,garnpangbluebush2,maireana pyramidata shrubland,control,microcerotermes,Microcerotermes distinctus,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,control,microcerotermes,Microcerotermes distinctus,1
+mungo,2020-june,garnpangpine1,callitris glaucophylla woodland,control,microcerotermes,Microcerotermes implacidus,1
+yathong,2020-june,north,wilga woodland,control,amitermes,Amitermes colonus,1
+yathong,2019-nov,middle,wilga woodland,control,amitermes,Amitermes colonus,1
+yathong,2019-nov,north,wilga woodland,control,amitermes,Amitermes colonus,1
+yathong,2019-nov,north,wilga woodland,control,amitermes,Amitermes colonus,1
+yathong,2019-nov,north,wilga woodland,control,amitermes,Amitermes colonus,1
+yathong,2019-nov,north,wilga woodland,exclosure,amitermes,Amitermes colonus,1
+yathong,2019-nov,south,wilga woodland,control,amitermes,Amitermes colonus,1
+yathong,2020-june,north,wilga woodland,exclosure,amitermes,Amitermes exilis,1
+yathong,2019-nov,north,wilga woodland,control,amitermes,Amitermes exilis,1
+yathong,2020-june,south,wilga woodland,exclosure,amitermes,Amitermes germanus,1
+yathong,2019-nov,middle,wilga woodland,control,amitermes,Amitermes germanus,1
+yathong,2019-nov,middle,wilga woodland,control,amitermes,Amitermes germanus,1
+yathong,2019-nov,north,wilga woodland,exclosure,amitermes,Amitermes germanus,1
+yathong,2019-nov,north,wilga woodland,exclosure,amitermes ,Amitermes germanus,1
+yathong,2019-nov,south,wilga woodland,control,amitermes,Amitermes germanus,1
+yathong,2020-june,north,wilga woodland,exclosure,amitermes,Amitermes lativentris,1
+yathong,2019-nov,middle,wilga woodland,control,amitermes,Amitermes lativentris,1
+yathong,2019-nov,north,wilga woodland,exclosure,amitermes,Amitermes lativentris,1
+yathong,2019-nov,south,wilga woodland,exclosure,amitermes,Amitermes lativentris,1
+yathong,2019-nov,middle,wilga woodland,control,amitermes,Amitermes neogermanus,1
+yathong,2019-nov,north,wilga woodland,exclosure,amitermes,Amitermes neogermanus,1
+yathong,2019-nov,north,wilga woodland,exclosure,amitermes,Amitermes neogermanus,1
+yathong,2019-nov,north,wilga woodland,exclosure,amitermes,Amitermes sp,1
+yathong,2019-nov,middle,wilga woodland,control,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,middle,wilga woodland,control,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,middle,wilga woodland,control,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,middle,wilga woodland,exclosure,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,middle,wilga woodland,exclosure,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,middle,wilga woodland,exclosure,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,middle,wilga woodland,exclosure,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,south,wilga woodland,control,drepanotermes,Drepanotermes perniger,1
+yathong,2019-nov,south,wilga woodland,exclosure,drepanotermes,Drepanotermes perniger,1
+yathong,2020-june,middle,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,middle,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,middle,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,middle,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,middle,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,control,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,control,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,control,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,south,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,south,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,south,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,south,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,south,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,south,wilga woodland,exclosure,heterotermes,Heterotermes ferox,1
+yathong,2020-june,north,wilga woodland,exclosure,microcerotermes,Microcerotermes implacidus,1
+yathong,2019-nov,middle,wilga woodland,control,nasutitermes,Nasutitermes centraliensis,1
+yathong,2019-nov,north,wilga woodland,exclosure,nasutitermes,Nasutitermes centraliensis,1

@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="knb-lter-jrn.210086002.96"
+  system="https://pasta.edirepository.org"
+  xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <access
+    authSystem="https://pasta.edirepository.org/authentication"
+    order="allowFirst" scope="document"
+    system="https://pasta.edirepository.org">
+    <allow>
+      <principal>uid=JRN,o=LTER,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset
+      id="d210086002">
+    <alternateIdentifier
+        system="https://doi.org">doi:10.6073/pasta/7c9e83391e3000acbb86503925385713</alternateIdentifier><title>Quadrat vegetation cover data on 1m x 1m plots from the long-term Small Mammal Exclusion Study (SMES) at Jornada Basin LTER, 1995-2020</title>
+    <creator>
+      <individualName>
+        <givenName>David C</givenName>
+        <surName>Lightfoot</surName>
+      </individualName>
+      <organizationName>Jornada Basin LTER (now at Univ. of NM)</organizationName>
+      <electronicMailAddress>dlightfo@unm.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Brandon T</givenName>
+        <surName>Bestelmeyer</surName>
+      </individualName>
+      <organizationName>USDA-ARS Jornada Experimental Range</organizationName>
+      <address>
+        <deliveryPoint>P.O. Box 30003; MSC 3JER New Mexico State University</deliveryPoint>
+        <city>Las Cruces</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>88003-8003</postalCode>
+        <country>U.S.A.</country>
+      </address>
+      <userId
+        directory="ORCID">0000-0001-5060-9955</userId>
+    </creator>
+    <metadataProvider>
+      <organizationName>Jornada Basin LTER/New Mexico State University</organizationName>
+      <positionName>Jornada Basin LTER program</positionName>
+      <address>
+        <deliveryPoint>P.O. Box 30003; MSC 3JER New Mexico State University</deliveryPoint>
+        <city>Las Cruces</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>88003-8003</postalCode>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>jornada.lter@nmsu.edu</electronicMailAddress>
+      <onlineUrl>https://lter.jornada.nmsu.edu</onlineUrl>
+    </metadataProvider>
+    <pubDate>2022-04-11</pubDate>
+    <language>English</language>
+    <abstract>
+      <para>
+    This data package contains vegetation cover from plots with various
+    levels of herbivore exclusion on the Jornada Experimental Range
+    (JER) and Chihuahuan Desert Rangeland Research Center (CDRRC) in
+    Dona Ana County, southern New Mexico, USA. Study sites were
+    established in 1995; one in black grama grassland and the other in
+    creosotebush shrubland to compare the impact of herbivores on
+    ecosystem processes between these vegetation types. Parallel studies
+    were established at the Sevilleta LTER site (New Mexico, USA) and
+    Mapimi Biosphere Reserve (Durango, Mexico). Each study site is 1 km
+    by 0.5 km in area. Four replicate experimental blocks were randomly
+    located at the grassland study site to measure vegetation responses
+    using exclusion treatments including a) all mammalian herbivores,
+    including cattle, lagomorphs, and rodents, b) lagomorphs and cattle
+    only, c) cattle only, and d) control accessible to all herbivores.
+    Because grazing cattle are excluded from the entire creosote site,
+    only three replicate experimental blocks were randomly located there
+    including a) all mammalian herbivores, including lagomorphs, and
+    rodents, b) lagomorphs only, and c) control accessible to all
+    herbivores. Thirty-six sampling points were positioned at 5.8-meter
+    intervals on a systematically located 6 by 6 point grid within each
+    plot. A permanent one-meter by one-meter vegetation measurement
+    quadrat is located at each of the 36 points. At each quadrat,
+    percent cover by individual plant species is measured. Other
+    measurements include height (cm) of each species in the quadrat, and
+    plant condition (living or dead). Data were collected in the spring
+    and fall of every year from 1995 to 2005. After 2005, sampling
+    frequency changed to every 5 years in the fall. This study is
+    ongoing.
+  </para>
+    </abstract>
+    <keywordSet>
+      <keyword
+        keywordType="theme">land use and land cover change</keyword>
+      <keyword
+        keywordType="theme">populations</keyword>
+      <keywordThesaurus>LTER Core Research Areas</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword
+        keywordType="theme">abundance</keyword>
+      <keyword
+        keywordType="theme">biodiversity</keyword>
+      <keyword
+        keywordType="theme">consumers</keyword>
+      <keyword
+        keywordType="theme">deserts</keyword>
+      <keyword
+        keywordType="theme">grasslands</keyword>
+      <keyword
+        keywordType="theme">herbivory</keyword>
+      <keyword
+        keywordType="theme">land cover</keyword>
+      <keyword
+        keywordType="theme">long term</keyword>
+      <keyword
+        keywordType="theme">long term monitoring</keyword>
+      <keyword
+        keywordType="theme">plant communities</keyword>
+      <keyword
+        keywordType="theme">plant cover</keyword>
+      <keyword
+        keywordType="theme">plant species</keyword>
+      <keyword
+        keywordType="theme">populations</keyword>
+      <keyword
+        keywordType="theme">shrubs</keyword>
+      <keyword
+        keywordType="theme">small mammals</keyword>
+      <keyword
+        keywordType="theme">species diversity</keyword>
+      <keyword
+        keywordType="theme">species list</keyword>
+      <keyword
+        keywordType="theme">transects</keyword>
+      <keyword
+        keywordType="theme">vegetation dynamics</keyword>
+      <keywordThesaurus>LTER Controlled Vocabulary v1</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword
+        keywordType="theme">ongoing</keyword>
+      <keyword
+        keywordType="theme">quadrat</keyword>
+      <keywordThesaurus>none</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword
+        keywordType="theme">Plant-Animal Interactions</keyword>
+      <keyword
+        keywordType="theme">Vegetation Dynamics</keyword>
+      <keyword
+        keywordType="theme">ongoing</keyword>
+      <keywordThesaurus>Jornada Basin LTER dataset keywords</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword
+        keywordType="theme">SMES</keyword>
+      <keyword
+        keywordType="theme">study 086</keyword>
+      <keywordThesaurus>Jornada Basin project names</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword
+        keywordType="place">SMES</keyword>
+      <keywordThesaurus>Jornada Basin place names</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword
+          keywordType="theme">grazing</keyword>
+      <keywordThesaurus>USDA National Ag Library's Agricultural Thesaurus</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>
+      <para>
+  This information is released under the Creative Commons license - Attribution - CC BY 
+  (https://creativecommons.org/licenses/by/4.0/). The consumer of these data ("Data User" 
+  herein) is required to cite it appropriately in any publication that results from its 
+  use. The Data User should realize that these data may be actively used by others for 
+  ongoing research and that coordination may be necessary to prevent duplicate 
+  publication. The Data User is urged to contact the authors of these data if any 
+  questions about methodology or results occur. Where appropriate, the Data User is 
+  encouraged to consider collaboration or co-authorship with the authors. The Data User 
+  should realize that misinterpretation of data may occur if used out of context of the 
+  original study. While substantial efforts are made to ensure the accuracy of data and 
+  associated documentation, complete accuracy of data sets cannot be guaranteed. All data 
+  are made available "as is." The Data User should be aware, however, that data are updated 
+  periodically and it is the responsibility of the Data User to check for new versions of 
+  the data. The data authors and the repository where these data were obtained shall not be 
+  liable for damages resulting from any use or misinterpretation of the data. Thank you.
+</para>
+    </intellectualRights>
+    <distribution>
+      <online>
+        <url
+      function="information">https://jrn.lternet.edu</url>
+      </online>
+    </distribution>
+    <distribution
+      id="10.6073/pasta/7c9e83391e3000acbb86503925385713" scope="system"
+          system="https://pasta.edirepository.org"><online><url
+        function="information">https://doi.org/10.6073/pasta/7c9e83391e3000acbb86503925385713</url></online></distribution><coverage>
+      <geographicCoverage>
+        <geographicDescription>Western Bajada: Study occurred in the western bajada geomorphic zone in the Jornada Basin. More precise geographic coordinates for this study may be requested from the JRN LTER Data Manager (jornada.data@nmsu.edu).</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-106.851460</westBoundingCoordinate>
+          <eastBoundingCoordinate>-106.729443</eastBoundingCoordinate>
+          <northBoundingCoordinate>32.542771</northBoundingCoordinate>
+          <southBoundingCoordinate>32.467228</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Basin Floor: Study occurred in the basin floor geomorphic zone in the Jornada Basin. More precise geographic coordinates for this study may be requested from the JRN LTER Data Manager (jornada.data@nmsu.edu).</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-106.872883</westBoundingCoordinate>
+          <eastBoundingCoordinate>-106.692716</eastBoundingCoordinate>
+          <northBoundingCoordinate>32.749487</northBoundingCoordinate>
+          <southBoundingCoordinate>32.473173</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>1995-04-03</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2020-08-11</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <maintenance>
+      <description>ongoing - These data were collected yearly from 1995-2005 and every five years thereafter</description>
+      <maintenanceUpdateFrequency>asNeeded</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <organizationName>Jornada Basin LTER/New Mexico State University</organizationName>
+      <positionName>Jornada Basin LTER Information Manager</positionName>
+      <address>
+        <deliveryPoint>P.O. Box 30003, MSC 3JER New Mexico State University</deliveryPoint>
+        <city>Las Cruces</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>88003-8003</postalCode>
+        <country>USA</country>
+      </address>
+      <phone>575-646-1739</phone>
+      <electronicMailAddress>jornada.data@nmsu.edu</electronicMailAddress>
+      <onlineUrl>https://lter.jornada.nmsu.edu/information-management/</onlineUrl>
+    </contact>
+    
+    <publisher><organizationName>Environmental Data Initiative</organizationName><electronicMailAddress>info@environmentaldatainitiative.org</electronicMailAddress><onlineUrl>https://environmentaldatainitiative.org</onlineUrl><userId
+          directory="https://ror.org">0330j0z60</userId></publisher><pubPlace>Environmental Data Initiative</pubPlace><methods>
+      <methodStep>
+        <description>
+          <para>
+    Each study site is 1 km by 0.5 km in area. Four replicate
+    experimental blocks were randomly located at each study site
+    depending on whether the site was grazed. The blocks are all
+    oriented on a site in an X/Y coordinate system, with the access road
+    to each site forming the X axis. The compass orientation at the
+    Jornada grassland site is to the north, and Jornada creosotebush
+    site is oriented to the south. Treatments within each block include
+    one unfenced control plot (Treatment: C; control); one plot fenced
+    with barbed wire, hardware cloth, and poultry wire to exclude
+    rodents, rabbits, and cattle (Treatment: R; rodent); one plot fenced
+    only with barbed and poultry wire to exclude cattle and rabbits
+    (Treatment: L; lagomorph); and one plot fenced with barbed wire to
+    exclude cattle (Treatment B; bovine). Cattle exclosure plots with
+    barbed wire occur only at the black grama grassland site where
+    cattle were present, for a total of 4 treatment plots at each of the
+    four grassland site blocks. There are only 3 treatment plots at each
+    of the creosotebush site blocks because grazing is excluded from the
+    entire creosotebush site. The treatments were randomly assigned to
+    each of the three or four possible plots in each block
+    independently, and their arrangements differ from block to block.
+    Each of the plots in a replicate block is separated by 20 meters.
+    Each plot measures 36 meters by 36 meters. Thirty-six sampling
+    points are positioned at 5.8-meter intervals on a systematically
+    located 6 by 6 point grid within each plot. A permanent one-meter by
+    one-meter vegetation measurement quadrat is located at each of the
+    36 points. All cover values are measured from a vegetation
+    measurement frame placed over the quadrat, which is 1 meter by 1
+    meter, and partitioned into a grid of 100, 10 cm by 10 cm squares.
+  </para>
+          <para>
+    Fraction of canopy cover for each species present was recorded in
+    increments of 0.1, to a maximum of 1.0 for each square in the
+    quadrat frame. Maximum height (cm) was also recorded, by species,
+    for each square. For plants, total canopy cover is measured by
+    summing fractional covers, by species, for all 100 10x10 squares in
+    the quadrat. Total cover values range from 0.1 to 100%. For total
+    cover values less than 5%, increments of 1% were used. For cover
+    values greater than 5%, estimates were made to the nearest 5%. For
+    live plants, the maximum height in centimeters for that plant
+    species in the quadrat is also recorded. For annuals, the highest
+    part of the plant, whether it is a reproductive structure or
+    vegetative structure was used. For perennials, including perennial
+    grasses, the highest vegetative structure and NOT any reproductive
+    structures were used. The height for bare branches is from the
+    ground to the highest point if the bare branch is the highest point
+    for the species. If a plant is dead, but still rooted in the soil,
+    it is stated as "dead" in the condition column. For dead
+    plants cover only (not height) was measured.
+  </para>
+          <para>
+    From 1995 to 2005, vegetation data for all quadrats was measured
+    twice a year in the spring and fall. After 2005, sampling frequency
+    changed to once every 5 years in the fall. This study is ongoing.
+  </para>
+          <para>
+    Field observations were recorded on micro-cassette tape recorders.
+    Further details on measurements and data preparation can be found in
+    the SMES vegetation quadrat protocol included with this package
+    ("SMESvegquadprotocol.pdf"). A comment history is found in
+    the file
+    "Jornada_086_small_mammal_exclosure_quad_his.txt".
+  </para>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Jornada Basin LTER</title>
+      <personnel>
+        <individualName>
+          <salutation>Dr.</salutation>
+          <givenName>Niall</givenName>
+          <surName>Hanan</surName>
+        </individualName>
+        <address>
+          <deliveryPoint>P.O. Box 30003, MSC 3JER</deliveryPoint>
+          <deliveryPoint>New Mexico State University</deliveryPoint>
+          <city>Las Cruces</city>
+          <administrativeArea>NM</administrativeArea>
+          <postalCode>88003-8003</postalCode>
+          <country>United States</country>
+        </address>
+        <phone
+      phonetype="voice">575-646-3335</phone>
+        <electronicMailAddress>nhanan@nmsu.edu</electronicMailAddress>
+        <role>Principal Investigator</role>
+      </personnel>
+      <abstract>
+        <section>
+          <para>The Jornada Basin Long-Term Ecological Research (LTER) program is part of a 
+          national network of long-term ecological research sites funded by the US National 
+          Science Foundation (NSF). The Jornada LTER program has been continuously funded
+          since 1982 to develop general principles governing changes between grassland 
+          and shrubland ecosystems based on long-term data collected in the Chihuahuan 
+          Desert. We translate our findings to dryland ecosystems around the world, and 
+          forecast the dynamics of future ecosystem states in response to changing climate 
+          and land use.</para>
+        </section>
+      </abstract>
+      <funding>
+        <section>
+          <para>JRN LTER is funded by the National Science Foundation under award DEB 2025166.</para>
+        </section>
+      </funding>
+    </project>
+    <dataTable
+      id="68b3d5f17a23fae3ab76515aec334a21" scope="document"
+          system="https://pasta.edirepository.org">
+      <entityName>Quadrat percent cover table</entityName>
+      <entityDescription>Vegetation cover data (percent) from 1x1 m quadrats at SMES plots</entityDescription>
+      <physical>
+        <objectName>JRN086002_smes_quadrat_vegcover_data.csv</objectName>
+        <size
+          unit="byte">9517358</size>
+        <authentication
+              method="MD5">da45d387b877f252d8489b93a8dcd9ba</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <numFooterLines>0</numFooterLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+          function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-jrn/210086002/96/68b3d5f17a23fae3ab76515aec334a21</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute
+          id="d210086002-e1-att1">
+          <attributeName>year</attributeName>
+          <attributeLabel>Year</attributeLabel>
+          <attributeDefinition>Year of measurement</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY</formatString>
+              <dateTimePrecision>1</dateTimePrecision>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att2">
+          <attributeName>date</attributeName>
+          <attributeLabel>Date collected</attributeLabel>
+          <attributeDefinition>Date data collected</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimePrecision>1</dateTimePrecision>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att3">
+          <attributeName>season</attributeName>
+          <attributeLabel>Season</attributeLabel>
+          <attributeDefinition>Season of data collection</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>S</code>
+                    <definition>Spring</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>F</code>
+                    <definition>Fall</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att4">
+          <attributeName>site</attributeName>
+          <attributeLabel>Site</attributeLabel>
+          <attributeDefinition>Site or location code - there are 2 SMES sites</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>G</code>
+                    <definition>SMES Grassland site</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>C</code>
+                    <definition>SMES Creosote site</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att5">
+          <attributeName>block</attributeName>
+          <attributeLabel>Block</attributeLabel>
+          <attributeDefinition>Block number</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>Block 1</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>2</code>
+                    <definition>Block 2</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>3</code>
+                    <definition>Block 3</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>4</code>
+                    <definition>Block 4</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att6">
+          <attributeName>plot</attributeName>
+          <attributeLabel>Plot</attributeLabel>
+          <attributeDefinition>Plot number</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>3</code>
+                    <definition>Plot 3</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>2</code>
+                    <definition>Plot 2</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>4</code>
+                    <definition>Plot 4</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>Plot 1</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att7">
+          <attributeName>treatment</attributeName>
+          <attributeLabel>Treatment</attributeLabel>
+          <attributeDefinition>Treatment type</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>R</code>
+                    <definition>Rodent exclosure</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>C</code>
+                    <definition>Control - no mammal exclosure</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>L</code>
+                    <definition>Lagomorph exclosure</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>B</code>
+                    <definition>Bovine exclosure</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att8">
+          <attributeName>quad</attributeName>
+          <attributeLabel>Quad number</attributeLabel>
+          <attributeDefinition>Quad number [1-36]</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att9">
+          <attributeName>LTER_code</attributeName>
+          <attributeLabel>LTER plant code</attributeLabel>
+          <attributeDefinition>Local plant species code (Jornada LTER)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att10">
+          <attributeName>USDA_code</attributeName>
+          <attributeLabel>USDA Plants code</attributeLabel>
+          <attributeDefinition>USDA Plants database species code (plants.usda.gov)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value - data not collected or otherwise unavailable</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att11">
+          <attributeName>live_dead</attributeName>
+          <attributeLabel>Live/Dead status</attributeLabel>
+          <attributeDefinition>Live or dead vegetation</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>dead</code>
+                    <definition>Organism(s) dead at time of observation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>live</code>
+                    <definition>Organism(s) alive at time of observation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att12">
+          <attributeName>Species_binomial</attributeName>
+          <attributeLabel>Species binomial name</attributeLabel>
+          <attributeDefinition>Binomial name [Genus and species - plants.usda.gov]</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att13">
+          <attributeName>cover</attributeName>
+          <attributeLabel>Percent cover</attributeLabel>
+          <attributeDefinition>Cover (%) [sum from all 10cm squares]</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Dead plant, no height measurement taken			</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att14">
+          <attributeName>height</attributeName>
+          <attributeLabel>Height</attributeLabel>
+          <attributeDefinition>Maximum height (cm) for species in the quadrat</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Dead plant, no height measurement taken			</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute
+          id="d210086002-e1-att15">
+          <attributeName>id</attributeName>
+          <attributeLabel>History file ID</attributeLabel>
+          <attributeDefinition>Comment history id code. A Book or Tape number where comments are logged</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute
+      id="d210086002-e1-att16">
+          <attributeName>comments</attributeName>
+          <attributeLabel>Comments</attributeLabel>
+          <attributeDefinition>Comments on observation. In history file prior to 2012, then entered in this column</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>No comment, quality flag, or additional information available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>109963</numberOfRecords>
+    </dataTable>
+    <otherEntity
+      id="2e364eeb6e3bcd83e6cd3ab0ae774be5" scope="document"
+          system="https://pasta.edirepository.org">
+      <entityName>SMES quadrat protocol</entityName>
+      <entityDescription>SMES veg quadrat measurement and data preparation protocol</entityDescription>
+      <physical>
+        <objectName>SMESvegquadprotocol.pdf</objectName>
+        <size
+          unit="byte">86866</size>
+        <authentication
+              method="MD5">c44795a6b927f9c73e93d6f830ac088b</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>PDF</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+      function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-jrn/210086002/96/2e364eeb6e3bcd83e6cd3ab0ae774be5</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>otherEntity</entityType>
+    </otherEntity>
+    <otherEntity
+      id="e526791dff89dead9af01a8331f9f054" scope="document"
+          system="https://pasta.edirepository.org">
+      <entityName>Data collection history file</entityName>
+      <entityDescription>SMES quadrat data collection comments and history</entityDescription>
+      <physical>
+        <objectName>JRN086_small_mammal_exclosure_quad_his.txt</objectName>
+        <size
+          unit="byte">742817</size>
+        <authentication
+              method="MD5">1b5953eb06af45c5334641e1fdde58ce</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>text/plain</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+          function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-jrn/210086002/96/e526791dff89dead9af01a8331f9f054</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>otherEntity</entityType>
+    </otherEntity>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit
+          abbreviation="cm" id="centimeter" multiplierToSI="0.01"
+          name="centimeter"
+          parentSI="meter">
+          <description>.01 meters</description>
+        </unit>
+        <unit
+          id="dimensionless" name="dimensionless"
+          unitType="dimensionless">
+          <description>a designation asserting the absence of an associated unit</description>
+        </unit>
+        <unit
+          id="number" name="number" unitType="dimensionless">
+          <description>a quantity or amount</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

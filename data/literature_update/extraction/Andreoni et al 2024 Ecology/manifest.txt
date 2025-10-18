@@ -1,0 +1,7 @@
+Manifest file for knb-lter-jrn.210086002.96.zip created on Thu Oct 16 20:28:11 UTC 2025
+JRN086002_smes_quadrat_vegcover_data.csv (9517358 bytes)
+SMESvegquadprotocol.pdf (86866 bytes)
+JRN086_small_mammal_exclosure_quad_his.txt (742817 bytes)
+knb-lter-jrn.210086002.96.xml (34790 bytes)
+knb-lter-jrn.210086002.96.txt (19159 bytes)
+knb-lter-jrn.210086002.96.report.xml (53112 bytes)

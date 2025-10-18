@@ -1,0 +1,690 @@
+
+  
+    
+      uid=JRN,o=LTER,dc=ecoinformatics,dc=org
+      all
+    
+    
+      public
+      read
+    
+  
+  
+    doi:10.6073/pasta/7c9e83391e3000acbb86503925385713Quadrat vegetation cover data on 1m x 1m plots from the long-term Small Mammal Exclusion Study (SMES) at Jornada Basin LTER, 1995-2020
+    
+      David C Lightfoot
+      Jornada Basin LTER (now at Univ. of NM)
+      dlightfo@unm.edu
+    
+    
+      Brandon T Bestelmeyer
+      USDA-ARS Jornada Experimental Range
+      			P.O. Box 30003; MSC 3JER New Mexico State University
+			Las Cruces, NM 88003-8003  U.S.A.
+      0000-0001-5060-9955
+    
+    
+      Jornada Basin LTER/New Mexico State University
+      Jornada Basin LTER program
+      			P.O. Box 30003; MSC 3JER New Mexico State University
+			Las Cruces, NM 88003-8003  USA
+      jornada.lter@nmsu.edu
+      https://lter.jornada.nmsu.edu
+    
+    2022-04-11
+    English
+    
+      
+    This data package contains vegetation cover from plots with various
+    levels of herbivore exclusion on the Jornada Experimental Range
+    (JER) and Chihuahuan Desert Rangeland Research Center (CDRRC) in
+    Dona Ana County, southern New Mexico, USA. Study sites were
+    established in 1995; one in black grama grassland and the other in
+    creosotebush shrubland to compare the impact of herbivores on
+    ecosystem processes between these vegetation types. Parallel studies
+    were established at the Sevilleta LTER site (New Mexico, USA) and
+    Mapimi Biosphere Reserve (Durango, Mexico). Each study site is 1 km
+    by 0.5 km in area. Four replicate experimental blocks were randomly
+    located at the grassland study site to measure vegetation responses
+    using exclusion treatments including a) all mammalian herbivores,
+    including cattle, lagomorphs, and rodents, b) lagomorphs and cattle
+    only, c) cattle only, and d) control accessible to all herbivores.
+    Because grazing cattle are excluded from the entire creosote site,
+    only three replicate experimental blocks were randomly located there
+    including a) all mammalian herbivores, including lagomorphs, and
+    rodents, b) lagomorphs only, and c) control accessible to all
+    herbivores. Thirty-six sampling points were positioned at 5.8-meter
+    intervals on a systematically located 6 by 6 point grid within each
+    plot. A permanent one-meter by one-meter vegetation measurement
+    quadrat is located at each of the 36 points. At each quadrat,
+    percent cover by individual plant species is measured. Other
+    measurements include height (cm) of each species in the quadrat, and
+    plant condition (living or dead). Data were collected in the spring
+    and fall of every year from 1995 to 2005. After 2005, sampling
+    frequency changed to every 5 years in the fall. This study is
+    ongoing.
+  
+    
+    
+      land use and land cover change
+      populations
+      LTER Core Research Areas
+    
+    
+      abundance
+      biodiversity
+      consumers
+      deserts
+      grasslands
+      herbivory
+      land cover
+      long term
+      long term monitoring
+      plant communities
+      plant cover
+      plant species
+      populations
+      shrubs
+      small mammals
+      species diversity
+      species list
+      transects
+      vegetation dynamics
+      LTER Controlled Vocabulary v1
+    
+    
+      ongoing
+      quadrat
+      none
+    
+    
+      Plant-Animal Interactions
+      Vegetation Dynamics
+      ongoing
+      Jornada Basin LTER dataset keywords
+    
+    
+      SMES
+      study 086
+      Jornada Basin project names
+    
+    
+      SMES
+      Jornada Basin place names
+    
+    
+      grazing
+      USDA National Ag Library's Agricultural Thesaurus
+    
+    
+      
+  This information is released under the Creative Commons license - Attribution - CC BY 
+  (https://creativecommons.org/licenses/by/4.0/). The consumer of these data ("Data User" 
+  herein) is required to cite it appropriately in any publication that results from its 
+  use. The Data User should realize that these data may be actively used by others for 
+  ongoing research and that coordination may be necessary to prevent duplicate 
+  publication. The Data User is urged to contact the authors of these data if any 
+  questions about methodology or results occur. Where appropriate, the Data User is 
+  encouraged to consider collaboration or co-authorship with the authors. The Data User 
+  should realize that misinterpretation of data may occur if used out of context of the 
+  original study. While substantial efforts are made to ensure the accuracy of data and 
+  associated documentation, complete accuracy of data sets cannot be guaranteed. All data 
+  are made available "as is." The Data User should be aware, however, that data are updated 
+  periodically and it is the responsibility of the Data User to check for new versions of 
+  the data. The data authors and the repository where these data were obtained shall not be 
+  liable for damages resulting from any use or misinterpretation of the data. Thank you.
+
+    
+    
+      
+        https://jrn.lternet.edu
+      
+    
+    https://doi.org/10.6073/pasta/7c9e83391e3000acbb86503925385713
+      
+        Western Bajada: Study occurred in the western bajada geomorphic zone in the Jornada Basin. More precise geographic coordinates for this study may be requested from the JRN LTER Data Manager (jornada.data@nmsu.edu).
+        
+          -106.851460
+          -106.729443
+          32.542771
+          32.467228
+        
+      
+      
+        Basin Floor: Study occurred in the basin floor geomorphic zone in the Jornada Basin. More precise geographic coordinates for this study may be requested from the JRN LTER Data Manager (jornada.data@nmsu.edu).
+        
+          -106.872883
+          -106.692716
+          32.749487
+          32.473173
+        
+      
+      
+        
+          
+            1995-04-03
+          
+          
+            2020-08-11
+          
+        
+      
+    
+    
+      ongoing - These data were collected yearly from 1995-2005 and every five years thereafter
+      asNeeded
+    
+    
+      Jornada Basin LTER/New Mexico State University
+      Jornada Basin LTER Information Manager
+      			P.O. Box 30003, MSC 3JER New Mexico State University
+			Las Cruces, NM 88003-8003  USA
+      575-646-1739
+      jornada.data@nmsu.edu
+      https://lter.jornada.nmsu.edu/information-management/
+    
+    
+    Environmental Data Initiativeinfo@environmentaldatainitiative.orghttps://environmentaldatainitiative.org0330j0z60Environmental Data Initiative
+      
+        
+          
+    Each study site is 1 km by 0.5 km in area. Four replicate
+    experimental blocks were randomly located at each study site
+    depending on whether the site was grazed. The blocks are all
+    oriented on a site in an X/Y coordinate system, with the access road
+    to each site forming the X axis. The compass orientation at the
+    Jornada grassland site is to the north, and Jornada creosotebush
+    site is oriented to the south. Treatments within each block include
+    one unfenced control plot (Treatment: C; control); one plot fenced
+    with barbed wire, hardware cloth, and poultry wire to exclude
+    rodents, rabbits, and cattle (Treatment: R; rodent); one plot fenced
+    only with barbed and poultry wire to exclude cattle and rabbits
+    (Treatment: L; lagomorph); and one plot fenced with barbed wire to
+    exclude cattle (Treatment B; bovine). Cattle exclosure plots with
+    barbed wire occur only at the black grama grassland site where
+    cattle were present, for a total of 4 treatment plots at each of the
+    four grassland site blocks. There are only 3 treatment plots at each
+    of the creosotebush site blocks because grazing is excluded from the
+    entire creosotebush site. The treatments were randomly assigned to
+    each of the three or four possible plots in each block
+    independently, and their arrangements differ from block to block.
+    Each of the plots in a replicate block is separated by 20 meters.
+    Each plot measures 36 meters by 36 meters. Thirty-six sampling
+    points are positioned at 5.8-meter intervals on a systematically
+    located 6 by 6 point grid within each plot. A permanent one-meter by
+    one-meter vegetation measurement quadrat is located at each of the
+    36 points. All cover values are measured from a vegetation
+    measurement frame placed over the quadrat, which is 1 meter by 1
+    meter, and partitioned into a grid of 100, 10 cm by 10 cm squares.
+  
+          
+    Fraction of canopy cover for each species present was recorded in
+    increments of 0.1, to a maximum of 1.0 for each square in the
+    quadrat frame. Maximum height (cm) was also recorded, by species,
+    for each square. For plants, total canopy cover is measured by
+    summing fractional covers, by species, for all 100 10x10 squares in
+    the quadrat. Total cover values range from 0.1 to 100%. For total
+    cover values less than 5%, increments of 1% were used. For cover
+    values greater than 5%, estimates were made to the nearest 5%. For
+    live plants, the maximum height in centimeters for that plant
+    species in the quadrat is also recorded. For annuals, the highest
+    part of the plant, whether it is a reproductive structure or
+    vegetative structure was used. For perennials, including perennial
+    grasses, the highest vegetative structure and NOT any reproductive
+    structures were used. The height for bare branches is from the
+    ground to the highest point if the bare branch is the highest point
+    for the species. If a plant is dead, but still rooted in the soil,
+    it is stated as "dead" in the condition column. For dead
+    plants cover only (not height) was measured.
+  
+          
+    From 1995 to 2005, vegetation data for all quadrats was measured
+    twice a year in the spring and fall. After 2005, sampling frequency
+    changed to once every 5 years in the fall. This study is ongoing.
+  
+          
+    Field observations were recorded on micro-cassette tape recorders.
+    Further details on measurements and data preparation can be found in
+    the SMES vegetation quadrat protocol included with this package
+    ("SMESvegquadprotocol.pdf"). A comment history is found in
+    the file
+    "Jornada_086_small_mammal_exclosure_quad_his.txt".
+  
+        
+      
+    
+    
+      Jornada Basin LTER
+      
+        Dr. Niall Hanan
+        			P.O. Box 30003, MSC 3JER
+			New Mexico State University
+			Las Cruces, NM 88003-8003  United States
+        575-646-3335
+        nhanan@nmsu.edu
+        Principal Investigator
+      
+      
+        
+          The Jornada Basin Long-Term Ecological Research (LTER) program is part of a 
+          national network of long-term ecological research sites funded by the US National 
+          Science Foundation (NSF). The Jornada LTER program has been continuously funded
+          since 1982 to develop general principles governing changes between grassland 
+          and shrubland ecosystems based on long-term data collected in the Chihuahuan 
+          Desert. We translate our findings to dryland ecosystems around the world, and 
+          forecast the dynamics of future ecosystem states in response to changing climate 
+          and land use.
+        
+      
+      
+        
+          JRN LTER is funded by the National Science Foundation under award DEB 2025166.
+        
+      
+    
+    
+      Quadrat percent cover table
+      Vegetation cover data (percent) from 1x1 m quadrats at SMES plots
+      
+        JRN086002_smes_quadrat_vegcover_data.csv
+        9517358
+        da45d387b877f252d8489b93a8dcd9ba
+        
+          
+            1
+            0
+            \n
+            column
+            
+              ,
+              "
+            
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/knb-lter-jrn/210086002/96/68b3d5f17a23fae3ab76515aec334a21
+          
+        
+      
+      
+        
+          year
+          Year
+          Year of measurement
+          date
+          
+            
+              YYYY
+              1
+              
+            
+          
+        
+        
+          date
+          Date collected
+          Date data collected
+          date
+          
+            
+              YYYY-MM-DD
+              1
+              
+            
+          
+        
+        
+          season
+          Season
+          Season of data collection
+          string
+          
+            
+              
+                
+                  
+                    S
+                    Spring
+                  
+                  
+                    F
+                    Fall
+                  
+                
+              
+            
+          
+        
+        
+          site
+          Site
+          Site or location code - there are 2 SMES sites
+          string
+          
+            
+              
+                
+                  
+                    G
+                    SMES Grassland site
+                  
+                  
+                    C
+                    SMES Creosote site
+                  
+                
+              
+            
+          
+        
+        
+          block
+          Block
+          Block number
+          integer
+          
+            
+              
+                
+                  
+                    1
+                    Block 1
+                  
+                  
+                    2
+                    Block 2
+                  
+                  
+                    3
+                    Block 3
+                  
+                  
+                    4
+                    Block 4
+                  
+                
+              
+            
+          
+        
+        
+          plot
+          Plot
+          Plot number
+          integer
+          
+            
+              
+                
+                  
+                    3
+                    Plot 3
+                  
+                  
+                    2
+                    Plot 2
+                  
+                  
+                    4
+                    Plot 4
+                  
+                  
+                    1
+                    Plot 1
+                  
+                
+              
+            
+          
+        
+        
+          treatment
+          Treatment
+          Treatment type
+          string
+          
+            
+              
+                
+                  
+                    R
+                    Rodent exclosure
+                  
+                  
+                    C
+                    Control - no mammal exclosure
+                  
+                  
+                    L
+                    Lagomorph exclosure
+                  
+                  
+                    B
+                    Bovine exclosure
+                  
+                
+              
+            
+          
+        
+        
+          quad
+          Quad number
+          Quad number [1-36]
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+        
+        
+          LTER_code
+          LTER plant code
+          Local plant species code (Jornada LTER)
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          USDA_code
+          USDA Plants code
+          USDA Plants database species code (plants.usda.gov)
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+          
+            NA
+            Missing value - data not collected or otherwise unavailable
+          
+        
+        
+          live_dead
+          Live/Dead status
+          Live or dead vegetation
+          string
+          
+            
+              
+                
+                  
+                    dead
+                    Organism(s) dead at time of observation
+                  
+                  
+                    live
+                    Organism(s) alive at time of observation
+                  
+                
+              
+            
+          
+        
+        
+          Species_binomial
+          Species binomial name
+          Binomial name [Genus and species - plants.usda.gov]
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          cover
+          Percent cover
+          Cover (%) [sum from all 10cm squares]
+          float
+          
+            
+              
+                dimensionless
+              
+              
+                real
+              
+            
+          
+          
+            NA
+            Dead plant, no height measurement taken			
+          
+        
+        
+          height
+          Height
+          Maximum height (cm) for species in the quadrat
+          float
+          
+            
+              
+                centimeter
+              
+              
+                real
+              
+            
+          
+          
+            NA
+            Dead plant, no height measurement taken			
+          
+        
+        
+          id
+          History file ID
+          Comment history id code. A Book or Tape number where comments are logged
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          comments
+          Comments
+          Comments on observation. In history file prior to 2012, then entered in this column
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+          
+            NA
+            No comment, quality flag, or additional information available
+          
+        
+      
+      109963
+    
+    
+      SMES quadrat protocol
+      SMES veg quadrat measurement and data preparation protocol
+      
+        SMESvegquadprotocol.pdf
+        86866
+        c44795a6b927f9c73e93d6f830ac088b
+        
+          
+            PDF
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/knb-lter-jrn/210086002/96/2e364eeb6e3bcd83e6cd3ab0ae774be5
+          
+        
+      
+      otherEntity
+    
+    
+      Data collection history file
+      SMES quadrat data collection comments and history
+      
+        JRN086_small_mammal_exclosure_quad_his.txt
+        742817
+        1b5953eb06af45c5334641e1fdde58ce
+        
+          
+            text/plain
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/knb-lter-jrn/210086002/96/e526791dff89dead9af01a8331f9f054
+          
+        
+      
+      otherEntity
+    
+  
+  
+    
+      
+        
+          .01 meters
+        
+        
+          a designation asserting the absence of an associated unit
+        
+        
+          a quantity or amount
+        
+      
+    
+  

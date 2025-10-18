@@ -1,0 +1,13 @@
+Measurement,variable,mean_High_Megafauna,mean_Low_Megafauna,sd_High_Megafauna,sd_Low_Megafauna,nativeness,species_class
+Plant Area (cm^2),Arabis lyrata,4.6,12.7,2,13,Native,Forb
+Plant Area (cm^2),Cerastium arvense,8.5,25.3,8,17,Introduced,Forb
+Plant Area (cm^2),Liatris spicata,25.8,45.8,56,52,Native,Forb
+Plant Area (cm^2),Oenothera biennis,3.1,19.9,2.6,26,Native,Forb
+Plant Area (cm^2),Oenothera perennis,3.1,19.9,2.6,26,Native,Forb
+Plant Area (cm^2),Packera anonyma,21.2,30.4,15,26,Native,Forb
+Plant Area (cm^2),Polyganum tenue,11.3,4.8,12,4,Native,Forb
+Plant Area (cm^2),Polygala verticillata,13.5,38.4,16,39,Native,Forb
+Plant Area (cm^2),Sabatia angularis,0,10,,0,Native,Forb
+Plant Area (cm^2),Sisyrinchium angustifolium,11.9,7.2,23,13,Native,Forb
+Plant Area (cm^2),Solidago nemoralis,1.5,18.6,1,6.5,Native,Forb
+Plant Area (cm^2),Symphyotrichum depauperatum,40.8,61.6,33,42,Native,Forb
