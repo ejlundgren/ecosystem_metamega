@@ -1,0 +1,5 @@
+SimpleSpecies,mean_cover_high_megafauna,mean_cover_low_megafauna,sd_cover_high_megafauna,sd_cover_low_megafauna,n_high_megafauna,n_low_megafauna
+BG,83.66666667,41.86567164,30.30901456,38.26201537,45,134
+Herb,1.555555556,3.259259259,7.371799939,10.30141118,45,108
+Riparian,3.777777778,16.80555556,18.0011223,35.30546497,45,108
+Upland shrub,5.688888889,12.33333333,17.10239513,23.68879226,45,108

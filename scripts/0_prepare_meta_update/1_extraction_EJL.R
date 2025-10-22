@@ -1076,3 +1076,56 @@ fwrite(dat.mlt.sum.cst, "data//literature_update/extraction/Wijas et al 2023 Eco
 # - averain: average annual rainfall in mm
 # - rain12: average rainfall in the past 12 months in mm
 
+
+# Lundgren et al 2022 JAE -------------------------------------------------
+dat <- fread("data/literature_update/extraction/Lundgren et al 2025 Journal of Animal Ecology/Lundgren_Cougar_Burro_Trophic_Cascade.csv")
+dat
+
+range(dat$cover)
+dat[, cover := cover * 100]
+
+dat
+unique(dat$SimpleSpecies)
+dat[SimpleSpecies %in% c("trampled BG", "BG"), SimpleSpecies := "BG"]
+
+unique(dat$region)
+#
+dat[, ]
+#
+cover.grid <- CJ(plot_ID = unique(dat$plot_ID),
+                 SimpleSpecies = unique(dat$SimpleSpecies))
+cover.grid
+
+cover.grid[, key := paste(plot_ID, SimpleSpecies)]
+dat[, key := paste(plot_ID, SimpleSpecies)]
+
+cover.grid <- merge(cover.grid,
+                    unique(dat[, .(plot_ID, if_kill)]),
+                    by = "plot_ID")
+
+cover.grid.mrg <- merge(cover.grid,
+                        dat[, .(cover, key)],
+                        by = "key",
+                        all.x = T)
+cover.grid.mrg[is.na(cover), cover := 0]
+cover.grid.mrg
+cover.grid.mrg <- cover.grid.mrg[!SimpleSpecies %in% c("litter")]
+cover.grid.mrg
+
+#
+cover.grid.mrg[, trt := ifelse(if_kill == 'burro kills present', "low_megafauna", "high_megafauna")]
+
+#
+dat.summarized <- cover.grid.mrg[, .(mean_cover = mean(cover), sd_cover = sd(cover), n = .N),
+                      by = .(SimpleSpecies, trt)]
+dat.summarized
+
+
+dat.wide <- dcast(dat.summarized,
+                  SimpleSpecies ~ trt,
+                  value.var = c('mean_cover', 'sd_cover', "n"))
+dat.wide
+dat.wide <- dat.wide[SimpleSpecies != "rock"]
+
+dat.wide
+fwrite(dat.wide, "data/literature_update/extraction/Lundgren et al 2025 Journal of Animal Ecology/extracted.csv")
