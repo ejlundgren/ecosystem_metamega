@@ -75,3 +75,50 @@ dt_charles_mega <- dt_t1 %>%
 dt_charles <- rbind(dt_charles_mega, dt_charles_meso)
 
 fwrite(dt_charles, "data/literature_update/extraction/Charles et al 2021 Ecology and Evolution/summary_for_dataset.csv")
+
+## Trepel et al 2024 Conservation Science and Practice ---------
+
+dt <- fread("data/literature_update/extraction/Trepel et al 2024 Conservation Science and Practice/exclosure_plot_data.csv")
+
+
+dt_trepel_soil <- dt %>% 
+  filter(Species_Co == "Soil") %>% 
+  mutate(Treatment = case_when(
+    Type == "Grazed" ~ "high_megafauna", 
+    Type == "Exclosure" ~ "low_megafauna", 
+  )) %>% 
+  dplyr::select(Treatment, N, C, P, K, Na, Ca, Mg, N_P, N_Ca, P_Ca) %>% 
+  pivot_longer(cols = c(N, C, P, K, Na, Ca, Mg, N_P, N_Ca, P_Ca)) %>% 
+  group_by(Treatment, name) %>% 
+  summarize(mean = mean(value), 
+            sd = sd(value)) %>% 
+  pivot_wider(
+    id_cols = name,
+    names_from = Treatment,
+    values_from = c(mean, sd)#,
+    #names_glue = "{Treatment}_{.value}"
+  ) %>% mutate(what = "soil")
+
+dt_trepel_veg <- dt %>% 
+  filter(!Species_Co == "Soil") %>% 
+  mutate(Treatment = case_when(
+    Type == "Grazed" ~ "high_megafauna", 
+    Type == "Exclosure" ~ "low_megafauna", 
+  )) %>% 
+  dplyr::select(Treatment, N, C, P, K, Na, Ca, Mg, N_P, N_Ca, P_Ca) %>% 
+  pivot_longer(cols = c(N, C, P, K, Na, Ca, Mg, N_P, N_Ca, P_Ca)) %>% 
+  group_by(Treatment, name) %>% 
+  summarize(mean = mean(value), 
+            sd = sd(value)) %>% 
+  pivot_wider(
+    id_cols = name,
+    names_from = Treatment,
+    values_from = c(mean, sd)#,
+    #names_glue = "{Treatment}_{.value}"
+  ) %>% mutate(what = "veg")
+
+dt_trepel_soil
+
+dt_charles <- rbind(dt_charles_mega, dt_charles_meso)
+
+fwrite(dt_charles, "data/literature_update/extraction/Charles et al 2021 Ecology and Evolution/summary_for_dataset.csv")
