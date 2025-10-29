@@ -1,0 +1,7 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_4.png,mean fire temper,2018 O,162.962962962963,12.2004357298474,3,,7.04392485285813,sd,mean_error
+figure_4.png,mean fire temper,2018 W,115.032679738562,10.0217864923747,3,,5.78608112913349,sd,mean_error
+figure_4.png,mean fire temper,2018 MW,97.1677559912854,12.636165577342,3,,7.29549359760308,sd,mean_error
+figure_4.png,mean fire temper,201318 O,171.677559912854,14.8148148148148,6,,6.04812282168687,sd,mean_error
+figure_4.png,mean fire temper,201318 W,101.525054466231,8.71459694989107,6,,3.55771930687463,sd,mean_error
+figure_4.png,mean fire temper,201318 MW,109.803921568627,22.6579520697168,6,,9.25007019787404,sd,mean_error

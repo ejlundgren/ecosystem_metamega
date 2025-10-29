@@ -1,0 +1,17 @@
+filename,variable,group_id,mean,sd,n,,
+figure_2b_hophornbeam.png,sugar maple density,selection control,273.0375427,221.6788576,3,366.894198,354.6861722
+figure_2b_hophornbeam.png,sugar maple density,selection exclosure,,,3,,
+figure_2b_hophornbeam.png,sugar maple density,clearcut control,392.4914676,435.1535836,9,887.3720137,1151.877133
+figure_2b_hophornbeam.png,sugar maple density,clearcut exclosure,,,9,,
+figure_2b_sugar_maple.png,hophornbeam density,selection control,952.3809524,391.773397,3,2011.904762,618.5895741
+figure_2b_sugar_maple.png,hophornbeam density,selection exclosure,,,3,,
+figure_2b_sugar_maple.png,hophornbeam density,clearcut control,547.6190476,392.8571429,9,1440.47619,1607.142857
+figure_2b_sugar_maple.png,hophornbeam density,clearcut exclosure,,,9,,
+figure_4a_rubus.png,rubus cover,selection control,15.05376344,4.516129032,9,12.79569892,2.258064516
+figure_4a_rubus.png,rubus cover,selection exclosure,,,9,,
+figure_4a_rubus.png,rubus cover,clearcut control,22.83154122,13.03694156,27,21.07526882,22.16280066
+figure_4a_rubus.png,rubus cover,clearcut exclosure,,,27,,
+figure_4b_graminoid.png,graminoid cover,selection control,32.86738351,11.29032258,9,52.18637993,21.07526882
+figure_4b_graminoid.png,graminoid cover,selection exclosure,,,9,,
+figure_4b_graminoid.png,graminoid cover,clearcut control,44.40860215,11.73324741,27,40.89605735,33.89604806
+figure_4b_graminoid.png,graminoid cover,clearcut exclosure,,,27,,

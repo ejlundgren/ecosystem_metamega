@@ -1,0 +1,31 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2a.png,cover,native low,105.245901639344,9.65405368153141,3,,5.57377049180326,se,mean_error
+figure_2a.png,cover,exotic low,7.21311475409834,3.40731306406995,3,,1.96721311475412,se,mean_error
+figure_2a.png,cover,native high,64.9180327868852,38.1231261737669,20,,8.52459016393442,se,mean_error
+figure_2a.png,cover,exotic high,41.9672131147541,49.8533188426184,20,,11.1475409836066,se,mean_error
+figure_2b.png,richness,native low,23.4246575342466,2.42012578591815,3,,1.3972602739726,se,mean_error
+figure_2b.png,richness,exotic low,1.89041095890411,0.996522382436891,3,,0.575342465753426,se,mean_error
+figure_2b.png,richness,native high,14.0547945205479,4.77844663684889,20,,1.06849315068494,se,mean_error
+figure_2b.png,richness,exotic high,2.38356164383562,3.30815536397229,20,,0.73972602739726,se,mean_error
+figure_4a.png,stem density,acru low,8.55869242199109,6.69142956861677,3,,3.86329866270431,se,mean_error
+figure_4a.png,stem density,acsa low,6.38930163447251,6.17670421718471,3,,3.56612184249629,se,mean_error
+figure_4a.png,stem density,carya low,1.42644873699852,0.669142956861675,3,,0.38632986627043,se,mean_error
+figure_4a.png,stem density,cornus low,1.99108469539376,0.514725351432058,3,,0.297176820208024,se,mean_error
+figure_4a.png,stem density,fraxinus low,9.27191679049035,5.55903379546623,3,,3.20950965824666,se,mean_error
+figure_4a.png,stem density,litu low,3.6552748885587,4.3751654871725,3,,2.5260029717682,se,mean_error
+figure_4a.png,stem density,prse low,4.81426448736999,3.96338520602685,3,,2.28826151560178,se,mean_error
+figure_4a.png,stem density,qupa low,9.65824665676077,7.36057252547844,3,,4.24962852897474,se,mean_error
+figure_4a.png,stem density,quru low,6.1812778603269,4.94136337374776,3,,2.85289747399703,se,mean_error
+figure_4a.png,stem density,rhamnus low,3.6552748885587,2.21331901115785,3,,1.2778603268945,se,mean_error
+figure_4a.png,stem density,ulmus low,1.01040118870728,0.566197886575263,3,,0.326894502228825,se,mean_error
+figure_4a.png,stem density,acru high,0.445765230312039,0.79740908558685,20,,0.178306092124815,se,mean_error
+figure_4a.png,stem density,acsa high,2.67459138187222,4.51865148499215,20,,1.01040118870728,se,mean_error
+figure_4a.png,stem density,carya high,2.16939078751858,5.58186359910795,20,,1.2481426448737,se,mean_error
+figure_4a.png,stem density,cornus high,0.356612184249632,0.930310599851325,20,,0.208023774145617,se,mean_error
+figure_4a.png,stem density,frax high,6.1812778603269,11.9611362838028,20,,2.67459138187222,se,mean_error
+figure_4a.png,stem density,litu high,0.475482912332842,1.86062119970265,20,,0.416047548291233,se,mean_error
+figure_4a.png,stem density,prse high,9.39078751857356,27.6435149670108,20,,6.18127786032689,se,mean_error
+figure_4a.png,stem density,qupa high,0.445765230312039,1.46191665690923,20,,0.326894502228827,se,mean_error
+figure_4a.png,stem density,quru high,0.802377414561667,2.1264242282316,20,,0.475482912332839,se,mean_error
+figure_4a.png,stem density,rhamnus high,0.83209509658247,1.46191665690922,20,,0.326894502228825,se,mean_error
+figure_4a.png,stem density,ulmus high,0.326894502228829,1.0632121141158,20,,0.237741456166419,se,mean_error

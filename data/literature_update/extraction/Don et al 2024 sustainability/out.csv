@@ -1,0 +1,13 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_10_phosphate.png,Phosphate,mcmaster_exclo,62.5165562913908,49.2458809583989,15,,12.7152317880795,se,mean_error
+fig_10_phosphate.png,Phosphate,sdd exclo,21.7218543046358,26.6748521857996,15,,6.88741721854308,se,mean_error
+fig_10_phosphate.png,Phosphate,mcmaster control,55.6291390728477,63.6092629045986,15,,16.4238410596026,se,mean_error
+fig_10_phosphate.png,Phosphate,sdd control,9.00662251655632,10.2595585329999,15,,2.64900662251659,se,mean_error
+fig_10_som.png,nitrate,mcmaster exclosure,2.62258064516129,1.83654371578223,15,,0.474193548387097,se,mean_error
+fig_10_som.png,nitrate,sdd exclosure,1.10967741935484,1.22436247718815,15,,0.316129032258065,se,mean_error
+fig_10_som.png,nitrate,mcmaster control,3.34516129032258,1.74908925312593,15,,0.451612903225806,se,mean_error
+fig_10_som.png,nitrate,sdd control,2.50967741935484,2.01145264109482,15,,0.519354838709678,se,mean_error
+fig_10nitrate.png,SOM,mcmaster exclosure,6.21348314606742,2.43693334143387,15,,0.629213483146065,se,mean_error
+fig_10nitrate.png,SOM,sdd exclosure,10.8539325842697,5.48310001822624,15,,1.41573033707865,se,mean_error
+fig_10nitrate.png,SOM,mcmaster control,7.47191011235955,3.65540001215084,15,,0.943820224719105,se,mean_error
+fig_10nitrate.png,SOM,sdd control,9.59550561797753,5.48310001822622,15,,1.41573033707865,se,mean_error

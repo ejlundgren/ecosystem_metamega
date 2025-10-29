@@ -1,0 +1,7 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_3b.png,cover_shrub,unfenced,5.26427061310782,4.34416398902297,14,,1.16102666277751,sd,boxplot
+fig_3b.png,cover_shrub,fenced,49.5665961945032,17.3562704292202,14,,4.63865838988127,sd,boxplot
+fig_4b.png,cover_tree,unfenced,2.27272727272727,1.74508342042994,14,,0.466393162184888,sd,boxplot
+fig_4b.png,cover_tree,fenced,11.3869463869464,11.2792211093416,14,,3.01449864148747,sd,boxplot
+fig_5.png,richness,unfenced,21.2698699421965,2.51909671975729,14,,0.673256917819848,sd,boxplot
+fig_5.png,richness,fenced,16.5010838150289,5.03389235989721,14,,1.34536432375959,sd,boxplot

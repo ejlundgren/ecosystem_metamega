@@ -1,0 +1,13 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2.png,richness,june_fenced,13.15,5.32424299926311,40,,0.841836734693881,CI95,mean_error
+figure_2.png,richness,july_fenced,12.9,8.38971624126304,40,,1.3265306122449,CI95,mean_error
+figure_2.png,richness,aug_fenced,14.5,9.51910111989461,40,,1.50510204081633,CI95,mean_error
+figure_2.png,richness,sep_fenced,11.7,6.1309464839999,40,,0.969387755102038,CI95,mean_error
+figure_2.png,richness,june_control,12.75,7.42167205957885,40,,1.1734693877551,CI95,mean_error
+figure_2.png,richness,july_control,12.3,10.1644639076841,40,,1.60714285714286,CI95,mean_error
+figure_2.png,richness,aug_control,18.25,10.6484859985262,40,,1.68367346938775,CI95,mean_error
+figure_2.png,richness,sept_control,15,4.35619881757887,40,,0.688775510204079,CI95,mean_error
+figure_3a.png,plant_richness,fenced,6.33463796477495,1.5407878690864,10,,0.487239905747035,CI95,mean_error
+figure_3a.png,plant_richness,unfenced,7.64970645792564,1.64182313919042,10,,0.519190063500938,CI95,mean_error
+figure_3c.png,biomass,fenced,31.6962524654832,5.25073274089061,10,,1.66042748460331,CI95,mean_error
+figure_3c.png,biomass,control,24.2998027613412,3.97782783400804,10,,1.25789960954796,CI95,mean_error

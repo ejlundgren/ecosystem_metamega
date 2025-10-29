@@ -1,0 +1,5 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_4.png,sapling density,fenced unburnt,0.738916256157641,3.42709894205436,40,,0.54187192118226,se,mean_error
+figure_4.png,sapling density,fenced burnt,4.87684729064039,7.16575233338649,40,,1.13300492610838,se,mean_error
+figure_4.png,sapling density,unfenced unburnt,0.443349753694584,2.18088114494373,40,,0.3448275862069,se,mean_error
+figure_4.png,sapling density,unfenced burnt,6.65024630541872,9.3466334783302,40,,1.47783251231527,se,mean_error

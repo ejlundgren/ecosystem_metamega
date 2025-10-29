@@ -1,0 +1,9 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig2d_birch.png,biomass,spruce,19.9817518248175,12.2974288729943,15,,3.17518248175182,se,mean_error
+fig2d_birch.png,biomass,birch blue,9.41605839416059,12.2974288729943,15,,3.17518248175182,se,mean_error
+fig2d_birch.png,biomass,rowan blue,8.88178419700125e-15,2.96834490037796,15,,0.766423357664237,se,mean_error
+fig2d_birch.png,biomass,others blue,0.109489051094902,2.3322709931541,15,,0.602189781021897,se,mean_error
+fig2d_birch.png,biomass,spruce red,2.51824817518249,3.39239417186051,15,,0.875912408759124,se,mean_error
+fig2d_birch.png,biomass,birch red,10.6204379562044,7.84491152242743,15,,2.02554744525547,se,mean_error
+fig2d_birch.png,biomass,rowan red,17.2445255474453,14.6296998661485,15,,3.77737226277372,se,mean_error
+fig2d_birch.png,biomass,others red,3.33941605839417,3.81644344334306,15,,0.98540145985401,se,mean_error

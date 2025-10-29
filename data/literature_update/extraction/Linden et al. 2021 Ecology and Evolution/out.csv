@@ -1,0 +1,27 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2.png,plant abundance,small amat,319.540229885058,364.699439357275,52,,50.5747126436779,se,mean_error
+figure_2.png,plant abundance,all amat,273.563218390805,198.92696692215,52,,27.5862068965516,se,mean_error
+figure_2.png,plant abundance,small adh,94.2528735632186,132.617977948099,52,,18.3908045977009,se,mean_error
+figure_2.png,plant abundance,all adh,98.850574712644,132.617977948101,52,,18.3908045977012,se,mean_error
+figure_4.png,abundance,amat small,56.2500000000001,101.406129622425,52,,14.0625000000001,se,mean_error
+figure_4.png,abundance,adh small,7.81250000000023,16.9010216037375,52,,2.34375,se,mean_error
+figure_4.png,abundance,amat all,44.5312500000001,73.2377602828627,52,,10.1562500000001,se,mean_error
+figure_4.png,abundance,adh all,7.03125000000023,28.1683693395624,52,,3.90625,se,mean_error
+figure_6.png,diversity,small amat,8.38624338624339,7.63079635018833,52,,1.05820105820106,se,mean_error
+figure_6.png,diversity,small adh,10.4497354497354,5.15078753637714,52,,0.714285714285715,se,mean_error
+figure_6.png,diversity,all amat,8.994708994709,11.6369644340372,52,,1.61375661375661,se,mean_error
+figure_6.png,diversity,all adh,9.84126984126984,6.10463708015066,52,,0.846560846560845,se,mean_error
+figure_4dead.png,evergreen abundance,amat small,123.939393939394,96.1480340123725,52,,13.3333333333333,se,mean_error
+figure_4dead.png,evergreen abundance,adh small,60.9090909090912,96.1480340123725,52,,13.3333333333333,se,mean_error
+figure_4dead.png,evergreen abundance,amat all,105.757575757576,61.1851125533284,52,,8.4848484848485,se,mean_error
+figure_4dead.png,evergreen abundance,adh all,65.757575757576,43.7036518238055,52,,6.06060606060601,se,mean_error
+figure_4evergreen.png,lichens,amat small,18.8819875776398,26.8736741028373,52,,3.72670807453417,se,mean_error
+figure_4evergreen.png,lichens,adh small,79.2546583850932,28.9869860610636,50,,4.0993788819876,se,mean_error
+figure_4evergreen.png,lichens,amat all,17.3913043478261,28.9869860610636,50,,4.0993788819876,se,mean_error
+figure_4evergreen.png,lichens,adhha ll,55.4037267080746,29.5610415131207,52,,4.09937888198755,se,mean_error
+figure_4forbs.png,graminoids,amat small,116.742081447964,205.565366836408,52,,28.5067873303167,se,mean_error
+figure_4forbs.png,graminoids,amat all,101.809954751131,127.254750898729,52,,17.6470588235294,se,mean_error
+figure_4graminoids.png,forbs,small,19.0909090909091,61.1851125533283,52,,8.48484848484848,se,mean_error
+figure_4graminoids.png,forbs,all,16.2121212121212,45.8888344149962,52,,6.36363636363636,se,mean_error
+figure_4lichen.png,dead,small,44.6891191709845,44.8358707829718,52,,6.21761658031087,se,mean_error
+figure_4lichen.png,dead,all,24.4818652849741,47.6381127069077,52,,6.60621761658032,se,mean_error

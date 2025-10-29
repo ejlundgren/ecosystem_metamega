@@ -1,0 +1,17 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_4.png,change,bare soil with,-2.82383419689118,3.58974260636037,12,,1.03626943005181,se,mean_error
+fig_4.png,change,richness with,-0.69948186528497,3.41025547604235,12,,0.984455958549223,se,mean_error
+fig_4.png,change,bare soil without,-4.89637305699481,3.94871686699641,12,,1.139896373057,se,mean_error
+fig_4.png,change,richness without,2.87564766839379,3.76922973667837,12,,1.0880829015544,se,mean_error
+fig_6_cover.png,cover,grass without,18.8095238095238,4.94871659305394,12,,1.42857142857143,se,mean_error
+fig_6_cover.png,cover,herb without,8.57142857142861,3.71153744479047,12,,1.07142857142858,se,mean_error
+fig_6_cover.png,cover,shrub without,1.30952380952385,0.824786098842283,12,,0.238095238095227,se,mean_error
+fig_6_cover.png,cover,grass with,11.7857142857143,4.53632354363278,12,,1.30952380952381,se,mean_error
+fig_6_cover.png,cover,herb with,3.69047619047623,4.53632354363278,12,,1.30952380952381,se,mean_error
+fig_6_cover.png,cover,shrub with,1.30952380952385,2.06196524710581,12,,0.595238095238095,se,mean_error
+fig_6b.png,cover,grass with,18.719806763285,5.43880688367039,12,,1.57004830917874,se,mean_error
+fig_6b.png,cover,herb with,8.33333333333334,2.92858832197634,12,,0.845410628019316,se,mean_error
+fig_6b.png,cover,shrub with,0.724637681159436,2.09184880141168,12,,0.603864734299513,se,mean_error
+fig_6b.png,cover,grass without,11.7149758454106,4.18369760282335,12,,1.20772946859903,se,mean_error
+fig_6b.png,cover,herb truly with,3.50241545893721,5.43880688367037,12,,1.57004830917874,se,mean_error
+fig_6b.png,cover,dwarf truly with,1.08695652173915,1.67347904112935,12,,0.483091787439612,se,mean_error

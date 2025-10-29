@@ -1,0 +1,5 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_2c.png,ground cover,hemlock deer,58.7881097560976,13.9244333217755,30,,2.54224207693768,sd,boxplot
+fig_2c.png,ground cover,oak deer,3.13262195121951,1.78916950431312,30,,0.326656165570877,sd,boxplot
+fig_2c.png,ground cover,hemlock exclosure,38.7118902439024,13.7503797431911,30,,2.51046438653596,sd,boxplot
+fig_2c.png,ground cover,oak exclosure,33.8871951219512,8.86808083984224,30,,1.61908263925365,sd,boxplot

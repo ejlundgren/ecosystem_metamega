@@ -1,0 +1,9 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2.png,richness,canal control,13.1661184210526,2.55656023901193,6,,1.04371134704451,sd,boxplot
+figure_2.png,richness,chiquita control,15.4605263157895,3.62431262371614,6,,1.47961943273871,sd,boxplot
+figure_2.png,richness,canal exclosure,7.19572368421053,1.90347027975367,6,,0.777088487658207,sd,boxplot
+figure_2.png,richness,chiquita exclosure,10.5509868421053,2.12583250127619,6,,0.867867484458524,sd,boxplot
+figure_3.png,richness,control,4.25,1.69690253528697,6,,0.692757559114702,sd,boxplot
+figure_3.png,richness,exclosure,2.4537037037037,0.759876922427878,6,,0.310218454544123,sd,boxplot
+figure_4c.png,bare soil,control,58.5600616016427,48.4676119315204,6,,19.7868197139091,sd,boxplot
+figure_4c.png,bare soil,exclosure,19.8665297741273,11.7751961967177,6,,4.80720371718658,sd,boxplot

@@ -1,0 +1,10 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_4.png,cover,fern excl,9.94082840236686,5.87074995058711,7,,2.2189349112426,se,mean_error
+figure_4.png,cover,fern deer,12.2041420118343,13.7375548843738,7,,5.19230769230769,se,mean_error
+figure_4.png,cover,fern deermoose,10.5177514792899,9.39319992093938,7,,3.55029585798817,se,mean_error
+figure_4.png,cover,gram exclosure,0.399408284023667,1.17414999011742,7,,0.443786982248521,se,mean_error
+figure_4.png,cover,gram deer,1.06508875739645,2.58312997825833,7,,0.976331360946746,se,mean_error
+figure_4.png,cover,gram deermoose,6.34615384615384,15.7336098675735,7,,5.94674556213018,se,mean_error
+figure_4.png,cover,forb exclosure,27.0266272189349,16.5555148606556,7,,6.25739644970414,se,mean_error
+figure_4.png,cover,forb deer,22.1449704142012,12.0937448982095,7,,4.57100591715977,se,mean_error
+figure_4.png,cover,forb deermose,13.0917159763314,7.51455993675149,7,,2.84023668639053,se,mean_error

@@ -1,0 +1,13 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_3_carbon_0_10_cm.jpg,carbon_stock,fenced0,23.4232365145229,3.29297298837309,27,,0.633732947090456,sd,boxplot
+fig_3_carbon_0_10_cm.jpg,carbon_stock,fenced10,40.1037344398341,2.59151683809604,27,,0.498737648028066,sd,boxplot
+fig_3_carbon_0_10_cm.jpg,carbon_stock,fenced30,23.6099585062241,2.39665748319009,27,,0.461236947691709,sd,boxplot
+fig_3_carbon_0_10_cm.jpg,carbon_stock,unfenced0,27.0954356846474,3.19554331092011,27,,0.614982596922279,sd,boxplot
+fig_3_carbon_0_10_cm.jpg,carbon_stock,unfenced10,40.383817427386,4.6374462461476,27,,0.89247694618858,sd,boxplot
+fig_3_carbon_0_10_cm.jpg,carbon_stock,unfenced30,42.0643153526972,16.8077761263771,27,,3.23465802368093,sd,boxplot
+fig_3_nitrogen_0_10_cm.jpg,nitrogen,fenced0,1.64516129032258,0.204196892134482,27,,0.0392977102138427,sd,boxplot
+fig_3_nitrogen_0_10_cm.jpg,nitrogen,fenced10,2.86451612903226,0.229039664325828,27,,0.0440787039512062,sd,boxplot
+fig_3_nitrogen_0_10_cm.jpg,nitrogen,fenced30,5.83548387096774,2.73270494104814,27,,0.525909311109987,sd,boxplot
+fig_3_nitrogen_0_10_cm.jpg,nitrogen,unfenced0,2.09032258064516,0.309022695503578,27,,0.0594714454782315,sd,boxplot
+fig_3_nitrogen_0_10_cm.jpg,nitrogen,unfenced10,2.87903225806452,0.52230591622508,27,,0.100517820443961,sd,boxplot
+fig_3_nitrogen_0_10_cm.jpg,nitrogen,unfenced30,6.88548387096774,2.20615971063295,27,,0.424575634269746,sd,boxplot

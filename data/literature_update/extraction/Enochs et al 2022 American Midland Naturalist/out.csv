@@ -1,0 +1,25 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_3a.png,pH,cn excl,4.167892157,0.33507736,6,,0.13679476,sd,boxplot
+fig_3a.png,pH,cs excl,3.878676471,0.37331718,6,,0.1524061,sd,boxplot
+fig_3a.png,pH,eg excl,5.264705882,0.430477676,6,,0.175741775,sd,boxplot
+fig_3a.png,pH,pt excl,4.857843137,0.493794936,6,,0.201590939,sd,boxplot
+fig_3a.png,pH,fn excl,5.37622549,0.56624513,6,,0.231168606,sd,boxplot
+fig_3a.png,pH,fs excl,4.768382353,0.491023191,6,,0.200459378,sd,boxplot
+fig_3a.png,pH,cn control,4.300245098,0.359725184,6,,0.146857191,sd,boxplot
+fig_3a.png,pH,cs control,4.125,0.396062877,6,,0.161691992,sd,boxplot
+fig_3a.png,pH,eg control,5.235294118,0.379484328,6,,0.154923828,sd,boxplot
+fig_3a.png,pH,pt control,5.137254902,0.444928907,6,,0.181641465,sd,boxplot
+fig_3a.png,pH,fn control,5.546568627,0.480192556,6,,0.19603779,sd,boxplot
+fig_3a.png,pH,fs control,4.952205882,0.316381876,6,,0.12916236,sd,boxplot
+fig_3b.png,conductivity,cn inside,196.1134454,70.82792094,6,,28.91537764,sd,boxplot
+fig_3b.png,conductivity,cs inside,248.9495798,132.8404763,6,,54.23189736,sd,boxplot
+fig_3b.png,conductivity,eg inside,139.7058824,34.05693953,6,,13.90368734,sd,boxplot
+fig_3b.png,conductivity,pt inside,129.6218487,54.12642002,6,,22.09701844,sd,boxplot
+fig_3b.png,conductivity,fn inside,236.2394958,81.24397649,6,,33.16771451,sd,boxplot
+fig_3b.png,conductivity,fs inside,250.210084,134.4797707,6,,54.90113651,sd,boxplot
+fig_3b.png,conductivity,cn control,157.5630252,80.0246018,6,,32.66990688,sd,boxplot
+fig_3b.png,conductivity,cs outside,176.8907563,64.90804884,6,,26.49859998,sd,boxplot
+fig_3b.png,conductivity,eg outside,140.4411765,36.44312253,6,,14.87784247,sd,boxplot
+fig_3b.png,conductivity,pt outside,136.7647059,69.82415203,6,,28.5055907,sd,boxplot
+fig_3b.png,conductivity,fn outside,210.9243697,85.41586123,6,,34.87087933,sd,boxplot
+fig_3b.png,conductivity,fs outside,138.2352941,33.83777357,6,,13.81421321,sd,boxplot

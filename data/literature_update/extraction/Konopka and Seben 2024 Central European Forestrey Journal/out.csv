@@ -1,0 +1,9 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_3_richness.png,richhness,F,4.55421686746988,1.21322369881196,15,,0.313253012048193,se,mean_error
+figure_3_richness.png,richhness,C,1.97590361445783,2.89307189716699,15,,0.746987951807229,se,mean_error
+figure_3_tree_abundance.png,abundance,F,40.9638554216868,16.3318574840072,15,,4.21686746987953,se,mean_error
+figure_3_tree_abundance.png,abundance,C,11.6465863453816,7.77707499238433,15,,2.00803212851405,se,mean_error
+figure_3_tree_biomass.png,biomass,F,9.14516129032258,4.68506049944446,15,,1.20967741935484,se,mean_error
+figure_3_tree_biomass.png,biomass,C,5.2741935483871,2.43623145971112,15,,0.629032258064518,se,mean_error
+figure_5_biomass.png,aboveground biomass,F,3.60995850622407,5.59252367004225,15,,1.44398340248963,se,mean_error
+figure_5_biomass.png,aboveground biomass,C,0.0746887966805003,0.385691287589119,15,,0.0995850622406635,se,mean_error

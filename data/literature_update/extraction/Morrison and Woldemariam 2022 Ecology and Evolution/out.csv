@@ -1,0 +1,9 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_1.1.png,cover,f,0.037524752,0.02492927,18,,0.005875885,sd,boxplot
+figure_1.1.png,cover,c,0.020660066,0.017077494,20,,0.003818644,sd,boxplot
+figure_1.2.png,linera,f,0.050305466,0.053935181,20,,0.012060273,sd,boxplot
+figure_1.2.png,linera,c,0.02329582,0.025102351,18,,0.005916681,sd,boxplot
+figure_1.3.png,nyssa,f,0.015110759,0.020163461,20,,0.004508687,sd,boxplot
+figure_1.3.png,nyssa,c,0.000553797,0.001111145,18,,0.000261899,sd,boxplot
+figure_1.4.png,rosa,f,0.001567657,0.002419834,20,,0.000541091,sd,boxplot
+figure_1.4.png,rosa,c,0.01109736,0.014706995,18,,0.003466472,sd,boxplot

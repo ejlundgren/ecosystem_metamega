@@ -1,0 +1,3 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_1c.png,mass,exposed,4.79239302694136,1.46080829856952,15,,0.37717908082409,se,mean_error
+fig_1c.png,mass,protectd,10.2947702060222,2.57789699747563,15,,0.665610142630747,se,mean_error

@@ -1,0 +1,13 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2b.png,tree density,trt: +all,12.6308900523561,10.3740136448571,81,,1.1526681827619,sd,boxplot
+figure_2b.png,tree density,trt: -mega,15.6413612565446,10.7350516638818,81,,1.19278351820909,sd,boxplot
+figure_2b.png,tree density,trt: -meso,20.6151832460734,14.5289965678412,81,,1.61433295198236,sd,boxplot
+figure_2c.png,tree richness,trt: +all,3.83408071748879,2.08375991673078,81,,0.231528879636754,sd,boxplot
+figure_2c.png,tree richness,trt: -mega,4.52354260089687,2.16940904441725,81,,0.241045449379695,sd,boxplot
+figure_2c.png,tree richness,trt: -meso,4.72533632286996,2.16703576636638,81,,0.240781751818487,sd,boxplot
+figure_3a.png,herbaceous biomass,trt: +all,3.16666666666668,1.36639106099188,441,,0.0650662409996134,sd,boxplot
+figure_3a.png,herbaceous biomass,trt: -mega,4.61666666666668,3.31927044024256,441,,0.158060497154407,sd,boxplot
+figure_3a.png,herbaceous biomass,trt: -meso,6.40000000000002,1.62187936161315,441,,0.077232350553007,sd,boxplot
+figure_3c.png,herbaceous richness,trt: +all,24,10.1425831016883,441,,0.482980147699441,sd,boxplot
+figure_3c.png,herbaceous richness,trt: -mega,36,9.43225873442334,441,,0.449155177829683,sd,boxplot
+figure_3c.png,herbaceous richness,trt: -meso,27.8888888888889,6.23266097996297,441,,0.296793379998236,sd,boxplot

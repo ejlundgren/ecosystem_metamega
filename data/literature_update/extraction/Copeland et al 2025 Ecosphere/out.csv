@@ -1,0 +1,32 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_2a.png,ticks per hour,W,8.846751868,7.391416261,21,,1.612939262,sd,boxplot
+fig_2a.png,ticks per hour,"""-CW""",7.010876236,4.894090053,21,,1.067978006,sd,boxplot
+fig_3.png,mean abundance,A 2017 W,0.866972477,0.357533424,3,,0.206422018,se,mean_error
+fig_3.png,mean abundance,A 2018 W,0.45412844,0.357533424,3,,0.206422018,se,mean_error
+fig_3.png,mean abundance,A 2019 W,3.178899083,2.88410295,3,,1.665137615,se,mean_error
+fig_3.png,mean abundance,I 2017 W,4.279816514,1.596982625,3,,0.922018349,se,mean_error
+fig_3.png,mean abundance,I 2018 W,3.055045872,1.191778079,3,,0.688073394,se,mean_error
+fig_3.png,mean abundance,I 2019 W,4.224770642,2.383556157,3,,1.376146789,se,mean_error
+fig_3.png,mean abundance,M 2017 W,2.036697248,0.738902409,3,,0.426605505,se,mean_error
+fig_3.png,mean abundance,M 2018 W,1.224770642,0.405204547,3,,0.233944954,se,mean_error
+fig_3.png,mean abundance,M 2019 W,1.032110092,0.643560162,3,,0.371559633,se,mean_error
+fig_3.png,mean abundance,A 2017 -CW,1.073394495,0.381368985,3,,0.220183486,se,mean_error
+fig_3.png,mean abundance,A 2018 -CW,0.440366972,0.333697862,3,,0.19266055,se,mean_error
+fig_3.png,mean abundance,A 2019 -CW,0.770642202,0.548217916,3,,0.316513761,se,mean_error
+fig_3.png,mean abundance,I 2017 -CW,7.458715596,2.621911773,3,,1.513761468,se,mean_error
+fig_3.png,mean abundance,I 2018 -CW,5.394495413,1.644653748,3,,0.949541284,se,mean_error
+fig_3.png,mean abundance,I 2019 -CW,3.963302752,2.788760704,3,,1.610091743,se,mean_error
+fig_3.png,mean abundance,M 2017 -CW,2.944954128,0.929586901,3,,0.536697248,se,mean_error
+fig_3.png,mean abundance,M 2018 -CW,1.403669725,0.572053478,3,,0.330275229,se,mean_error
+fig_3.png,mean abundance,M 2019 -CW,0.853211009,0.667395724,3,,0.385321101,se,mean_error
+fig_s3b.png,lizard population,"""-CW""",102.9461596,43.20105593,21,,9.427243282,sd,boxplot
+fig_s3b.png,lizard population,W,95.74548193,41.61612388,18,,9.809014468,sd,boxplot
+fig_s4b.png,mammal population,W,24.02694611,21.17621785,21,,4.621029583,sd,boxplot
+fig_s4b.png,mammal population,"""-CW""",24.7005988,16.53138292,21,,3.607443503,sd,boxplot
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,"""-CW == exclosure""",,,,,,

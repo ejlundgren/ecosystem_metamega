@@ -1,0 +1,106 @@
+,,,GRAZED,,,IN EXCLOSURE,,
+filename,variable,group_id,mean,sd,,mean,sd,
+fig_4.png,canopy cover,in tower,0,NA,6,75.08474576,4.982013036,Tower
+fig_4.png,canopy cover,inside lamar,0,NA,6,39.83050847,13.70053585,Lamar East
+fig_4.png,canopy cover,inside lamar west,0,NA,6,55.76271186,17.85221338,Lamar West
+fig_4.png,canopy cover,inside mammoth,47.45762712,14.53087136,6,65.93220339,14.1157036,Mammoth
+fig_4.png,canopy cover,inside porcupine,25.76271186,17.43704563,6,70.6779661,10.37919383,Porcupine
+fig_4.png,canopy cover,inside crown butte,6.949152542,11.62469708,6,67.79661017,8.30335506,Crowne Butte
+fig_4.png,canopy cover,inside mammoth willow,0,NA,6,62.37288136,10.37919383,Mammoth
+fig_4.png,canopy cover,inside tower willow,13.05084746,15.36120686,6,69.3220339,9.133690566,Tower
+fig_4.png,canopy cover,inside snowflake willow,22.71186441,15.77637461,6,31.01694915,20.75838765,Snowflake
+fig_4.png,canopy cover,inside porcupine willow,0,NA,6,29.15254237,12.45503259,Porcupine
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+fig_5_juncbutt.png,density,potr exclos,5962.674961,5965.631318,6,6970.451011,3565.664696,Junction Butte
+fig_5_juncbutt.png,density,sabe exclo,55.98755832,68.57047491,6,139.9688958,479.9933244,Junction Butte
+fig_5_juncbutt.png,density,salu exclo,10,60,6,279.9377916,617.1342742,Junction Butte
+fig_5_juncbutt.png,density,rowo exclo,6270.606532,9119.873164,6,12597.20062,8639.879839,Junction Butte
+fig_5_juncbutt.png,density,pofr exclo,9013.99689,10285.57124,6,1287.713841,2537.107572,Junction Butte
+fig_5_juncbutt.png,density,prvi exclo,10,205.7114247,6,307.9315708,959.9866488,Junction Butte
+fig_5_juncbutt.png,density,artr exclo,1063.763608,3085.671371,6,139.9688958,137.1409498,Junction Butte
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+fig_5_lameast.png,density,potr excl,778.2101167,2287.461238,6,20622.56809,6385.829291,Lamar East
+fig_5_lameast.png,density,amal excl,0,NA,6,5058.365759,5051.476901,Lamar East
+fig_5_lameast.png,density,aruv excl,0,NA,6,10700.38911,9149.844954,Lamar East
+fig_5_lameast.png,density,juco excl,0,NA,6,661.4785992,1048.419734,Lamar East
+fig_5_lameast.png,density,jusc excl,0,NA,6,428.0155642,857.7979644,Lamar East
+fig_5_lameast.png,density,loin excl,0,NA,6,350.1945525,1143.730619,Lamar East
+fig_5_lameast.png,density,dafr excl,544.7470817,1715.595929,6,233.463035,667.1761945,Lamar East
+fig_5_lameast.png,density,prvi excl,0,NA,6,272.3735409,667.1761945,Lamar East
+fig_5_lameast.png,density,ribes excl,0,NA,6,1284.046693,2096.839469,Lamar East
+fig_5_lameast.png,density,rowo excl,0,NA,6,5642.023346,6671.761945,Lamar East
+fig_5_lameast.png,density,syal excl,0,NA,6,5680.933852,11818.54973,Lamar East
+fig_5_lameast.png,density,artr grazed,9883.268482,6195.207521,6,0,NA,Lamar East
+,,,,,,,,
+,,,,,,,,
+fig_5_lamwest.png,density,potr excl,0,NA,6,4529.505582,2500.276611,Lamar West
+fig_5_lamwest.png,density,prvi excl,0,NA,6,3827.751196,7500.829834,Lamar West
+fig_5_lamwest.png,density,riin excl,0,NA,6,1339.712919,1718.94017,Lamar West
+fig_5_lamwest.png,density,rowo exclo,1275.917065,1406.405594,6,12312.59968,10313.64102,Lamar West
+fig_5_lamwest.png,density,syal exclos,12567.78309,15470.46153,6,32918.66029,12032.58119,Lamar West
+fig_5_lamwest.png,density,amal exclos,0,NA,6,191.3875598,1250.138306,Lamar West
+fig_5_lamwest.png,density,salu graz,701.754386,2344.009323,6,0,NA,Lamar West
+fig_5_lamwest.png,density,artr graz,637.9585327,2031.474747,6,0,NA,Lamar West
+fig_5_lamwest.png,density,dafr graz,1977.671451,4375.48407,6,0,NA,Lamar West
+,,,,,,,,
+fig_5_mammoth.png,density,potr excl,967.4796748,3066.840816,6,4097.560976,4042.653803,Mammoth
+fig_5_mammoth.png,density,jusc exclos,284.5528455,836.4111317,6,796.7479675,697.0092764,Mammoth
+fig_5_mammoth.png,density,rowo exclos,398.3739837,975.812987,6,6715.447154,3345.644527,Mammoth
+fig_5_mammoth.png,density,shca exclos,0,NA,6,3756.097561,2927.438961,Mammoth
+fig_5_mammoth.png,density,juco exclos,113.8211382,557.6074211,6,1195.121951,1812.224119,Mammoth
+fig_5_mammoth.png,density,bene exclos,7113.821138,10036.93358,6,7455.284553,8503.513172,Mammoth
+fig_5_mammoth.png,density,syal exclos,12235.77236,9479.326159,6,22650.4065,19655.66159,Mammoth
+fig_5_mammoth.png,density,artr graz,170.7317073,1115.214842,6,0,NA,Mammoth
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+fig_7_juncbutt.png,density,sabe exclos,242.4242424,593.8156952,6,1696.969697,1632.993162,Junction Butte
+fig_7_juncbutt.png,density,sage exclos,0,NA,6,424.2424242,1039.177467,Junction Butte
+fig_7_juncbutt.png,density,rowo exclos,5454.545455,5641.249105,6,4424.242424,7422.69619,Junction Butte
+fig_7_juncbutt.png,density,potr exclos,2727.272727,6235.0648,6,10060.60606,10243.32074,Junction Butte
+fig_7_juncbutt.png,density,riuid exclos,0,NA,6,6424.242424,7719.604038,Junction Butte
+fig_7_juncbutt.png,density,syal exclos 6,0,NA,6,2969.69697,2523.716705,Junction Butte
+fig_7_juncbutt.png,density,rila exclos,0,NA,6,6727.272727,5344.341257,Junction Butte
+fig_7_juncbutt.png,density,sara exclos,0,NA,6,242.4242424,1187.63139,Junction Butte
+fig_7_juncbutt.png,density,loin exclos,0,NA,6,121.2121212,890.7235428,Junction Butte
+fig_7_juncbutt.png,density,salu graz,1636.363636,2672.170628,6,0,NA,
+fig_7_juncbutt.png,density,dafr graz,12303.0303,7125.788343,6,0,NA,
+fig_7_juncbutt.png,density,aruv graz,181.8181818,593.8156952,6,0,NA,
+,,,,,,,,
+,,,,,,,,
+fig_7_mamm.png,density,salu exclosure,,,6,2113.207547,2136.242627,
+fig_7_mamm.png,density,sabe exclos,,,6,2381.551363,2136.242627,
+fig_7_mamm.png,density,beoc exclos,,,6,1006.289308,903.7949575,
+fig_7_mamm.png,density,rila exclos,,,6,167.7148847,657.3054236,
+fig_7_mamm.png,density,rowo exclos,,,6,4997.903564,4025.99572,
+,,,,,,,,
+,,,,,,,,
+fig_7_mamm.png,density,salu graz,,,6,9425.57652,10352.56042,
+fig_7_mamm.png,density,sabe graz,,,6,771.4884696,2218.405805,
+fig_7_mamm.png,density,dafr graz,,,6,1442.348008,2054.079449,
+fig_8a.png,aspen density,mamm exclos,,,6,6774.193548,2133.42655,
+fig_8a.png,aspen density,LE exclos,,,6,8580.645161,3555.710917,
+fig_8a.png,aspen density,real LW exclos,,,6,5258.064516,8533.706201,
+fig_8a.png,aspen density,tower jct exclos,,,6,8741.935484,8296.658806,
+fig_8a.png,aspen density,crownbutte exclos,,,6,9967.741935,5531.105871,
+fig_8a.png,aspen density,porcupine exclos,,,6,13645.16129,8375.674604,
+fig_8a.png,aspen density,mammoth graz,,,6,2032.258065,2370.473945,
+fig_8a.png,aspen density,porcupine graz,,,6,11290.32258,6637.327045,
+fig_8b.png,willow density,a,,,6,-32368.42105,31187.2639,

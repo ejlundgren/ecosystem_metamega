@@ -1,0 +1,13 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_1a.png,floral richness,north open,13.2,9.14522826396365,3,,5.27999999999999,se,mean_error
+figure_1a.png,floral richness,south open,20.88,4.98830632579836,3,,2.88,se,mean_error
+figure_1a.png,floral richness,north exclusion,24.24,7.06676729488099,3,,4.07999999999998,se,mean_error
+figure_1a.png,floral richness,south exclusion,24.72,3.32553755053225,3,,1.92,se,mean_error
+figure_1c.png,pollinator richness,north open,21.8253968253968,21.9942959691286,3,,12.6984126984127,se,mean_error
+figure_1c.png,pollinator richness,south open,30.5555555555556,5.49857399228213,3,,3.17460317460316,se,mean_error
+figure_1c.png,pollinator richness,north exclusion,38.4920634920635,13.7464349807053,3,,7.93650793650789,se,mean_error
+figure_1c.png,pollinator richness,south exclusion,42.4603174603175,13.7464349807054,3,,7.93650793650795,se,mean_error
+figure_1d.png,pollinator abundance,north open,60.8000000000002,38.7979380895426,3,,22.3999999999999,se,mean_error
+figure_1d.png,pollinator abundance,south open,51.2000000000003,33.2553755053227,3,,19.2000000000002,se,mean_error
+figure_1d.png,pollinator abundance,north exclusion,316.8,166.276877526612,3,,95.9999999999999,se,mean_error
+figure_1d.png,pollinator abundance,south exclusion,182.4,55.4256258422043,3,,32.0000000000001,se,mean_error

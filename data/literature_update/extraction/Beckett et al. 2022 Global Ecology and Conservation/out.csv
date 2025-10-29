@@ -1,0 +1,13 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_5.png,mean abundance,abs_fla,3.035714286,4.285714286,24,,0.874817765,sd,mean_error
+figure_5.png,mean abundance,abs_mel,1.964285714,3.303571429,24,,0.674338694,sd,mean_error
+figure_5.png,mean abundance,abs_mix,1.696428571,2.142857143,24,,0.437408883,sd,mean_error
+figure_5.png,mean abundance,abs_sit,1.071428571,4.107142857,24,,0.838367025,sd,mean_error
+figure_5.png,mean abundance,abs_van,9.017857143,8.482142857,24,,1.73141016,sd,mean_error
+figure_5.png,mean abundance,abs_vos,0.178571429,0.625,24,,0.127577591,sd,mean_error
+figure_5.png,mean abundance,pres_fla,1.875,3.839285714,36,,0.639880952,sd,mean_error
+figure_5.png,mean abundance,pres_mel,0.625,1.517857143,36,,0.25297619,sd,mean_error
+figure_5.png,mean abundance,pres_mix,0.625,1.517857143,36,,0.25297619,sd,mean_error
+figure_5.png,mean abundance,pres_sit,0.267857143,0.714285714,36,,0.119047619,sd,mean_error
+figure_5.png,mean abundance,pres_van,1.517857143,2.946428571,36,,0.491071429,sd,mean_error
+figure_5.png,mean abundance,pres_vos,1.071428571,2.053571429,36,,0.342261905,sd,mean_error

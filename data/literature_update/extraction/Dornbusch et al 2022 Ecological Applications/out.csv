@@ -1,0 +1,11 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_3.png,area burned,exclosure,92.0852359208524,2.10904207923154,3,,1.21765601217658,se,mean_error
+fig_3.png,area burned,control,74.4292237442923,12.654252475389,3,,7.30593607305934,se,mean_error
+fig_5_burned.png,sage cover,exclosure 2010,19.1623036649215,50.7575354337248,30,,9.26701570680628,se,mean_error
+fig_5_burned.png,sage cover,exclosure 2011,2.19895287958115,6.88237768592878,30,,1.2565445026178,se,mean_error
+fig_5_burned.png,sage cover,control 2010,24.1884816753927,10.3235665288932,30,,1.8848167539267,se,mean_error
+fig_5_burned.png,sage cover,control 2011,11.7801047120419,16.3456470040809,30,,2.98429319371727,se,mean_error
+fig_5_not_burned.png,sage cover,exclosure 2010,31.2565445026178,61.941399173359,30,,11.3089005235602,se,mean_error
+fig_5_not_burned.png,sage cover,exclosure 2011,26.0732984293194,67.1031824378058,30,,12.2513089005236,se,mean_error
+fig_5_not_burned.png,sage cover,control 2010,19.0052356020942,56.7796159089125,30,,10.3664921465969,se,mean_error
+fig_5_not_burned.png,sage cover,control 2011,19.3193717277487,43.0148605370548,30,,7.85340314136124,se,mean_error

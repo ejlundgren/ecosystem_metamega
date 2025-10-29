@@ -1,0 +1,25 @@
+filename,variable,group_id,mean,sd,n,,
+figure_3a.png,organic carbon,mega grass,0.002556962,0.003104855,89,0.002683544,0.004060194
+figure_3a.png,organic carbon,excl grass,,,89,,
+figure_3a.png,organic carbon,mega tree,0.002810127,0.004776699,89,0.004227848,0.020539807
+figure_3a.png,organic carbon,excl tree,,,89,,
+figure_3a.png,organic carbon,mega termite,0.003367089,0.006448544,89,0.003873418,0.007642719
+figure_3a.png,organic carbon,excl termite,,,89,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+figure_3b.png,nitrogen,termite excl,,,89,,
+figure_3b.png,nitrogen,termite mega,0.002889831,0.008394644,89,0.004186441,0.013431431
+figure_3b.png,nitrogen,tree excl,,,89,,
+figure_3b.png,nitrogen,tree mega,0.004211864,0.005996174,89,0.004389831,0.005036787
+figure_3b.png,nitrogen,grass excl,,,89,,
+figure_3b.png,nitrogen,grass mega,0.002864407,0.014870513,89,0.002483051,0.003118011

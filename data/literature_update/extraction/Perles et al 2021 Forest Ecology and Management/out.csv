@@ -1,0 +1,33 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_4_cover.png,cover,1 control burn,18.2881773399015,11.7845150337872,64,,1.4730643792234,sd,boxplot
+figure_4_cover.png,cover,5 control burn,15.7481527093596,8.16641167812203,64,,1.02080145976525,sd,boxplot
+figure_4_cover.png,cover,1 control unburned,15.6096059113301,6.70784554147216,64,,0.83848069268402,sd,boxplot
+figure_4_cover.png,cover,5 control unburned,23.0449507389163,10.0597849070897,64,,1.25747311338621,sd,boxplot
+figure_4_cover.png,cover,1 fence burn,16.8103448275862,7.45841964086569,64,,0.932302455108211,sd,boxplot
+figure_4_cover.png,cover,5 fence burn,18.7038177339902,11.5938964012609,64,,1.44923705015762,sd,boxplot
+figure_4_cover.png,cover,1 fence unburn,14.6397783251232,9.2011584875822,64,,1.15014481094777,sd,boxplot
+figure_4_cover.png,cover,5 fence unburn,39.993842364532,25.0451485914515,64,,3.13064357393144,sd,boxplot
+figure_4_cover.png,cover,grandview 1 control burn,7.98953201970444,5.75566504442431,64,,0.719458130553038,sd,boxplot
+figure_4_cover.png,cover,ggrandview 5 control burn,7.62007389162563,5.28133003462311,64,,0.660166254327889,sd,boxplot
+figure_4_cover.png,cover,g 1 control unburn,8.54371921182267,3.46701264062234,64,,0.433376580077793,sd,boxplot
+figure_4_cover.png,cover,g 5 control unburn,19.9045566502463,12.0322139710242,64,,1.50402674637802,sd,boxplot
+figure_4_cover.png,cover,g 1 fence burn,4.8491379310345,2.65142461604378,64,,0.331428077005472,sd,boxplot
+figure_4_cover.png,cover,g 5 fence burn,18.8423645320197,9.77606852981472,64,,1.22200856622684,sd,boxplot
+figure_4_cover.png,cover,g 1 fence unburn,9.1902709359606,5.47545914459482,64,,0.684432393074352,sd,boxplot
+figure_4_cover.png,cover,g 5 fence unburn,37.3152709359606,18.5604286450981,64,,2.32005358063727,sd,boxplot
+figure_4_richness.png,richness,1 burn control,8.1996855345912,2.75709423011009,64,,0.344636778763761,sd,boxplot
+figure_4_richness.png,richness,5 burn control,7.56289308176101,2.62737540909994,64,,0.328421926137492,sd,boxplot
+figure_4_richness.png,richness,1 unburn control,8.97012578616352,2.40906388995569,64,,0.301132986244461,sd,boxplot
+figure_4_richness.png,richness,5 unburn control,8.64779874213836,2.09535312944391,64,,0.261919141180489,sd,boxplot
+figure_4_richness.png,richness,1 fence burn,7.35849056603774,1.08191846255601,64,,0.135239807819501,sd,boxplot
+figure_4_richness.png,richness,5 fence burn,6.93396226415094,1.97236316985862,64,,0.246545396232327,sd,boxplot
+figure_4_richness.png,richness,1 unburn fence,10.2122641509434,3.63714684992052,64,,0.454643356240064,sd,boxplot
+figure_4_richness.png,richness,5 unburn fence,9.59905660377358,3.26355160910342,64,,0.407943951137927,sd,boxplot
+figure_4_richness.png,richness,grandview 1 burn control,6.16352201257862,1.55226348977735,64,,0.194032936222168,sd,boxplot
+figure_4_richness.png,richness,g 5 burn control,5.61320754716981,1.95583981165138,64,,0.244479976456423,sd,boxplot
+figure_4_richness.png,richness,g 1 unburn control,6.44654088050315,1.35413855490765,64,,0.169267319363457,sd,boxplot
+figure_4_richness.png,richness,g 5 unburn control,5.91981132075472,1.87397597494213,64,,0.234246996867766,sd,boxplot
+figure_4_richness.png,richness,g 1 burn fence,5.2437106918239,1.35473614561745,64,,0.169342018202181,sd,boxplot
+figure_4_richness.png,richness,g 5 burn fence,6.30503144654088,1.66657645219128,64,,0.20832205652391,sd,boxplot
+figure_4_richness.png,richness,g 1 unburn fence,7.16194968553459,1.54860026371002,64,,0.193575032963753,sd,boxplot
+figure_4_richness.png,richness,g 5 unburn fence,7.47641509433962,0.815907322727997,64,,0.101988415341,sd,boxplot

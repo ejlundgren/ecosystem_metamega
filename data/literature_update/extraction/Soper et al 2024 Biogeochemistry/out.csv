@@ -1,0 +1,9 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_4a.png,N2O,present,19.6428571428571,11.5366409913177,80,,1.28983567442984,sd,boxplot
+figure_4a.png,N2O,excluded,23.125,12.4300270272967,96,,1.26863432107837,sd,boxplot
+figure_4b.png,mineralization,present,2.03000000000001,0.798832931873316,80,,0.0893122369167096,sd,boxplot
+figure_4b.png,mineralization,excluded,3.51000000000001,1.65056099337129,96,,0.168459675962541,sd,boxplot
+figure_4c.png,nitrification,present,1.01570351758794,0.435274466203163,80,,0.0486651647650104,sd,boxplot
+figure_4c.png,nitrification,excluded,0.795226130653267,0.480632503099463,96,,0.0490543494329307,sd,boxplot
+figure_4d.png,inorganic N,absent,131.884057971014,96.2413448558423,96,,9.82259112733518,sd,boxplot
+figure_4d.png,inorganic N,present,161.352657004831,119.490154347211,80,,13.3594053881153,sd,boxplot

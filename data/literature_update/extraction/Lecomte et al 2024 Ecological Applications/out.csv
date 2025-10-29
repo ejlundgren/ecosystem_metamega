@@ -1,0 +1,5 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_4.jpg,biomass,F Live,13.2687898089172,17.982684681518,90,,1.89554140127389,se,mean_error
+fig_4.jpg,biomass,F Dead,11.3528662420382,17.2092358780119,90,,1.8140127388535,se,mean_error
+fig_4.jpg,biomass,C 90,0.101910828025478,1.5468976070123,90,,0.163057324840764,se,mean_error
+fig_4.jpg,biomass,C dead,0.55031847133758,1.93362200876538,90,,0.203821656050955,se,mean_error

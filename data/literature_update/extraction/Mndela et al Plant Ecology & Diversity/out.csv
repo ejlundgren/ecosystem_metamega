@@ -1,0 +1,29 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_5a.png,shrub,burned fence,27.2222222222223,45.7238085319528,96,,4.66666666666669,se,mean_error
+figure_5a.png,shrub,unburned fence,50.1666666666667,41.9134911542904,96,,4.27777777777783,se,mean_error
+figure_5a.png,shrub,burned control,19.8333333333334,57.1547606649412,96,,5.83333333333337,se,mean_error
+figure_5a.png,shrub,unburned control,25.6666666666667,64.775395420266,96,,6.61111111111109,se,mean_error
+figure_5b.png,herbaceous,fire fence,39.8882681564246,34.4844366023102,96,,3.51955307262566,se,mean_error
+figure_5b.png,herbaceous,unburned fence,25.4189944134078,34.4844366023108,96,,3.51955307262571,se,mean_error
+figure_5b.png,herbaceous,fire control,36.3687150837989,22.9896244015404,96,,2.3463687150838,se,mean_error
+figure_5b.png,herbaceous,unburned control,44.9720670391062,38.3160406692338,96,,3.91061452513964,se,mean_error
+figure_5d.png,richness,fire fence,9.01149425287356,5.51839068489086,96,,0.5632183908046,se,mean_error
+figure_5d.png,richness,unburned fence,4.10344827586206,6.3067322113039,96,,0.643678160919549,se,mean_error
+figure_5d.png,richness,fire control,10.0574712643678,6.30673221130383,96,,0.643678160919542,se,mean_error
+figure_5d.png,richness,unburned control,7.08045977011494,5.51839068489086,96,,0.5632183908046,se,mean_error
+figure_6.png,density,total unburned control,30.9050772626932,34.6064776022348,96,,3.53200883002208,se,mean_error
+figure_6.png,density,grass unburned control,27.3730684326711,17.3032388011174,96,,1.76600441501104,se,mean_error
+figure_6.png,density,sedges unburned control,1.41280353200884,13.842591040894,96,,1.41280353200884,se,mean_error
+figure_6.png,density,non-gramin unburned control,2.82560706401767,15.5729149210058,96,,1.58940397350995,se,mean_error
+figure_6.png,density,unburned fence total,17.4834437086093,17.3032388011174,96,,1.76600441501104,se,mean_error
+figure_6.png,density,grass unburned fence,10.5960264900663,15.5729149210056,96,,1.58940397350993,se,mean_error
+figure_6.png,density,sedge unburned fence,3.53200883002208,15.5729149210058,96,,1.58940397350995,se,mean_error
+figure_6.png,density,non-gram unburned fence,3.00220750551878,15.5729149210058,96,,1.58940397350995,se,mean_error
+figure_6.png,density,total burn control,46.6225165562914,38.0671253624583,96,,3.8852097130243,se,mean_error
+figure_6.png,density,grass burn control,34.6136865342164,17.3032388011174,96,,1.76600441501104,se,mean_error
+figure_6.png,density,sedge burn control,6.71081677704196,22.4942104414526,96,,2.29580573951435,se,mean_error
+figure_6.png,density,nongram burn control,4.59161147902873,17.3032388011173,96,,1.76600441501103,se,mean_error
+figure_6.png,density,total burn fence,35.8498896247241,24.2245343215644,96,,2.47240618101546,se,mean_error
+figure_6.png,density,grass burn fence,24.1942604856512,12.1122671607823,96,,1.23620309050774,se,mean_error
+figure_6.png,density,sedge burn fence,6.00441501103755,17.3032388011173,96,,1.76600441501103,se,mean_error
+figure_6.png,density,non-gram burn fence,6.00441501103755,15.5729149210055,96,,1.58940397350992,se,mean_error

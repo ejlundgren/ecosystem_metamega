@@ -1,0 +1,3 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+Watson et al 2021 Fungal Ecology.png,fungal OTUs,control,6.45474137931034,2.27022125340275,64,,0.283777656675344,sd,boxplot
+Watson et al 2021 Fungal Ecology.png,fungal OTUs,fence,6.85344827586207,4.70952325054889,64,,0.588690406318611,sd,boxplot

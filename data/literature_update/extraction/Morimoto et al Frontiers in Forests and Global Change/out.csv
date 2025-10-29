@@ -1,0 +1,13 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2.png,canopy biomass,LR control,81.6326530612244,75.8429004348662,16,,18.9607251087166,sd,boxplot
+figure_2.png,canopy biomass,PR control,8.21995464852601,9.88415902611415,24,,2.01759551254203,sd,boxplot
+figure_2.png,canopy biomass,RR control,4.8185941043083,1.32027580727534,24,,0.269500170630477,sd,boxplot
+figure_2.png,canopy biomass,LR fenced,193.877551020408,190.199819280527,5,,85.0599450438865,sd,boxplot
+figure_2.png,canopy biomass,PR fenced,122.448979591837,78.7820951501743,24,,16.08132783211,sd,boxplot
+figure_2.png,canopy biomass,RR fenced,22.6757369614511,24.4870252497555,24,,4.99839309837907,sd,boxplot
+figure_3.png,understorey biomass,lr control,73.4271523178808,30.4113749047657,16,,7.60284372619143,sd,boxplot
+figure_3.png,understorey biomass,PR control,86.7549668874173,33.3126347395679,4,,16.6563173697839,sd,boxplot
+figure_3.png,understorey biomass,rr control,99.1307947019868,14.52607627923,24,,2.96512290407165,sd,boxplot
+figure_3.png,understorey biomass,lr fenced,86.0927152317881,22.2844905894558,5,,9.96592716039549,sd,boxplot
+figure_3.png,understorey biomass,pr fenced,99.9172185430464,18.896326870701,24,,3.85719657050501,sd,boxplot
+figure_3.png,understorey biomass,rr fenced,95.8195364238411,19.7450003135941,24,,4.03043131161662,sd,boxplot

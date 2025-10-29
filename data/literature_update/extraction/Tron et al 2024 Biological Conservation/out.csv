@@ -1,0 +1,17 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2_individuals.png,density,20cm control,6.94610778443117,9.05551534158507,76,,1.03873884883294,CI95,mean_error
+figure_2_individuals.png,density,30cm control,7.90419161676649,7.99016059551637,76,,0.916534278382016,CI95,mean_error
+figure_2_individuals.png,density,60 cm control,8.74251497005991,6.39212847641306,76,,0.733227422705609,CI95,mean_error
+figure_2_individuals.png,density,180cm control,9.94011976047907,7.45748322248189,76,,0.855431993156542,CI95,mean_error
+figure_2_individuals.png,density,20 cm exclosure,17.8443113772455,13.8496116988949,19,,3.1773188317243,CI95,mean_error
+figure_2_individuals.png,density,30 cm exclosure,21.1976047904192,34.091351874203,19,,7.82109250885984,CI95,mean_error
+figure_2_individuals.png,density,60 cm exclosure,11.9760479041916,12.7842569528261,19,,2.93290969082243,CI95,mean_error
+figure_2_individuals.png,density,180 cm exclosure,8.98203592814372,8.52283796855079,19,,1.95527312721497,CI95,mean_error
+figure_2_richness.png,richness,20cm control,3.58260869565218,3.71299288890776,76,,0.425909494232476,CI95,mean_error
+figure_2_richness.png,richness,30 cm control,4.2608695652174,3.94505494446449,76,,0.452528837622005,CI95,mean_error
+figure_2_richness.png,richness,60 c control,4.62608695652174,3.71299288890776,76,,0.425909494232476,CI95,mean_error
+figure_2_richness.png,richness,180 control,6.60869565217392,4.17711700002122,76,,0.479148181011534,CI95,mean_error
+figure_2_richness.png,richness,20 cm excl,7.28695652173914,3.24886877779429,19,,0.745341614906832,CI95,mean_error
+figure_2_richness.png,richness,30 c excl,6.92173913043479,2.32062055556735,19,,0.532386867790595,CI95,mean_error
+figure_2_richness.png,richness,60 cm excl,5.40869565217392,3.71299288890776,19,,0.851818988464952,CI95,mean_error
+figure_2_richness.png,richness,180 excl,6.03478260869566,4.75727213891307,19,,1.09139307897072,CI95,mean_error

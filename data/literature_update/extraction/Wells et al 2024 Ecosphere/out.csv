@@ -1,0 +1,4 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2a.png,density,O,2.07308467741935,1.31347950126197,150,,0.107245152189905,sd,boxplot
+figure_2a.png,density,W,0.754536290322581,0.465161512022588,150,,0.0379802784145614,sd,boxplot
+figure_2a.png,density,MW,0.131552419354839,0.0943282483501936,150,,0.00770186922628345,sd,boxplot

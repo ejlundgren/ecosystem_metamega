@@ -1,0 +1,19 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_1_richness_2015.png,richness,C 2015,3.546099291,2.616675293,5,,1.170212766,se,mean_error
+fig_1_richness_2015.png,richness,C 2021,4.822695035,2.140916149,5,,0.957446809,se,mean_error
+fig_1_richness_2015.png,richness,e 2015,3.936170213,2.616675293,5,,1.170212766,se,mean_error
+fig_1_richness_2015.png,richness,e 2021,6.595744681,2.537382102,5,,1.134751773,se,mean_error
+fig_2_a.png,density shrubs,c,0.121809745,0.132296365,5,,0.059164733,se,mean_error
+fig_2_a.png,density shrubs,e,0.46287703,0.684828244,5,,0.306264501,se,mean_error
+fig_2_b.png,density vines,C,0.044520548,0.056667476,5,,0.025342466,se,mean_error
+fig_2_b.png,density vines,E,0.010273973,0.013783981,5,,0.006164384,se,mean_error
+fig_6_2015.png,percent cover,c 2016,16.15384615,2.683281573,5,,1.2,se,mean_error
+fig_6_2015.png,percent cover,c 2021,25.01538462,11.55875139,5,,5.169230769,se,mean_error
+fig_6_2015.png,percent cover,e 2016,16.52307692,8.875469818,5,,3.969230769,se,mean_error
+fig_6_2015.png,percent cover,e 2021,15.50769231,10.93953257,5,,4.892307692,se,mean_error
+fig_7_b.png,graminoid cover,c,3.649253731,1.576928536,5,,0.705223881,se,mean_error
+fig_7_b.png,graminoid cover,e,0.369402985,0.525642845,5,,0.235074627,se,mean_error
+fig_7_c.png,annual cover,e,0.583333333,0.670820393,5,,0.3,se,mean_error
+fig_7_c.png,annual cover,C,3.033333333,2.273335777,5,,1.016666667,se,mean_error
+fig_7_d.png,bare ground cover,c,14.59909228,7.695997956,5,,3.441754917,se,mean_error
+fig_7_d.png,bare ground cover,e,4.916792738,4.482284524,5,,2.004538578,se,mean_error

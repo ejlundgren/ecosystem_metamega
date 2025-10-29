@@ -1,0 +1,21 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2a.png,small mammal abundance,2020 open,9.06976744186045,28.8222016461948,240,,1.86046511627907,se,mean_error
+figure_2a.png,small mammal abundance,2021 open,27.0542635658915,31.2240517833778,240,,2.015503875969,se,mean_error
+figure_2a.png,small mammal abundance,2022 open,8.13953488372093,26.4203515090118,240,,1.70542635658914,se,mean_error
+figure_2a.png,small mammal abundance,2023 open,6.89922480620155,24.0185013718288,240,,1.55038759689921,se,mean_error
+figure_2a.png,small mammal abundance,2021 full,31.5503875968992,52.8407030180236,240,,3.41085271317829,se,mean_error
+figure_2a.png,small mammal abundance,2020 full,10.1550387596899,33.6259019205608,240,,2.17054263565893,se,mean_error
+figure_2a.png,small mammal abundance,2022 full,18.5271317829457,43.2333024692922,240,,2.79069767441861,se,mean_error
+figure_2a.png,small mammal abundance,2023 full,15.891472868217,40.8314523321094,240,,2.63565891472869,se,mean_error
+figure_2a.png,small mammal abundance,2020 mega,13.2558139534884,40.8314523321092,240,,2.63565891472868,se,mean_error
+figure_2a.png,small mammal abundance,2021 mega,27.6744186046512,33.2159461792692,204,,2.32558139534885,se,mean_error
+figure_2a.png,small mammal abundance,2022 mega,16.3565891472868,31.2240517833774,240,,2.01550387596897,se,mean_error
+figure_2a.png,small mammal abundance,2023 mega,15.5813953488372,31.2240517833778,240,,2.015503875969,se,mean_error
+figure_2b.png,mesoherbivore,2020 mega,48.1012658227849,90.1315600957864,30,,16.4556962025316,se,mean_error
+figure_2b.png,mesoherbivore,2021 mega,15.1898734177217,34.6659846522255,30,,6.3291139240506,se,mean_error
+figure_2b.png,mesoherbivore,2022 mega,26.5822784810128,90.1315600957867,30,,16.4556962025316,se,mean_error
+figure_2b.png,mesoherbivore,2023 mega,34.1772151898735,90.131560095787,30,,16.4556962025317,se,mean_error
+figure_2b.png,mesoherbivore,2020 open,94.9367088607596,138.663938608903,30,,25.3164556962026,se,mean_error
+figure_2b.png,mesoherbivore,2021 open,26.5822784810128,83.1983631653417,30,,15.1898734177215,se,mean_error
+figure_2b.png,mesoherbivore,2022 open,58.2278481012659,214.929104843799,30,,39.2405063291139,se,mean_error
+figure_2b.png,mesoherbivore,2023 open,208.860759493671,353.593043452702,30,,64.5569620253164,se,mean_error

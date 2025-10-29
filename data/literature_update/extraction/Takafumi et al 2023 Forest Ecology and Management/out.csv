@@ -1,0 +1,119 @@
+filename,variable,group_id,mean,sd,n,FIX SD,se,error_type,plot_type
+fig_s1_all_species.png,richness_allspecies,x1,41.09756098,4.87804878,8,3.449301372,1.219512195,se,mean_error
+fig_s1_all_species.png,richness_allspecies,x2,40.12195122,4.87804878,8,3.449301372,1.219512195,se,mean_error
+fig_s1_all_species.png,richness_allspecies,x3,40.48780488,15.12195122,8,10.69283425,3.780487805,se,mean_error
+fig_s1_all_species.png,richness_allspecies,x5,34.02439024,4.87804878,8,3.449301372,1.219512195,se,mean_error
+fig_s1_all_species.png,richness_allspecies,x9,32.07317073,28.29268293,8,20.00594796,7.073170732,se,mean_error
+fig_s1_all_species.png,richness_allspecies,c1,40.36585366,5.863812332,16,8.292682927,2.073170732,se,mean_error
+fig_s1_all_species.png,richness_allspecies,c2,44.63414634,4.139161646,16,5.853658537,1.463414634,se,mean_error
+fig_s1_all_species.png,richness_allspecies,c3,43.17073171,8.278323292,16,11.70731707,2.926829268,se,mean_error
+fig_s1_all_species.png,richness_allspecies,c5,39.87804878,5.863812332,16,8.292682927,2.073170732,se,mean_error
+fig_s1_all_species.png,richness_allspecies,c9,32.68292683,11.03776439,16,15.6097561,3.902439024,se,mean_error
+fig_s1_ferns.png,fern richness,x1,2.976076555,0.378928036,8,0.378928036,0.133971292,se,mean_error
+fig_s1_ferns.png,fern richness,x2,2.995215311,0.324795459,8,0.324795459,0.114832536,se,mean_error
+fig_s1_ferns.png,fern richness,x3,2.4784689,1.56984472,8,1.56984472,0.555023923,se,mean_error
+fig_s1_ferns.png,fern richness,x5,2,2.923159134,8,2.923159134,1.033492823,se,mean_error
+fig_s1_ferns.png,fern richness,x9,1.961722488,2.923159134,8,2.923159134,1.033492823,se,mean_error
+fig_s1_ferns.png,fern richness,c1,1.770334928,2.449760766,16,2.449760766,0.612440191,se,mean_error
+fig_s1_ferns.png,fern richness,c2,2.019138756,2.832535885,16,2.832535885,0.708133971,se,mean_error
+fig_s1_ferns.png,fern richness,c3,1.71291866,2.679425837,16,2.679425837,0.669856459,se,mean_error
+fig_s1_ferns.png,fern richness,c5,1.234449761,1.990430622,16,1.990430622,0.497607656,se,mean_error
+fig_s1_ferns.png,fern richness,c9,1.004784689,1.837320574,16,1.837320574,0.459330144,se,mean_error
+fig_s1_forbs.png,forb richness,x1,15.96698113,3.201992971,8,3.201992971,1.132075472,se,mean_error
+fig_s1_forbs.png,forb richness,x2,15.96698113,1.400871925,8,1.400871925,0.495283019,se,mean_error
+fig_s1_forbs.png,forb richness,x3,16.03773585,3.001868411,8,3.001868411,1.061320755,se,mean_error
+fig_s1_forbs.png,forb richness,x4,12.99528302,1.400871925,8,1.400871925,0.495283019,se,mean_error
+fig_s1_forbs.png,forb richness,x9,12.57075472,9.806103475,8,9.806103475,3.466981132,se,mean_error
+fig_s1_forbs.png,forb richness,c1,16.39150943,6.226415094,16,6.226415094,1.556603774,se,mean_error
+fig_s1_forbs.png,forb richness,c2,19.71698113,7.358490566,16,7.358490566,1.839622642,se,mean_error
+fig_s1_forbs.png,forb richness,c3,17.94811321,8.773584906,16,8.773584906,2.193396226,se,mean_error
+fig_s1_forbs.png,forb richness,c5,16.53301887,2.547169811,16,2.547169811,0.636792453,se,mean_error
+fig_s1_forbs.png,forb richness,c9,15.75471698,5.943396226,16,5.943396226,1.485849057,se,mean_error
+fig_s1_graminoids.png,graminoid richness,x1,3.484536082,1.516270211,8,1.516270211,0.536082474,se,mean_error
+fig_s1_graminoids.png,graminoid richness,x2,2.927835052,0.408226595,8,0.408226595,0.144329897,se,mean_error
+fig_s1_graminoids.png,graminoid richness,x3,2.989690722,0.291590425,8,0.291590425,0.103092784,se,mean_error
+fig_s1_graminoids.png,graminoid richness,x5,2.494845361,1.457952126,8,1.457952126,0.515463918,se,mean_error
+fig_s1_graminoids.png,graminoid richness,x9,1.979381443,2.857586167,8,2.857586167,1.010309278,se,mean_error
+fig_s1_graminoids.png,graminoid richness,c1,5.010309278,2.721649485,16,2.721649485,0.680412371,se,mean_error
+fig_s1_graminoids.png,graminoid richness,c2,4.721649485,2.969072165,16,2.969072165,0.742268041,se,mean_error
+fig_s1_graminoids.png,graminoid richness,c3,5.711340206,4.701030928,16,4.701030928,1.175257732,se,mean_error
+fig_s1_graminoids.png,graminoid richness,c5,4.989690722,3.546391753,16,3.546391753,0.886597938,se,mean_error
+fig_s1_graminoids.png,graminoid richness,c9,4.474226804,2.556701031,16,2.556701031,0.639175258,se,mean_error
+fig_s1_shrubs.png,shrub richness,x1,0.533333333,1.389402798,8,1.389402798,0.49122807,se,mean_error
+fig_s1_shrubs.png,shrub richness,x2,0.533333333,1.389402798,8,1.389402798,0.49122807,se,mean_error
+fig_s1_shrubs.png,shrub richness,x3,0.505263158,1.389402798,8,1.389402798,0.49122807,se,mean_error
+fig_s1_shrubs.png,shrub richness,x4,0.547368421,1.27031113,8,1.27031113,0.449122807,se,mean_error
+fig_s1_shrubs.png,shrub richness,x9,0.505263158,1.429100021,8,1.429100021,0.505263158,se,mean_error
+fig_s1_shrubs.png,shrub richness,c1,1.501754386,1.964912281,16,1.964912281,0.49122807,se,mean_error
+fig_s1_shrubs.png,shrub richness,c2,1.740350877,1.964912281,16,1.964912281,0.49122807,se,mean_error
+fig_s1_shrubs.png,shrub richness,c3,2.231578947,2.021052632,16,2.021052632,0.505263158,se,mean_error
+fig_s1_shrubs.png,shrub richness,c5,1.78245614,2.245614035,16,2.245614035,0.561403509,se,mean_error
+fig_s1_shrubs.png,shrub richness,c9,1.515789474,1.796491228,16,1.796491228,0.449122807,se,mean_error
+fig_s1_trees.png,tree richness,x1,10.98837209,2.959981875,8,2.959981875,1.046511628,se,mean_error
+fig_s1_trees.png,tree richness,x2,10.53488372,1.18399275,8,1.18399275,0.418604651,se,mean_error
+fig_s1_trees.png,tree richness,x3,10.98837209,2.861315812,8,2.861315812,1.011627907,se,mean_error
+fig_s1_trees.png,tree richness,x5,9.976744186,2.959981875,8,2.959981875,1.046511628,se,mean_error
+fig_s1_trees.png,tree richness,x9,10.46511628,1.578657,8,1.578657,0.558139535,se,mean_error
+fig_s1_trees.png,tree richness,c1,8.441860465,4.186046512,16,4.186046512,1.046511628,se,mean_error
+fig_s1_trees.png,tree richness,c2,9.76744186,4.465116279,16,4.465116279,1.11627907,se,mean_error
+fig_s1_trees.png,tree richness,c3,8.546511628,5.860465116,16,5.860465116,1.465116279,se,mean_error
+fig_s1_trees.png,tree richness,c5,8.720930233,5.441860465,16,5.441860465,1.360465116,se,mean_error
+fig_s1_trees.png,tree richness,c9,6.209302326,5.302325581,16,5.302325581,1.325581395,se,mean_error
+fig_s1_vines.png,vine richness,x1,5.525773196,1.457952126,8,1.457952126,0.515463918,se,mean_error
+fig_s1_vines.png,vine richness,x2,5.010309278,0.524862765,8,0.524862765,0.18556701,se,mean_error
+fig_s1_vines.png,vine richness,x3,5.525773196,1.399634041,8,1.399634041,0.494845361,se,mean_error
+fig_s1_vines.png,vine richness,x5,4.020618557,0.524862765,8,0.524862765,0.18556701,se,mean_error
+fig_s1_vines.png,vine richness,x9,3.010309278,2.857586167,8,2.857586167,1.010309278,se,mean_error
+fig_s1_vines.png,vine richness,c1,5.257731959,1.81443299,16,1.81443299,0.453608247,se,mean_error
+fig_s1_vines.png,vine richness,c2,4.969072165,1.979381443,16,1.979381443,0.494845361,se,mean_error
+fig_s1_vines.png,vine richness,c3,5.051546392,1.484536082,16,1.484536082,0.371134021,se,mean_error
+fig_s1_vines.png,vine richness,c5,4.783505155,1.896907216,16,1.896907216,0.474226804,se,mean_error
+fig_s1_vines.png,vine richness,c9,2.020618557,3.628865979,16,3.628865979,0.907216495,se,mean_error
+fig_s2_all_species.png,total cover,x1,56.86440678,23.73002418,8,23.73002418,8.389830508,se,mean_error
+fig_s2_all_species.png,total cover,x2,55.59322034,24.44911582,8,24.44911582,8.644067797,se,mean_error
+fig_s2_all_species.png,total cover,x9,72.62711864,15.10092448,8,15.10092448,5.338983051,se,mean_error
+fig_s2_all_species.png,total cover,c3,40.08474576,13.22033898,16,13.22033898,3.305084746,se,mean_error
+fig_s2_all_species.png,total cover,c5,26.10169492,12.20338983,16,12.20338983,3.050847458,se,mean_error
+fig_s2_all_species.png,total cover,c9,25.84745763,10.16949153,16,10.16949153,2.542372881,se,mean_error
+fig_s2_ferns.png,fern cover,x1,22.90076336,30.44337592,8,30.44337592,10.76335878,se,mean_error
+fig_s2_ferns.png,fern cover,x5,16.83206107,25.5853904,8,25.5853904,9.045801527,se,mean_error
+fig_s2_ferns.png,fern cover,x9,16.83206107,26.55698751,8,26.55698751,9.389312977,se,mean_error
+fig_s2_ferns.png,fern cover,c1,9.160305344,16.03053435,16,16.03053435,4.007633588,se,mean_error
+fig_s2_ferns.png,fern cover,c5,11.5648855,11.90839695,16,11.90839695,2.977099237,se,mean_error
+fig_s2_ferns.png,fern cover,c9,10.41984733,15.11450382,16,15.11450382,3.778625954,se,mean_error
+fig_s2_forbs.png,forb cover,x1,12.17391304,4.427103326,8,4.427103326,1.565217391,se,mean_error
+fig_s2_forbs.png,forb cover,x5,8.52173913,2.951402217,8,2.951402217,1.043478261,se,mean_error
+fig_s2_forbs.png,forb cover,x9,12.17391304,3.197352402,8,3.197352402,1.130434783,se,mean_error
+fig_s2_forbs.png,forb cover,c3,9.652173913,6.956521739,16,6.956521739,1.739130435,se,mean_error
+fig_s2_forbs.png,forb cover,c5,4.434782609,3.47826087,16,3.47826087,0.869565217,se,mean_error
+fig_s2_forbs.png,forb cover,c9,4.695652174,4.869565217,16,4.869565217,1.217391304,se,mean_error
+fig_s2_graminoids.png,graminoid cover,x1,0.318936877,0.451044857,8,0.451044857,0.159468439,se,mean_error
+fig_s2_graminoids.png,graminoid cover,x5,0.478405316,0.526219,8,0.526219,0.186046512,se,mean_error
+fig_s2_graminoids.png,graminoid cover,x9,0.584717608,0.826915571,8,0.826915571,0.292358804,se,mean_error
+fig_s2_graminoids.png,graminoid cover,c3,2.019933555,4.358803987,16,4.358803987,1.089700997,se,mean_error
+fig_s2_graminoids.png,graminoid cover,c5,1.009966777,0.956810631,16,0.956810631,0.239202658,se,mean_error
+fig_s2_graminoids.png,graminoid cover,c9,1.302325581,2.551495017,16,2.551495017,0.637873754,se,mean_error
+fig_s2_shrubs.png,shrub cover,x1,0.361607143,1.477348096,8,1.477348096,0.522321429,se,mean_error
+fig_s2_shrubs.png,shrub cover,x5,0.441964286,1.250063774,8,1.250063774,0.441964286,se,mean_error
+fig_s2_shrubs.png,shrub cover,x9,1.205357143,3.409264838,8,3.409264838,1.205357143,se,mean_error
+fig_s2_shrubs.png,shrub cover,c3,1.165178571,2.410714286,16,2.410714286,0.602678571,se,mean_error
+fig_s2_shrubs.png,shrub cover,c5,0.321428571,1.607142857,16,1.607142857,0.401785714,se,mean_error
+fig_s2_shrubs.png,shrub cover,c9,0.120535714,1.446428571,16,1.446428571,0.361607143,se,mean_error
+fig_s2_trees.png,tree cover,x3,19.31707317,5.518882195,8,5.518882195,1.951219512,se,mean_error
+fig_s2_trees.png,tree cover,x5,15.2195122,5.518882195,8,5.518882195,1.951219512,se,mean_error
+fig_s2_trees.png,tree cover,x9,41.56097561,6.622658634,8,6.622658634,2.341463415,se,mean_error
+fig_s2_trees.png,tree cover,c3,11.12195122,17.17073171,16,17.17073171,4.292682927,se,mean_error
+fig_s2_trees.png,tree cover,c5,4.097560976,8.585365854,16,8.585365854,2.146341463,se,mean_error
+fig_s2_trees.png,tree cover,c9,5.853658537,7.804878049,16,7.804878049,1.951219512,se,mean_error
+fig_s2_vines.png,vine cover,x1,13.38129496,23.60414003,8,23.60414003,8.345323741,se,mean_error
+fig_s2_vines.png,vine cover,x5,11.07913669,14.24387761,8,14.24387761,5.035971223,se,mean_error
+fig_s2_vines.png,vine cover,x9,12.94964029,14.24387761,8,14.24387761,5.035971223,se,mean_error
+fig_s2_vines.png,vine cover,c3,14.96402878,10.9352518,16,10.9352518,2.73381295,se,mean_error
+fig_s2_vines.png,vine cover,c5,3.165467626,5.755395683,16,5.755395683,1.438848921,se,mean_error
+fig_s2_vines.png,vine cover,c9,1.007194245,5.179856115,16,5.179856115,1.294964029,se,mean_error
+fig_s3.png,simpson index total,c3,0.867896679,0.12398524,16,0.12398524,0.03099631,se,mean_error
+fig_s3.png,simpson index total,real_c5,0.800369004,0.128413284,16,0.128413284,0.032103321,se,mean_error
+fig_s3.png,simpson index total,real_c9,0.774907749,0.234686347,16,0.234686347,0.058671587,se,mean_error
+fig_s3.png,simpson index total,x3,0.862361624,0.087670804,8,0.087670804,0.03099631,se,mean_error
+fig_s3.png,simpson index total,x9,0.894464945,0.028179901,8,0.028179901,0.0099631,se,mean_error
+fig_s3.png,simpson index total,x5,0.860147601,0.106457405,8,0.106457405,0.037638376,se,mean_error

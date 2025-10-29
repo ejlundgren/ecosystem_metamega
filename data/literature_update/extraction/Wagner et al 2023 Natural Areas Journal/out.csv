@@ -1,0 +1,47 @@
+filename,variable,group_id,mean,sd,,,,,,,n,r,se,error_type,plot_type
+fig_1a.jpg,bole native cover,edge deer,15.94559585,4.038156479,edge exclosure,12.78497409,8.213744161,,,,4,,2.01907824,sd,boxplot
+fig_1a.jpg,bole native cover,interior deer,13.45854922,7.517017699,interior exclosure,14.15803109,3.731156019,,,,5,,3.361712513,sd,boxplot
+fig_1a.jpg,bole native cover,,,,,,,,,,5,,3.673298059,sd,boxplot
+fig_1a.jpg,bole native cover,,,,,,,,,,5,,1.668623699,sd,boxplot
+fig_1b.jpg,bole introduced cover,edge deer,0.341954023,0.445969667,edge exclosure,0.043103448,0.01552235,,,,4,,0.222984833,sd,boxplot
+fig_1b.jpg,bole introduced cover,interior deer,0.051724138,0.096766308,interior exclosure,0.018678161,0.029517036,,,,5,,0.043275209,sd,boxplot
+fig_1b.jpg,bole introduced cover,,,,,,,,,,5,,0.006941806,sd,boxplot
+fig_1b.jpg,bole introduced cover,,,,,,,,,,5,,0.01320042,sd,boxplot
+fig_1c.jpg,bole herbaceous cover,edge deer,0.558510638,0.710819654,edge no deer,1.768617021,2.704013283,,,,4,,0.355409827,sd,boxplot
+fig_1c.jpg,bole herbaceous cover,interior deer,4.188829787,3.038702707,interior no deer,7.553191489,2.768578198,,,,5,,1.358949163,sd,boxplot
+fig_1c.jpg,bole herbaceous cover,,,,,,,,,,5,,1.209271502,sd,boxplot
+fig_1c.jpg,bole herbaceous cover,,,,,,,,,,5,,1.23814581,sd,boxplot
+fig_1d.jpg,bole woody cover,edge deer,15.23026316,3.228227535,edge no deer,10.84868421,5.772419944,,,,4,,1.614113768,sd,boxplot
+fig_1d.jpg,bole woody cover,interior deer,7.276315789,4.131850229,interior no deer,6.980263158,3.426568696,,,,5,,1.847819597,sd,boxplot
+fig_1d.jpg,bole woody cover,,,,,,,,,,5,,2.581504678,sd,boxplot
+fig_1d.jpg,bole woody cover,,,,,,,,,,5,,1.532408107,sd,boxplot
+fig_1e.jpg,firman native cover,edge deer,17.34693878,7.549053133,edge no deer,45.15306122,24.89351286,,,,8,,2.668993331,sd,boxplot
+fig_1e.jpg,firman native cover,interior deer,12.70408163,2.884989547,interior no deer,20.58673469,8.752462674,,,,5,,1.290206548,sd,boxplot
+fig_1e.jpg,firman native cover,,,,,,,,,,4,,12.44675643,sd,boxplot
+fig_1e.jpg,firman native cover,,,,,,,,,,5,,3.914220302,sd,boxplot
+fig_1f.jpg,firman introduced cover,edge deer,2.56512605,1.322560621,edge no deer,1.862394958,1.910717364,,,,8,,0.467595792,sd,boxplot
+fig_1f.jpg,firman introduced cover,interior deer,0.141806723,0.005342201,interior no deer,0.245798319,0,,,,5,,0.002389105,sd,boxplot
+fig_1f.jpg,firman introduced cover,,,,,,,,,,4,,0.955358682,sd,boxplot
+fig_1f.jpg,firman introduced cover,,,,,,,,,,5,,0,sd,boxplot
+fig_1g.jpg,firman herb cover,edge deer,5.515564202,4.316731507,edge no deer,17.9036965,22.18998911,,,,8,,1.526195061,sd,boxplot
+fig_1g.jpg,firman herb cover,interior deer,5.048638132,4.233589699,interior no deer,7.178988327,6.051487949,,,,5,,1.893318871,sd,boxplot
+fig_1g.jpg,firman herb cover,,,,,,,,,,4,,11.09499455,sd,boxplot
+fig_1g.jpg,firman herb cover,,,,,,,,,,5,,2.706307684,sd,boxplot
+fig_1h.jpg,firman woody cover,edge deer,13.55714286,6.04060595,edge no deer,28.91428571,9.503978842,,,,8,,2.135676715,sd,boxplot
+fig_1h.jpg,firman woody cover,interior deer,5.485714286,1.981731749,interior no deer,12,1.712466058,,,,5,,0.886257381,sd,boxplot
+fig_1h.jpg,firman woody cover,,,,,,,,,,4,,4.751989421,sd,boxplot
+fig_1h.jpg,firman woody cover,,,,,,,,,,5,,0.765838103,sd,boxplot
+fig_2a.jpg,firman native richness,edge deer,14.35929648,1.436673584,edge no deer,23.02763819,12.31289607,,,,8,,0.507940817,sd,boxplot
+fig_2a.jpg,firman native richness,interior deer,9.535175879,4.272626442,interior no deer,10.60301508,2.743324512,,,,4,,2.136313221,sd,boxplot
+fig_2a.jpg,firman native richness,,,,,,,,,,4,,6.156448034,sd,boxplot
+fig_2a.jpg,firman native richness,,,,,,,,,,5,,1.226852019,sd,boxplot
+fig_2b.jpg,firman introduced richness,edge deer,3.565436242,1.056099415,edge no deer,2.896392617,0.229381631,,,,8,,0.373387529,sd,boxplot
+fig_2b.jpg,firman introduced richness,,,,,,,,,,4,,0.114690815,sd,boxplot
+fig_2c.jpg,bole native richness,edge deer,10.33393502,2.355672123,edge no deer,9.047833935,0.414262103,,,,5,,1.0534886,sd,boxplot
+fig_2c.jpg,bole native richness,interior deer,11.76895307,11.95084413,interior no deer,12.42554152,6.190024979,,,,4,,5.975422066,sd,boxplot
+fig_2c.jpg,bole native richness,,,,,,,,,,5,,0.185263644,sd,boxplot
+fig_2c.jpg,bole native richness,,,,,,,,,,5,,2.768263327,sd,boxplot
+fig_2d.jpg,bole introduced richness,edge deer,2.136150235,2.662477426,0,NA,,,,,4,,1.331238713,sd,boxplot
+fig_2d.jpg,bole introduced richness,interior deer,0.375586854,0.830280133,0,NA,,,,,5,,0.371312564,sd,boxplot
+fig_2d.jpg,bole introduced richness,edge no deer,,,,,,,,,5,,0.164542123,sd,boxplot
+fig_2d.jpg,bole introduced richness,interior no deer,,,,,,,,,5,,0.185656282,sd,boxplot

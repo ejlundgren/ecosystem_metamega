@@ -1,0 +1,15 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2.png,biomass,dwarf_shrubs_open,7.38916256157648,16.5226697844814,20,,3.69458128078821,se,mean_error
+figure_2.png,biomass,rushes_open,22.9064039408868,23.1317376982736,20,,5.17241379310343,se,mean_error
+figure_2.png,biomass,horsetails,28.8177339901479,19.8272037413775,20,,4.43349753694582,se,mean_error
+figure_2.png,biomass,grass_open,48.7684729064041,19.827203741377,20,,4.43349753694571,se,mean_error
+figure_2.png,biomass,forb_open,50.9852216748771,33.045339568962,20,,7.38916256157626,se,mean_error
+figure_2.png,biomass,dwarfshrub_fence,12.5615763546799,19.8272037413775,20,,4.43349753694582,se,mean_error
+figure_2.png,biomass,rush_fence,16.9950738916257,19.8272037413775,20,,4.43349753694582,se,mean_error
+figure_2.png,biomass,horsetail_fence,22.9064039408868,19.8272037413775,20,,4.43349753694582,se,mean_error
+figure_2.png,biomass,grass_fence,73.8916256157636,23.1317376982739,20,,5.17241379310349,se,mean_error
+figure_2.png,biomass,forb_fence,79.0640394088671,26.4362716551697,20,,5.91133004926104,se,mean_error
+figure_3c.png,carbon_nitrogen,carbon_open,20,10.5226728352933,20,,2.35294117647064,se,mean_error
+figure_3c.png,carbon_nitrogen,a,12.3529411764706,10.5226728352931,20,,2.35294117647058,se,mean_error
+figure_3c.png,carbon_nitrogen,carbon_exclosure,31.7647058823529,15.7840092529397,20,,3.52941176470588,se,mean_error
+figure_3c.png,carbon_nitrogen,nitrogen_exclosure,23.5294117647059,10.522672835293,20,,2.35294117647055,se,mean_error

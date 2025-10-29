@@ -1,0 +1,7 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_1a.png,bacterial_OTU,open,1732.7337184874,85.1392593300769,7,,32.1796152850885,sd,boxplot
+fig_1a.png,bacterial_OTU,fenced,1572.01943277311,137.757088751863,7,,52.0672854533833,sd,boxplot
+fig_1b.png,fungal_OTU,open,412.254901960784,139.15726454577,7,,52.5965021594476,sd,boxplot
+fig_1b.png,fungal_OTU,fenced,391.013071895425,121.530013302312,7,,45.9340274326128,sd,boxplot
+fig_1c.png,ecto_OTU,open,6.15843949044586,4.64147682885158,7,,1.75431334360143,sd,boxplot
+fig_1c.png,ecto_OTU,femced,8.76990445859873,2.83947118080288,7,,1.07321922847705,sd,boxplot

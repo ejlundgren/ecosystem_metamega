@@ -1,0 +1,25 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_2_bottom.png,irrorata density,grazed june,10.5405405405406,10.7021566882288,8,,3.78378378378378,se,mean_error
+figure_2_bottom.png,irrorata density,grazed july,7.29729729729732,9.17327716133903,8,,3.24324324324326,se,mean_error
+figure_2_bottom.png,irrorata density,exclusion june,20.2702702702703,23.6976326667924,8,,8.37837837837839,se,mean_error
+figure_2_bottom.png,irrorata density,ungrazed july,12.1621621621622,19.110994086123,8,,6.75675675675677,se,mean_error
+figure_2_top.png,density fidicinium,grazed june,2.53012048192772,4.43006658092777,8,,1.56626506024097,se,mean_error
+figure_2_top.png,density fidicinium,grazed july,0.361445783132542,1.36309740951624,8,,0.481927710843374,se,mean_error
+figure_2_top.png,density fidicinium,ungrazed june,8.67469879518074,5.45238963806493,8,,1.92771084337349,se,mean_error
+figure_2_top.png,density fidicinium,ungrazed july,1.0843373493976,3.06696917141153,8,,1.08433734939759,se,mean_error
+figure_3_Araneae.png,prokelisa,grazed june,2.77777777777806,23.5702260395514,8,,8.33333333333326,se,mean_error
+figure_3_Araneae.png,prokelisa,g july,19.4444444444448,39.2837100659194,8,,13.8888888888889,se,mean_error
+figure_3_Araneae.png,prokelisa,ungrazed june,11.1111111111113,31.426968052736,8,,11.1111111111113,se,mean_error
+figure_3_Araneae.png,prokelisa,ungrazed july,22.2222222222226,62.8539361054708,8,,22.2222222222222,se,mean_error
+figure_3_Chaetopsis.png,chaetopsis,grazed june,6.00000000000001,9.69746442770119,8,,3.42857142857142,se,mean_error
+figure_3_Chaetopsis.png,chaetopsis,grazed july,4,6.86903730295508,8,,2.42857142857145,se,mean_error
+figure_3_Chaetopsis.png,chaetopsis,ungrazed june,11.7142857142857,10.1015254455222,8,,3.5714285714286,se,mean_error
+figure_3_Chaetopsis.png,chaetopsis,ungrazed july,13.5714285714286,17.374623766298,8,,6.14285714285714,se,mean_error
+figure_3_Diptera.png,diptera,the real grazed june,10.6194690265488,7.50909856127317,8,,2.6548672566372,se,mean_error
+figure_3_Diptera.png,diptera,grazed july,41.8141592920355,39.4227674466836,8,,13.9380530973451,se,mean_error
+figure_3_Diptera.png,diptera,ungrazed june,7.96460176991158,11.2636478419098,8,,3.98230088495581,se,mean_error
+figure_3_Diptera.png,diptera,ungrazed july,69.6902654867258,60.0727884901844,8,,21.2389380530973,se,mean_error
+figure_3_prokelisia.png,araneae,grazed june,0.25714285714286,1.45461966415518,8,,0.514285714285714,se,mean_error
+figure_3_prokelisia.png,araneae,grazed july,1.8,3.15167593900289,8,,1.11428571428571,se,mean_error
+figure_3_prokelisia.png,araneae,ungrazed july,0.600000000000001,0.969746442770124,8,,0.342857142857143,se,mean_error
+figure_3_prokelisia.png,araneae,the real ungrazed july,5.4,6.78822509939085,8,,2.4,se,mean_error

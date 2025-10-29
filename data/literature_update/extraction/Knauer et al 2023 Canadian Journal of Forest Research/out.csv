@@ -1,0 +1,9 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_2_cover.png,cover,2013 control,10.5223880597015,14.244706611136,48,,2.05604629911665,CI95,mean_error
+fig_2_cover.png,cover,2019 control,21.9402985074627,15.8274517901512,48,,2.2844958879074,CI95,mean_error
+fig_2_cover.png,cover,2013 exclosure,26.6417910447761,30.0721584012872,48,,4.34054218702406,CI95,mean_error
+fig_2_cover.png,cover,2019 exclosure,22.6119402985075,27.6980406327644,48,,3.99786780383793,CI95,mean_error
+fig_2_richness.png,richness,2013 control,27.9194630872483,10.4383283841982,48,,1.50664292562663,CI95,mean_error
+fig_2_richness.png,richness,2019 control,31.9463087248322,18.0298399363423,48,,2.60238323517327,CI95,mean_error
+fig_2_richness.png,richness,2013 exclosure,30.0671140939598,16.1319620483061,48,,2.32844815778659,CI95,mean_error
+fig_2_richness.png,richness,2019 exclosure,34.3624161073825,23.7234736004504,48,,3.42418846733325,CI95,mean_error

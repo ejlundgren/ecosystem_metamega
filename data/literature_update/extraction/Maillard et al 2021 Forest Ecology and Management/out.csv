@@ -1,0 +1,41 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_3.png,microbial abundance,in,58574380165.2893,25801113344.8733,19,,5919181352.69165,sd,boxplot
+fig_3.png,microbial abundance,out,52685950413.2232,19682848155.9053,19,,4515555054.34986,sd,boxplot
+fig_3.png,microbial abundance,absent,102427685950.413,34614082109.7118,14,,9251002572.30021,sd,boxplot
+fig_3.png,microbial abundance,present,74535123966.9421,25417485051.4839,10,,8037714515.59713,sd,boxplot
+fig_a2_bryo_cover.png,bryophyte,in,57.1694599627561,49.6967158082394,19,,11.401208528104,CI95,mean_error
+fig_a2_bryo_cover.png,bryophyte,out,83.6126629422719,47.6260193162293,19,,10.9261581727663,CI95,mean_error
+fig_a2_forb_cover.png,forb cover,in,14.3680709534368,40.237810963496,19,,9.23118693153536,CI95,mean_error
+fig_a2_forb_cover.png,forb cover,out,0.532150776053214,3.10659569938757,19,,0.71270193221413,CI95,mean_error
+fig_a2_pen_res.png,penetration resistance,in,0.666666666666667,0.232982936729579,19,,0.053449951409135,CI95,mean_error
+fig_a2_pen_res.png,penetration resistance,out,2.09047619047619,1.02724294830769,19,,0.235665694849368,CI95,mean_error
+fig_a2_shrub_cover.png,shrub,in,59.2017738359202,68.788904772153,19,,15.7812570704557,CI95,mean_error
+fig_a2_shrub_cover.png,shrub,out,26.6075388026608,65.0905765585965,19,,14.9328023892484,CI95,mean_error
+fig_a2_vasc_div.png,vascular div,in,1.54137931034483,0.690184561785117,19,,0.158339197748065,CI95,mean_error
+fig_a2_vasc_div.png,vascular div,out,1.14137931034483,1.05828299473718,19,,0.242786769880366,CI95,mean_error
+fig_a4_bryo_cover.png,bryophyte cover,absent,6.21483375959083,8.34886232499532,14,,2.2313273135341,CI95,mean_error
+fig_a4_bryo_cover.png,bryophyte cover,present,79.8721227621484,53.1062600949515,10,,16.7936739913357,CI95,mean_error
+fig_a4_bryo_div.png,bryophyte diversity,absent,1.12258064516129,0.492647450529814,14,,0.131665569453588,CI95,mean_error
+fig_a4_bryo_div.png,bryophyte diversity,present,1.53978494623656,0.888241256312382,10,,0.280886548167654,CI95,mean_error
+fig_a4_coni_cover.png,conifer cover,absent,17.2222222222222,33.7611754003129,14,,9.02305366591081,CI95,mean_error
+fig_a4_coni_cover.png,conifer cover,present,32.5925925925926,23.9023254736839,10,,7.55857898715041,CI95,mean_error
+fig_a4_gram_cover.png,graminoid cover,absent,0.0272727272727273,0.119440661970029,14,,0.0319218596529521,CI95,mean_error
+fig_a4_gram_cover.png,graminoid cover,present 10,0.210160427807487,0.253658635842383,10,,0.0802139037433155,CI95,mean_error
+fig_a4_pen_res.png,penetration,absent,0.759493670886076,0.289976031008056,14,,0.0774993541720488,CI95,mean_error
+fig_a4_pen_res.png,penetration,present,2.67721518987342,0.428880333657555,10,,0.135623869801085,CI95,mean_error
+fig_a4_pH.png,pH,absent,4.17155756207675,0.534350112820712,14,,0.142811074768508,CI95,mean_error
+fig_a4_pH.png,pH,present,3.58465011286682,0.320496192581677,10,,0.101349794997006,CI95,mean_error
+fig_a4_pteri_cover.png,pteridophyte cover,absent,21.3566739606127,41.4384420095538,14,,11.0748894743893,CI95,mean_error
+fig_a4_pteri_cover.png,pteridophyte cover,present,0,1.55338964238165,10,,0.491224936364044,CI95,mean_error
+fig_a4_shrub_cover.png,shrub cover,absent,115.753424657534,96.1042137013855,14,,25.6849315068493,CI95,mean_error
+fig_a4_shrub_cover.png,shrub cover,present,1.02739726027397,8.84058613410222,10,,2.79563880346658,CI95,mean_error
+fig_a4_swc.png,SWC,absent,257.20823798627,78.6319443351363,14,,21.0152710969972,CI95,mean_error
+fig_a4_swc.png,SWC,present,376.201372997712,124.05142831651,10,,39.2285060477279,CI95,mean_error
+fig_a4_total_P.png,total P,absent,845.93837535014,812.799295131823,14,,217.229749042474,CI95,mean_error
+fig_a4_total_P.png,total P,present,515.406162464987,424.818641822197,10,,134.33945006574,CI95,mean_error
+fig_a4_vasc_div.png,vascular div,absent,1.32644628099174,1.12016222997533,14,,0.299375948726598,CI95,mean_error
+fig_a4_vasc_div.png,vascular div,present,0.888429752066116,0.493355850169633,10,,0.156012818350481,CI95,mean_error
+fig_3bottom.png,alpha div bacteria,in,5.55785123966942,0.207828805432881,19,,0.0476791979178266,sd,boxplot
+fig_3bottom.png,alpha div bacteria,out,5.50413223140496,0.237616916152173,19,,0.0545130591991105,sd,boxplot
+fig_3bottom.png,alpha div bacteria,absent,6.29028925619835,0.213288963647557,14,,0.05700387331066,sd,boxplot
+fig_3bottom.png,alpha div bacteria,present,6.12706611570248,0.134768722528306,10,,0.0426176120540694,sd,boxplot

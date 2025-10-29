@@ -1,0 +1,15 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+fig_3a.png,shrubs,control,0.275132275132275,0.719693423464971,22,,0.153439153439154,se,mean_error
+fig_3a.png,shrubs,excl,1.54497354497355,3.77218621954053,22,,0.804232804232804,se,mean_error
+fig_3b.png,biomass per m2,march control,2.36254295532646,3.022175102979,22,,0.644329896907212,se,mean_error
+fig_3b.png,biomass per m2,july control,6.57216494845361,4.63400182456783,22,,0.987972508591067,se,mean_error
+fig_3b.png,biomass per m2,march exclos,10.6958762886598,12.2901787521146,22,,2.62027491408934,se,mean_error
+fig_3b.png,biomass per m2,july exclos,5.36941580756014,3.82808846377343,22,,0.816151202749143,se,mean_error
+fig_3c.png,grass biomass,march control,2.43055555555556,2.23934780199903,22,,0.477430555555555,se,mean_error
+fig_3c.png,grass biomass,july control,6.640625,4.68227267690708,22,,0.998263888888891,se,mean_error
+fig_3c.png,grass biomass,march exclosu,10.6770833333333,12.8253555932672,22,,2.734375,se,mean_error
+fig_3c.png,grass biomass,july exclosu,5.29513888888889,4.07154145818008,22,,0.868055555555559,se,mean_error
+fig_4a.png,bulk density,control,1.44083526682135,0.0870610813888355,22,,0.0185614849187938,se,mean_error
+fig_4a.png,bulk density,exclosure,1.30162412993039,0.185004797951273,22,,0.0394431554524364,se,mean_error
+fig_4b.png,water infiltration,control,0.128596802841918,0.126632894403758,22,,0.0269982238010656,se,mean_error
+fig_4b.png,water infiltration,exclos,0.28348134991119,0.236603565859654,22,,0.0504440497335701,se,mean_error

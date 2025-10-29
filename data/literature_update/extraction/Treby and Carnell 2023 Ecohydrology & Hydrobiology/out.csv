@@ -1,0 +1,59 @@
+filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+figure_3a.png,ch4,day-fence,75.49668874,33.27199759,18,,7.842285039,sd,boxplot
+figure_3a.png,ch4,night-fence,88.6589404,42.8239438,18,,10.09370035,sd,boxplot
+figure_3a.png,ch4,day-unfenced,65.31456954,51.85881118,18,,12.22323902,sd,boxplot
+figure_3a.png,ch4,night-unfenced,72.93046358,55.38438106,18,,13.05422381,sd,boxplot
+figure_3b.png,co2,day-fenced,344.8620996,106.2171343,18,,25.03561864,sd,boxplot
+figure_3b.png,co2,night-fenced,314.9688612,84.92182845,18,,20.01626692,sd,boxplot
+figure_3b.png,co2,day-unfenced,116.7704626,69.13751262,18,,16.295868,sd,boxplot
+figure_3b.png,co2,night-unfenced,185.5871886,40.98151074,18,,9.659434717,sd,boxplot
+figure_4a.png,bulk density,0-1F,0.597353497,0.245950185,8,,0.086956522,se,mean_error
+figure_4a.png,bulk density,1-2F,0.880907372,0.245950185,8,,0.086956522,se,mean_error
+figure_4a.png,bulk density,2-4F,1.009451796,0.245950185,8,,0.086956522,se,mean_error
+figure_4a.png,bulk density,4-6F,1.289224953,0.267337157,8,,0.094517958,se,mean_error
+figure_4a.png,bulk density,6-8F,1.459357278,0.224563212,8,,0.079395085,se,mean_error
+figure_4a.png,bulk density,0-1U,0.669187146,0.181789267,8,,0.064272212,se,mean_error
+figure_4a.png,bulk density,1-2U,0.703213611,0.181789267,8,,0.064272212,se,mean_error
+figure_4a.png,bulk density,2-4U,0.756143667,0.20317624,8,,0.071833648,se,mean_error
+figure_4a.png,bulk density,4-6U,0.986767486,0.299417616,8,,0.105860113,se,mean_error
+figure_4a.png,bulk density,6-8U,1.311909263,0.224563212,8,,0.079395085,se,mean_error
+figure_4b.png,percent nitrogen,0-1F,0.598651685,0.240257405,8,,0.08494382,se,mean_error
+figure_4b.png,percent nitrogen,1-2F,0.443595506,0.217375748,8,,0.076853933,se,mean_error
+figure_4b.png,percent nitrogen,2-4F,0.328988764,0.171612432,8,,0.060674157,se,mean_error
+figure_4b.png,percent nitrogen,4-6F,0.262921348,0.114408288,8,,0.040449438,se,mean_error
+figure_4b.png,percent nitrogen,6-8F,0.200898876,0.083899411,8,,0.029662921,se,mean_error
+figure_4b.png,percent nitrogen,0-1U,0.543370787,0.122035507,8,,0.043146067,se,mean_error
+figure_4b.png,percent nitrogen,1-2U,0.585168539,0.156357994,8,,0.055280899,se,mean_error
+figure_4b.png,percent nitrogen,2-4U,0.442247191,0.09534024,8,,0.033707865,se,mean_error
+figure_4b.png,percent nitrogen,4-6U,0.295280899,0.083899411,8,,0.029662921,se,mean_error
+figure_4b.png,percent nitrogen,6-8U,0.221123596,0.072458583,8,,0.025617978,se,mean_error
+figure_4c.png,SOC,0-1F,8,2.965729412,8,,1.048543689,se,mean_error
+figure_4c.png,SOC,1-2F,5.495145631,2.965729412,8,,1.048543689,se,mean_error
+figure_4c.png,SOC,2-4F,3.514563107,2.306678432,8,,0.815533981,se,mean_error
+figure_4c.png,SOC,4-6F,2.563106796,1.373022876,8,,0.485436893,se,mean_error
+figure_4c.png,SOC,6-8F,1.883495146,0.768892811,8,,0.27184466,se,mean_error
+figure_4c.png,SOC,0-1U,7.45631068,2.141915687,8,,0.757281553,se,mean_error
+figure_4c.png,SOC,1-2U,7.669902913,3.075571242,8,,1.087378641,se,mean_error
+figure_4c.png,SOC,2-4U,5.436893204,1.812390196,8,,0.640776699,se,mean_error
+figure_4c.png,SOC,4-6U,3.417475728,1.427943791,8,,0.504854369,se,mean_error
+figure_4c.png,SOC,6-8U,2.27184466,0.823813726,8,,0.291262136,se,mean_error
+figure_4d.png,soil organic carbon density,0-1F,41.91964286,7.576144084,8,,2.678571429,se,mean_error
+figure_4d.png,soil organic carbon density,1-2F,42.32142857,12.50063774,8,,4.419642857,se,mean_error
+figure_4d.png,soil organic carbon density,2-4F,31.33928571,10.98540892,8,,3.883928571,se,mean_error
+figure_4d.png,soil organic carbon density,4-6F,30.80357143,10.22779451,8,,3.616071429,se,mean_error
+figure_4d.png,soil organic carbon density,6-8F,27.99107143,10.22779451,8,,3.616071429,se,mean_error
+figure_4d.png,soil organic carbon density,0-1U,48.21428571,15.15228817,8,,5.357142857,se,mean_error
+figure_4d.png,soil organic carbon density,1-2U,52.90178571,21.59201064,8,,7.633928571,se,mean_error
+figure_4d.png,soil organic carbon density,2-4U,39.24107143,10.60660172,8,,3.75,se,mean_error
+figure_4d.png,soil organic carbon density,4-6U,32.14285714,9.848987309,8,,3.482142857,se,mean_error
+figure_4d.png,soil organic carbon density,6-8U,29.86607143,9.848987309,8,,3.482142857,se,mean_error
+figure_4e.png,C:N,0-1F,15.48704663,1.626711973,8,,0.575129534,se,mean_error
+figure_4e.png,C:N,1-2F,14.10362694,1.362920842,8,,0.481865285,se,mean_error
+figure_4e.png,C:N,2-4F,12.14507772,1.187060089,8,,0.419689119,se,mean_error
+figure_4e.png,C:N,4-6F,11.55440415,0.967234146,8,,0.341968912,se,mean_error
+figure_4e.png,C:N,6-8F,10.51295337,1.099129712,8,,0.388601036,se,mean_error
+figure_4e.png,C:N,0-1U,15.65803109,1.670677162,8,,0.590673575,se,mean_error
+figure_4e.png,C:N,1-2U,15.22279793,2.2861898,8,,0.808290155,se,mean_error
+figure_4e.png,C:N,2-4U,14.04145078,2.154294235,8,,0.761658031,se,mean_error
+figure_4e.png,C:N,4-6U,13.48186528,1.758607539,8,,0.621761658,se,mean_error
+figure_4e.png,C:N,6-8U,12.12953368,2.198259423,8,,0.777202073,se,mean_error
