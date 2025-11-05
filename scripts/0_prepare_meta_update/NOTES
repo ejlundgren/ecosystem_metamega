@@ -1,0 +1,12 @@
+#
+#
+
+November 2 2025
+
+I have noticed some errors in teh data collection. AFTER creating all the files
+
+Editing means, etc, is fine. But changing row numbers breaks the data point ID
+
+So no adding new effect sizes...Unless it's really bad. And then well have to output a
+file with the current data_point_IDs and responses merged in. And reorganize entire
+file structure

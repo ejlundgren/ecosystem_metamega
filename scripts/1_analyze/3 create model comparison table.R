@@ -16,7 +16,7 @@ rm(list = ls())
 gc()
 
 library("groundhog")
-groundhog.day <- "2024-07-15"
+groundhog.day <- "2025-04-15"
 libs <- c("data.table", "foreach", "parallel",
           "doSNOW", "metafor", "multcomp",
           "broom", "dplyr",
@@ -83,13 +83,13 @@ tidy_with_CIs <- function(m){
 # ~~~~~~~~~~~~~~~~~~~~~~~~ ------------------------------------------------
 # 0. Load data ------------------------------------------------------------
 
-dat <- fread("data/master_data.csv")
-guide <- readRDS("outputs/main_text/data/master_guide.Rds")
+dat <- readRDS("builds/analysis_ready/analysis_ready_dataset.Rds")
+guide <- readRDS("outputs/revision/data/master_guide.Rds")
 
 guide[!file.exists(model_path), ]
 guide[file.exists(model_path), ]
 
-length(list.files("outputs/main_text/models/"))
+length(list.files("outputs/revision/models/"))
 
 guide <- guide[file.exists(model_path), ]
 
@@ -98,7 +98,6 @@ m1 <- readRDS(guide[400, ]$model_path)
 m1
 
 I2(m1)
-
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 1. Extract model level information ----------------------------------------------
@@ -145,11 +144,13 @@ guide.mrg
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 2. Cast guide wide and choose best random effects by BIC -----------------------------
+unique(guide.mrg$model_type)
 
 guide.wide <- dcast(guide.mrg,
                     ... ~ model_type,
                     value.var = c("formula", "model_path", "i2", "BIC", "min_sigma", "model_id"))
 guide.wide[is.na(formula_nativeness), ]
+
 # These are the models that didn't run
 guide.wide <- guide.wide[!is.na(formula_nativeness), ]
 guide.wide <- guide.wide[!is.na(formula_null), ]
@@ -192,7 +193,6 @@ i <- 1
 
 coef <- c()
 
-
 clust <- prepare_cluster(n = nrow(guide.wide))
 
 posthoc_comp_out <- foreach(i = 1:nrow(guide.wide), 
@@ -217,6 +217,8 @@ posthoc_comp_out <- foreach(i = 1:nrow(guide.wide),
                  preferred_model = guide.wide[i, ]$preferred_model,
                  nativeness_var = guide.wide[i, ]$nativeness_var,
                  contrast = paste0("intercept-", term),
+                 effect_size = guide.wide[i, ]$effect_size,
+                 filter_big_CVs = guide.wide[i, ]$filter_big_CVs,
                  analysis_group = guide.wide[i, ]$analysis_group,
                  analysis_group_category = guide.wide[i, ]$analysis_group_category,
                  min_refs = guide.wide[i, ]$min_refs,
@@ -225,7 +227,8 @@ posthoc_comp_out <- foreach(i = 1:nrow(guide.wide),
       setDT(out)
       return(out)
         
-    }
+}
+
 stopCluster(clust_out$cluster)
 
 posthoc_final <- rbindlist(posthoc_comp_out)
@@ -267,7 +270,7 @@ posthoc_final[contrast == "intercept-Herbivore_nativenessNative",
 
 posthoc_final
 
-fwrite(posthoc_final, "outputs/main_text/summaries/posthoc_comparisons.csv",
+fwrite(posthoc_final, "outputs/revision/summaries/posthoc_comparisons.csv",
        na = "NA")
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
@@ -319,7 +322,7 @@ guide.wide.mrg
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 5. Save final model comparison table -----------------------------------------
 
-fwrite(guide.wide.mrg, "outputs/main_text/summaries/model_comparison_table.csv",
+fwrite(guide.wide.mrg, "outputs/revision/summaries/model_comparison_table.csv",
        na = "NA")
 
 

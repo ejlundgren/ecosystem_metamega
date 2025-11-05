@@ -18,42 +18,48 @@ groundhog.library(libs, groundhog.day)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --------------------------------------------
 # 0. Load data ------------------------------------------------------------
 
-dat <- fread("data/master_data.csv")
+dat <- readRDS("builds/analysis_ready/analysis_ready_dataset.Rds")
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --------------------------------------------
 # 1. Cross Join  -----------------------------------------------------
 #' *Cross join of analysis groups, nativeness vars (the predictors), and random effects*
 names(dat)
 
-guide <- CJ(analysis_group = unique(dat$analysis_group), 
+guide <- CJ(effect_size = c("smd", "rom"),
+            filter_big_CVs = c("yes", "no"),
+            analysis_group = unique(dat$analysis_group), 
             nativeness_var = c("Herbivore_nativeness", "Invasive", "Africa_Comparison"),
             site_id = c("yes", "no"),
             species_response = c("yes", "no"),
             time_series = c("yes", "no"))
 guide
 
+# The model comparison ID is for comparing random effect sizes
 guide[, model_comparison_id := paste(analysis_group, 
                                      nativeness_var,
+                                     effect_size,
+                                     filter_big_CVs,
                                      sep = "_")]
-
-guide[duplicated(model_comparison_id), ]
-guide
 
 # Merge in analysis_group_category
 guide.m <- merge(guide,
                  unique(dat[, .(analysis_group, analysis_group_category)]),
                  by = "analysis_group")
 nrow(guide.m) == nrow(guide)
+#' [Must be TRUE]
 
+guide.m
+
+unique(guide.m$analysis_group_category)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ------------------------------------------
 # 3. Create formulas ------------------------------------------------------
 
 # >>> Fixed effects -------------------------------------------------------
 
-guide.m[, formula_null := "yi_smd ~ 1"]
+guide.m[, formula_null := " ~ 1"]
 
-guide.m[, formula_nativeness := paste("yi_smd ~", nativeness_var)]
+guide.m[, formula_nativeness := paste(" ~", nativeness_var)]
 guide.m
 
 # >>> Exclusion formula-----------------------------------------------------
@@ -62,6 +68,16 @@ guide.m[, exclusion := paste0("!is.na(", nativeness_var, ") & analysis_group == 
 unique(guide.m$exclusion)
 
 unique(guide.m[nativeness_var == "Africa_Comparison"]$exclusion)
+
+names(dat)
+guide.m[, exclusion := paste0(exclusion, " & eff_type == '", effect_size, "' & !is.na(yi)")]
+guide.m
+
+guide.m$filter_big_CVs
+unique(dat$filter)
+guide.m[filter_big_CVs == "yes", exclusion := paste0(exclusion, " & filter == 'keep'")]
+
+unique(guide.m$exclusion)
 
 # >>> Random effect formulas -----------------------------------------------
 
@@ -86,7 +102,7 @@ sample_sizes <- list()
 guide_simple <- unique(guide.m[, .(model_comparison_id, analysis_group, nativeness_var,
                                    exclusion)])
 guide_simple[duplicated(model_comparison_id)]
-#' *Should be 0 rows*
+#' [Must be 0 rows]
 
 sub.dat <- c()
 i <- 1
@@ -94,37 +110,52 @@ i <- 1
 for(i in 1:nrow(guide_simple)){
   
   sub.dat <- dat[eval(parse(text = guide_simple[i, ]$exclusion)), ]
-  sample_sizes[[i]] <- sub.dat[, .(n_obs = .N, n_refs = uniqueN(Citation)),
-                               by = c(guide_simple[i, ]$nativeness_var)]
   
-  # Now calculate min/max sample sizes and number of levels of nativeness_var
-  sample_sizes[[i]] <- sample_sizes[[i]][, .(min_obs = min(n_obs),
-                                              max_obs = max(n_obs),
-                                              min_refs = min(n_refs),
-                                              max_refs = max(n_refs),
-                                              n_levels = .N)]
-  sample_sizes[[i]][, `:=` (model_comparison_id = guide_simple[i, ]$model_comparison_id)]
+  if(nrow(sub.dat) > 0){
+    sample_sizes[[i]] <- sub.dat[, .(n_obs = .N, n_refs = uniqueN(Citation)),
+                                 by = c(guide_simple[i, ]$nativeness_var)]
+    
+    # Now calculate min/max sample sizes and number of levels of nativeness_var
+    sample_sizes[[i]] <- sample_sizes[[i]][, .(min_obs = min(n_obs),
+                                               max_obs = max(n_obs),
+                                               min_refs = min(n_refs),
+                                               max_refs = max(n_refs),
+                                               n_levels = .N)]
+    sample_sizes[[i]][, `:=` (model_comparison_id = guide_simple[i, ]$model_comparison_id)]
+  }else{
+    sample_sizes[[i]] <- data.table(model_comparison_id = guide_simple[i, ]$model_comparison_id,
+                                    min_refs = 0,
+                                    n_levels = 0)
+  }
+ 
   cat(i, "/", nrow(guide_simple), "\r")
 }
 
-sample_sizes <- rbindlist(sample_sizes)
+sample_sizes <- rbindlist(sample_sizes, fill = T)
 sample_sizes
 
-
 guide.m2 <- merge(guide.m,
-                  sample_sizes,
+                  unique(sample_sizes),
                   by = "model_comparison_id")
 
 guide.m2
 
+range(guide.m2$min_refs)
 
 # >>> Filter to >= 3 references -------------------------------------------
+unique(guide.m2$analysis_group)
+
 guide.m2 <- guide.m2[min_refs >= 3, ]
 guide.m2
 
 range(guide.m2$n_levels)
+
 # Drop those with only 1 level of nativeness_var
 guide.m2 <- guide.m2[n_levels == 2, ]
+
+guide.m2
+unique(guide.m2$analysis_group)
+unique(guide.m2$analysis_group_category)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ------------------------------------------
 # Melt --------------------------------------------------------------------
@@ -156,8 +187,11 @@ setdiff(c("Citation", "data_point_ID", "species_response_tag",
 guide.mlt[, model_id := paste0("model_", seq(1:.N))]
 guide.mlt
 
-guide.mlt[, model_path := paste0("outputs/main_text/models/", model_id, ".Rds")]
+guide.mlt[, model_path := paste0("outputs/revision/models/", model_id, ".Rds")]
 guide.mlt
 
-saveRDS(guide.mlt, "outputs/main_text/data/master_guide.Rds")
+saveRDS(guide.mlt, "outputs/revision/data/master_guide.Rds")
+
+file.remove(list.files("outputs/revision/models/", full.names = T))
+
 

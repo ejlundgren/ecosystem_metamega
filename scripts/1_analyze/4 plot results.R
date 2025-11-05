@@ -8,25 +8,25 @@
 #
 # Prepare workspace ---------------------------------------
 #
-
+#
+#
 rm(list = ls())
 gc()
 
 library("groundhog")
-groundhog.day <- "2025-04-12"
+groundhog.day <- "2025-04-15"
 
 libs <- c("metafor", "broom", "data.table",
           "ggplot2", "tidyr", "multcomp",
           "shades", "patchwork", "dplyr",
           "scico", "beepr",
-          "plotly", "nlme", 
           "ggtext", "ggstance")
 groundhog.library(libs, groundhog.day)
 
 # >>> Helper functions  -------------------------------------
 
 getVars <- function(formula_str){
-  formula_str <- gsub("yi_smd ~ ", "", formula_str)
+  formula_str <- gsub("yi ~ ", "", formula_str)
   formula_str <- gsub("- 1", "", formula_str)
   
   formula_str <- gsub("[*]", "+", formula_str)
@@ -140,21 +140,44 @@ I2 <- function(mod){
 # ~~~~~~~~~~~~~~~~~ -------------------------------------------------------
 # Load datasets and model guide -----------------------------------------------
 
-dat <- fread("data/master_data.csv")
-dat[is.na(yi_smd)]
-range(dat[SD_High_Megafauna > 0]$SD_High_Megafauna^2 / dat[SD_High_Megafauna > 0]$Raw_Mean_High_Megafauna^2, 
-      na.rm = T)
-dat[, CV2_High_Megafauna := SD_High_Megafauna^2 / Raw_Mean_High_Megafauna^2]
-range(dat[CV2_High_Megafauna > 0 & CV2_High_Megafauna != Inf, ]$CV2_High_Megafauna)
+master_dat <- readRDS("builds/analysis_ready/analysis_ready_dataset.Rds")
 
+unique(master_dat$analysis_group_category)
+unique(master_dat$analysis_group)
 
-master_guide <- fread("outputs/main_text/summaries/model_comparison_table.csv")
+master_dat[is.na(yi)]
+
+master_guide <- fread("outputs/revision/summaries/model_comparison_table.csv")
 master_guide
+sort(unique(master_guide$analysis_group))
 
-posthocs <- fread("outputs/main_text/summaries/posthoc_comparisons.csv")
+master_posthocs <- fread("outputs/revision/summaries/posthoc_comparisons.csv")
 
-sub_guide <- master_guide[preferred_model == "yes", ]
-posthocs <- posthocs[preferred_model == "yes", ]
+sort(unique(master_guide$analysis_group))
+
+#
+master_guide <- master_guide[preferred_model == "yes", ]
+master_posthocs <- master_posthocs[preferred_model == "yes", ]
+sort(unique(master_guide$analysis_group))
+
+# 
+sub_guide <- master_guide[effect_size == "smd" &
+                         filter_big_CVs == "no"]
+sub_guide[duplicated(paste(analysis_group, nativeness_var))]
+
+posthocs <- master_posthocs[effect_size == "smd" &
+                         filter_big_CVs == "no"]
+
+unique(master_dat$filter)
+# dat <- master_dat[eff_type == "rom" & filter == "keep"]
+dat <- master_dat[eff_type == "smd"]
+
+dat
+
+dat[yi > 10, ]
+
+file_epithet <- "smd_no_filtering"
+
 
 # *** Set plotting constants ----------------------------------------------
 
@@ -173,8 +196,15 @@ theme_lundy <-   theme_bw()+
         panel.grid = element_blank(),
         panel.border = element_blank())
 
-dat[, wi := 1/sqrt(vi_smd)]
-dat[, pt_size := 10 * (wi-min(wi, na.rm=T)) / (max(wi, na.rm = T) - min(wi, na.rm=T)) + 0.01]
+dat[, wi := 1/sqrt(vi)]
+# For SMD:
+# dat[, pt_size := 10 * (wi-min(wi, na.rm=T)) / (max(wi, na.rm = T) - min(wi, na.rm=T)) + 0.01]
+
+# For ROM:
+dat[, pt_size :=  (wi-min(wi, na.rm=T)) / (max(wi, na.rm = T) - min(wi, na.rm=T)) + 2]
+
+# dat[, pt_size := 1/sqrt(vi)]
+range(dat$pt_size)
 
 # ~~~~~~~~~~~~~~~~~ -------------------------------------------------------
 # Main text figures ----------------------------------------------------
@@ -226,19 +256,18 @@ mods <- merge(mods,
 mods
 setnames(mods, "Herbivore_nativeness", "nativeness_comparison")
 
-unique(mods$analysis_group)
+sort(unique(mods$analysis_group))
 unique(mods$nativeness_comparison)
-
-unique(mods$analysis_group)
 
 # Melt dataset so the 3 comparison columns are in 1 column:
 sub_dat.mlt <- melt(dat[analysis_group %in% sub_guide$analysis_group, 
-                            .(data_point_ID, Citation, yi_smd, pt_size,
+                            .(data_point_ID, Citation, yi, pt_size,
                                 analysis_group, analysis_group_category,
                                 Herbivore_nativeness, Invasive, Africa_Comparison)],
                     measure.vars = c("Herbivore_nativeness", "Invasive", "Africa_Comparison"),
                     value.name = "nativeness_comparison",
                     variable.name = "nativeness_var")
+
 # Drop redundant 'Native' for Invasive models
 sub_dat.mlt <- sub_dat.mlt[!(nativeness_var == "Invasive" &
                                nativeness_comparison == "Native")]
@@ -249,14 +278,23 @@ mods <- mods[!(nativeness_var == "Invasive" &
 # >>> Prepare for plotting ------------------------------------------------
 
 lvls <- c("Primary_Productivity",
+          "Aboveground_Primary_Productivity",
           "Dead_Vegetation",
           "Litter_Cover", "Bare_Ground",
           "Soil_Compaction", "Soil_Moisture",
+          "Soil_Temperature", 
+          "Soil_Respiration", "CO2_Respiration",
+          "Soil_Decomposition_Rate",
+          "Root_Biomass",
+          "Soil_Organic_Matter",
+          "Soil_Organic_C", 
           "Soil_Total_C",
-          "Soil_C:N", "Soil_Total_N",
+          "Soil_C:N", "Soil_Total_N", "Soil_Temperature",
           "Soil_Labile_N", "Soil_Total_P",
-          "Soil_Total_Ca", "Soil_Total_Mg",
+          "Soil_Total_Ca", "Soil_Total_Mg", "Soil_K",
+          "Soil_pH", "Microbe_Abundance", "Fungi_Abundance",
           
+          "Plant_C:N", "Plant_C", "Plant_N", 
           
           "Invertebrate_Diversity", "Invertebrate_Abundance",
           "Invert_Herbivore_Diversity", "Invert_Herbivore_Abundance",
@@ -266,10 +304,17 @@ lvls <- c("Primary_Productivity",
           "Vertebrate_Diversity", "Vertebrate_Abundance",
           "Vert_Herb_Diversity", "Vert_Herb_Abundance",
           "Vert_Carn_Diversity", "Vert_Carn_Abundance",
-          "Small_Mammal_Abundance",
-          "Bird_Diversity", "Bird_Abundance")
+          "Mammal_Abundance", "Mammal_Diversity",
+          "Small_Mammal_Abundance", "Mamm_SmallHerb_Abundance",
+          "TerrestrialBird_Abundance",
+          "Bird_Diversity", "Bird_Abundance", "Bird_Carnivore_Abundance",
+          "Bird_Omnivore_Abundance", "Herpetofauna_Abundance")
+lvls <- unique(lvls)
 setdiff(mods$analysis_group, lvls)
 setdiff(sub_dat.mlt$analysis_group, lvls)
+setdiff(lvls, sub_dat.mlt$analysis_group)
+
+
 
 # 
 N <- sub_dat.mlt[, .(obs = .N, refs = uniqueN(Citation)),
@@ -311,14 +356,13 @@ N$nativeness_comparison <- factor(N$nativeness_comparison,
 
 unique(mods$analysis_group_category)
 mods$analysis_group_category <- factor(mods$analysis_group_category,
-                                     levels = rev(c("Ecosystem", "Invertebrates", "Vertebrates")))
+                                     levels = rev(c("Ecosystem", "Soil", "Microbes", "Invertebrates", "Vertebrates")))
 
 sub_dat.mlt$analysis_group_category <- factor(sub_dat.mlt$analysis_group_category,
-                                              levels = rev(c("Ecosystem", "Invertebrates", "Vertebrates")))
+                                              levels = rev(c("Ecosystem", "Soil", "Microbes","Invertebrates", "Vertebrates")))
 
 N$analysis_group_category <- factor(N$analysis_group_category,
-                                    levels = rev(c("Ecosystem", "Invertebrates", "Vertebrates")))
-
+                                    levels = rev(c("Ecosystem", "Soil", "Microbes","Invertebrates", "Vertebrates")))
 
 # Drop some combinations that don't have models:
 mods[, key := paste(analysis_group, nativeness_comparison, nativeness_var)]
@@ -335,7 +379,7 @@ eco <- ggplot()+
   annotate(geom = "label", y = 2, x = Inf, label = "Positive effect",
            size = 2.75, label.size = NA, fontface = "italic")+
   geom_hline(yintercept = 0, color = "grey50", linetype = "dashed")+
-  geom_text(data = N[analysis_group_category == "Ecosystem" &
+  geom_text(data = N[analysis_group_category %in% c("Ecosystem", "Soil", "Microbes") &
                         nativeness_var != "Africa_Comparison"],
              aes(y = -6.5, x = analysis_group,
                  color = nativeness_comparison,
@@ -343,30 +387,30 @@ eco <- ggplot()+
                  label = n_lab),
              label.size = NA, size = 2.5,
              position = position_dodge(width = .66))+
-  geom_jitter(data = sub_dat.mlt[analysis_group_category == "Ecosystem" &
+  geom_jitter(data = sub_dat.mlt[analysis_group_category %in% c("Ecosystem", "Soil", "Microbes") &
                                    nativeness_var != "Africa_Comparison"], 
-              aes(y = yi_smd, x = analysis_group, 
+              aes(y = yi, x = analysis_group, 
                   fill = nativeness_comparison,
                   group = nativeness_comparison,
                   size = pt_size),
               shape = 21, alpha = .25, 
               position = position_jitterdodge(dodge.width = 0.6,
                                               jitter.width = 0.25))+
-  geom_errorbar(data = mods[analysis_group_category == "Ecosystem" &
+  geom_errorbar(data = mods[analysis_group_category %in% c("Ecosystem", "Soil", "Microbes") &
                               nativeness_var != "Africa_Comparison"], 
                 aes(ymin = ci.lb, ymax = ci.ub, 
                      x = analysis_group,
                      group = nativeness_comparison),
                 position = position_dodge(width = .66),
-                width = .25)+
-  geom_pointrange(data = mods[analysis_group_category == "Ecosystem" &
+                width = .5)+
+  geom_point(data = mods[analysis_group_category %in% c("Ecosystem", "Soil", "Microbes") &
                                 nativeness_var != "Africa_Comparison"], 
-                  aes(y = pred, ymin = pi.lb, ymax = pi.ub, 
+                  aes(y = pred, #ymin = pi.lb, ymax = pi.ub, 
                       fill = nativeness_comparison,
                       group = nativeness_comparison,
                       x = analysis_group),
-                  shape = 21, position = position_dodge(width = .66),
-                  size = .75)+
+             size = 3,
+                  shape = 21, position = position_dodge(width = .66))+
   scale_size_identity()+
   scale_fill_manual(name = "Megafauna nativeness", 
                     values=rev(tertiary_palette),
@@ -404,7 +448,7 @@ inverts <- ggplot()+
              position = position_dodge(width = .66))+
   geom_jitter(data = sub_dat.mlt[analysis_group_category == "Invertebrates" &
                                    nativeness_var != "Africa_Comparison"], 
-              aes(y = yi_smd, x = analysis_group, 
+              aes(y = yi, x = analysis_group, 
                   fill = nativeness_comparison,
                   group = nativeness_comparison,
                   size = pt_size),
@@ -417,15 +461,15 @@ inverts <- ggplot()+
                     x = analysis_group,
                     group = nativeness_comparison),
                 position = position_dodge(width = .66),
-                width = .25)+
-  geom_pointrange(data = mods[analysis_group_category == "Invertebrates" &
+                width = .5)+
+  geom_point(data = mods[analysis_group_category == "Invertebrates" &
                                 nativeness_var != "Africa_Comparison"], 
-                  aes(y = pred, ymin = pi.lb, ymax = pi.ub, 
+                  aes(y = pred, #ymin = pi.lb, ymax = pi.ub, 
                       fill = nativeness_comparison,
                       group = nativeness_comparison,
                       x = analysis_group),
                   shape = 21, position = position_dodge(width = .66),
-                  size = .75)+
+             size = 3)+
   scale_size_identity()+
   scale_fill_manual(name = "Megafauna nativeness", 
                     values=rev(tertiary_palette),
@@ -470,7 +514,7 @@ verts <- ggplot()+
              position = position_dodge(width = .66))+
   geom_jitter(data = sub_dat.mlt[analysis_group_category == "Vertebrates" &
                                    nativeness_var != "Africa_Comparison"], 
-              aes(y = yi_smd, x = analysis_group, 
+              aes(y = yi, x = analysis_group, 
                   fill = nativeness_comparison,
                   group = nativeness_comparison,
                   size = pt_size),
@@ -483,15 +527,15 @@ verts <- ggplot()+
                     x = analysis_group,
                     group = nativeness_comparison),
                 position = position_dodge(width = .66),
-                width = .25)+
-  geom_pointrange(data = mods[analysis_group_category == "Vertebrates" &
+                width = .5)+
+  geom_point(data = mods[analysis_group_category == "Vertebrates" &
                                 nativeness_var != "Africa_Comparison"], 
-                  aes(y = pred, ymin = pi.lb, ymax = pi.ub, 
+                  aes(y = pred, #ymin = pi.lb, ymax = pi.ub, 
                       fill = nativeness_comparison,
                       group = nativeness_comparison,
                       x = analysis_group),
                   shape = 21, position = position_dodge(width = .66),
-                  size = .75)+
+             size = 3)+
   scale_size_identity()+
   scale_fill_manual(name = "Megafauna nativeness", 
                     values=rev(tertiary_palette),
@@ -537,7 +581,7 @@ africa.p.1 <- ggplot()+
              position = position_dodge(width = .66))+
   geom_jitter(data = sub_dat.mlt[nativeness_var == "Africa_Comparison" &
                                    analysis_group_category == "Vertebrates"], 
-              aes(y = yi_smd, x = analysis_group, 
+              aes(y = yi, x = analysis_group, 
                   fill = nativeness_comparison,
                   group = nativeness_comparison,
                   size = pt_size),
@@ -550,15 +594,15 @@ africa.p.1 <- ggplot()+
                     x = analysis_group,
                     group = nativeness_comparison),
                 position = position_dodge(width = .66),
-                width = .25)+
-  geom_pointrange(data = mods[nativeness_var == "Africa_Comparison" &
+                width = .5)+
+  geom_point(data = mods[nativeness_var == "Africa_Comparison" &
                                 analysis_group_category == "Vertebrates"], 
-                  aes(y = pred, ymin = pi.lb, ymax = pi.ub, 
+                  aes(y = pred, #ymin = pi.lb, ymax = pi.ub, 
                       fill = nativeness_comparison,
                       group = nativeness_comparison,
                       x = analysis_group),
                   shape = 21, position = position_dodge(width = .66),
-                  size = .75)+
+             size = 3)+
   scale_size_identity()+
   scale_fill_manual(name = NULL, 
                     values= c("Intact_Africa" = "#d7a4a3",
@@ -585,7 +629,6 @@ africa.p.1 <- ggplot()+
   coord_flip(ylim = c(-7, 7), clip = 'off')
 africa.p.1
 
-
 africa.p.2 <- ggplot()+
   geom_hline(yintercept = 0, color = "grey50", linetype = "dashed")+
   geom_text(data = N[nativeness_var == "Africa_Comparison" &
@@ -598,7 +641,7 @@ africa.p.2 <- ggplot()+
              position = position_dodge(width = .66))+
   geom_jitter(data = sub_dat.mlt[nativeness_var == "Africa_Comparison" &
                                    analysis_group_category == "Invertebrates"], 
-              aes(y = yi_smd, x = analysis_group, 
+              aes(y = yi, x = analysis_group, 
                   fill = nativeness_comparison,
                   group = nativeness_comparison,
                   size = pt_size),
@@ -611,15 +654,15 @@ africa.p.2 <- ggplot()+
                     x = analysis_group,
                     group = nativeness_comparison),
                 position = position_dodge(width = .66),
-                width = .25)+
-  geom_pointrange(data = mods[nativeness_var == "Africa_Comparison" &
+                width = .5)+
+  geom_point(data = mods[nativeness_var == "Africa_Comparison" &
                                 analysis_group_category == "Invertebrates"], 
-                  aes(y = pred, ymin = pi.lb, ymax = pi.ub, 
+                  aes(y = pred, #ymin = pi.lb, ymax = pi.ub, 
                       fill = nativeness_comparison,
                       group = nativeness_comparison,
                       x = analysis_group),
                   shape = 21, position = position_dodge(width = .66),
-                  size = .75)+
+             size = 3)+
   scale_size_identity()+
   scale_fill_manual(name = NULL, 
                     values= c("Intact_Africa" = "#d7a4a3",
@@ -647,11 +690,10 @@ africa.p.2 <- ggplot()+
 africa.p.2
 
 
-
 africa.p.3 <- ggplot()+
   geom_hline(yintercept = 0, color = "grey50", linetype = "dashed")+
   geom_text(data = N[nativeness_var == "Africa_Comparison" &
-                        analysis_group_category == "Ecosystem"],
+                        analysis_group_category %in% c("Ecosystem", "Soil", "Microbes")],
              aes(y = -6.5, x = analysis_group,
                  color = nativeness_comparison,
                  group = nativeness_comparison,
@@ -659,8 +701,8 @@ africa.p.3 <- ggplot()+
              label.size = NA, size = 2.5,
              position = position_dodge(width = .66))+
   geom_jitter(data = sub_dat.mlt[nativeness_var == "Africa_Comparison" &
-                                   analysis_group_category == "Ecosystem"], 
-              aes(y = yi_smd, x = analysis_group, 
+                                   analysis_group_category %in% c("Ecosystem", "Soil", "Microbes")],
+              aes(y = yi, x = analysis_group, 
                   fill = nativeness_comparison,
                   group = nativeness_comparison,
                   size = pt_size),
@@ -668,20 +710,20 @@ africa.p.3 <- ggplot()+
               position = position_jitterdodge(dodge.width = 0.6,
                                               jitter.width = 0.25))+
   geom_errorbar(data = mods[nativeness_var == "Africa_Comparison" &
-                              analysis_group_category == "Ecosystem"], 
+                              analysis_group_category %in% c("Ecosystem", "Soil", "Microbes")],
                 aes(ymin = ci.lb, ymax = ci.ub, 
                     x = analysis_group,
                     group = nativeness_comparison),
                 position = position_dodge(width = .66),
-                width = .25)+
-  geom_pointrange(data = mods[nativeness_var == "Africa_Comparison" &
-                                analysis_group_category == "Ecosystem"], 
-                  aes(y = pred, ymin = pi.lb, ymax = pi.ub, 
+                width = .5)+
+  geom_point(data = mods[nativeness_var == "Africa_Comparison" &
+                                analysis_group_category %in% c("Ecosystem", "Soil", "Microbes")],
+                  aes(y = pred, #ymin = pi.lb, ymax = pi.ub, 
                       fill = nativeness_comparison,
                       group = nativeness_comparison,
                       x = analysis_group),
                   shape = 21, position = position_dodge(width = .66),
-                  size = .75)+
+             size = 3)+
   scale_size_identity()+
   scale_fill_manual(name = NULL, 
                     values= c("Intact_Africa" = "#d7a4a3",
@@ -713,14 +755,9 @@ africa.p.3
 
 # >>> Prepare for plotting ------------------------------------------------
 
-posthocs <- fread("outputs/main_text/summaries/posthoc_comparisons.csv")
-
-posthocs <- posthocs[preferred_model == "yes", ]
-
-posthocs
-
 unique(posthocs$contrast)
 
+posthocs[p.value < 0.05, ]
 posthocs[, p.value.rounded := round(p.value, 2)]
 posthocs[p.value.rounded == 0, ]$p.value
 posthocs[p.value.rounded == 0, p.value.rounded := 0.003]
@@ -734,6 +771,9 @@ posthocs$contrast <- factor(posthocs$contrast,
 levels(mods$analysis_group)
 posthocs$analysis_group <- factor(posthocs$analysis_group,
                                   levels(mods$analysis_group))
+
+posthocs$analysis_group_category <- factor(posthocs$analysis_group_category,
+                                  levels(mods$analysis_group_category))
 
 # >>> Figures -------------------------------------------------------------
 
@@ -832,7 +872,7 @@ p.post.eco <- ggplot()+
            size = 2.75, label.size = NA, fontface = "italic")+
   annotate(geom = "label", x = 1, y = Inf, label = "More positive",
            size = 2.75, label.size = NA, fontface = "italic")+
-  geom_errorbar(data = posthocs[analysis_group_category == "Ecosystem" &
+  geom_errorbar(data = posthocs[analysis_group_category %in% c("Ecosystem", "Soil", "Microbes") &
                                   nativeness_var != "Africa_Comparison"],
                 aes(y = analysis_group,
                     xmin = ci.lb, xmax = ci.ub,
@@ -840,14 +880,14 @@ p.post.eco <- ggplot()+
                 width = .25,
                 position = position_dodgev(height = .75),
                 shape = 21)+
-  geom_point(data = posthocs[analysis_group_category == "Ecosystem" &
+  geom_point(data = posthocs[analysis_group_category %in% c("Ecosystem", "Soil", "Microbes") &
                                nativeness_var != "Africa_Comparison"],
              aes(x = estimate, y = analysis_group,
                  fill = contrast),
              size = 3,
              position = position_dodgev(height = .75),
              shape = 21)+
-  geom_text(data = posthocs[analysis_group_category == "Ecosystem" &
+  geom_text(data = posthocs[analysis_group_category %in% c("Ecosystem", "Soil", "Microbes") &
                               nativeness_var != "Africa_Comparison"], 
             aes(x = 1.5, y = analysis_group,
                 color = contrast, 
@@ -865,7 +905,7 @@ p.post.eco <- ggplot()+
   scale_y_discrete(labels = group_labels)+
   ylab(NULL)+
   xlab("Difference relative to native megafauna\n(Hedges' g ± CIs)")+
-  coord_cartesian(xlim = c(-2, 2), clip = "off")+
+  coord_cartesian(xlim = c(-4, 4), clip = "off")+
   theme_lundy
 p.post.eco
 
@@ -959,21 +999,21 @@ p.post.africa.2
 p.post.africa.3 <- ggplot()+
   geom_vline(xintercept = 0, color = "grey50", linetype = "dashed")+
   geom_errorbar(data = posthocs[nativeness_var == "Africa_Comparison" &
-                                  analysis_group_category == "Ecosystem"],
+                                  analysis_group_category %in% c("Ecosystem", "Soil", "Microbes")],
                 aes(y = analysis_group,
                     xmin = ci.lb, xmax = ci.ub,
                     group = contrast),
                 width = .25,
                 position = position_dodgev(height = .75))+
   geom_point(data = posthocs[nativeness_var == "Africa_Comparison" &
-                               analysis_group_category == "Ecosystem"],
+                               analysis_group_category %in% c("Ecosystem", "Soil", "Microbes")],
              aes(x = estimate, y = analysis_group,
                  fill = contrast),
              size = 3,
              position = position_dodgev(height = .75),
              shape = 21)+
   geom_text(data = posthocs[nativeness_var == "Africa_Comparison" &
-                              analysis_group_category == "Ecosystem"], 
+                              analysis_group_category %in% c("Ecosystem", "Soil", "Microbes")], 
             aes(x = 3, y = analysis_group,
                 color = contrast, 
                 label = paste0("p=", p.value.rounded)),
@@ -1021,13 +1061,14 @@ fig1 <- verts + theme(axis.text.x = element_blank(),
               widths = c(.66, .33))+
   plot_annotation(tag_levels = "A")
 fig1
-ggsave("figures/main_text/Fig 1A-D raw.pdf", width = 10, height = 8)
+
+ggsave(paste0("figures/revision/main_text/Fig 1A-D raw_", file_epithet, ".pdf"), width = 10, height = 9)
 
 #
 eco + p.post.eco + theme(axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   plot_annotation(tag_levels = "A")
 
-ggsave("figures/main_text/Fig 2A & B raw.pdf", width = 10, height = 8)
+ggsave(paste0("figures/revision/main_text/Fig 2A & B raw_", file_epithet, ".pdf"), width = 11, height = 10)
 
 
 africa.p.1 + theme(axis.text.x = element_blank(),
@@ -1056,7 +1097,7 @@ africa.p.1 + theme(axis.text.x = element_blank(),
   plot_layout(ncol = 2, heights = c(4/12, 3/12, 5/12), widths = c(.66, .33))+
   plot_annotation(tag_levels = "A")
 
-ggsave("figures/main_text/Fig 3 raw.pdf", width = 10, height = 8)
+ggsave(paste0("figures/revision/main_text/Fig 3 raw_", file_epithet, ".pdf"), width = 10, height = 8)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ------------------------------------------
 # Text summaries ------------------------------------------------------

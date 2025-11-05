@@ -1,0 +1,294 @@
+#' *March 21 2025*
+#' *Updated November 4th, 2025*
+#
+#
+#' [Produce funnel plot figures]
+#
+#
+#
+# Prepare workspace ---------------------------------------
+#
+rm(list = ls())
+gc()
+
+# Groundhog makes libraries consistent.
+library("groundhog")
+groundhog.day <- "2025-04-15"
+libs <- c("metafor", "broom", "data.table",
+          "ggplot2", "tidyr", "multcomp",
+          "shades", "patchwork", "dplyr",
+          "scico", "stringr",
+          "plotly", "nlme", 
+          "ggtext")#"ggh4x", "ggstance"
+groundhog.library(libs, groundhog.day)
+library("orchaRd")
+
+# 
+#' [Tried bias per nativeness group. No go. Ask Shinichi about itneractions of bias with categorical or continuous variables]
+#' [BUT, let's redo simpler. Bias should be done with sqrt(1/eff_N) as predictor]
+#' [IF the N coefficient is NOT significant, the intercept is an adjusted estimate of impact without bias]
+#' [IF the N coefficient IS significant, then do (1/eff_N), whose intercept provides a less bias estimate of overall effect]
+#' [REF: Nakagawa 2022 MEE]
+
+# >>> Helper functions ----------------------------------------------------
+
+
+tidy_with_CIs <- function(m){
+  x <- tidy(m) %>%
+    mutate(ci.lb = m$ci.lb, ci.ub = m$ci.ub)
+  return(x)
+}
+
+
+prepare_cluster <- function(n){
+  require("parallel")
+  require("foreach")
+  require("doSNOW")
+  
+  nCores <- parallel::detectCores() -1 
+  cl <- makeCluster(nCores)
+  registerDoSNOW(cl)
+  
+  # Progress bar
+  pb <- txtProgressBar(max = n, style = 3)
+  progress <- function(n) setTxtProgressBar(pb, n)
+  opts <- list(progress = progress)
+  
+  ret <- list(opts, pb, cl)
+  names(ret) <- c("options", "progress", "cluster")
+  return(ret)
+  
+  cat("Pass 'x$options' to .opts in foreach;
+      'x$progress' to setTxtProgressBar(x$progress, i);
+      'x$cluster' to stopCluster(x$cluster) after foreach")
+}
+
+
+
+rma_predictions <- function(m, newgrid,
+                            has_intercept = T){
+  
+  if(!is.data.frame(newgrid)){errorCondition("ERROR newgrid must be a data frame")}
+  #create the new model matrix. 
+  
+  if(!all(unlist(lapply(names(newgrid), # lapply through names of newgrid to check that they're in formula
+                        function(x) grepl(pattern=x,
+                                          x = as.character(m$formula.mods)[-1]))))){
+    errorCondition("ERROR: variables in newgrid are not in model formula")
+  }
+  
+  
+  # Drop levels that might be missing from the model...
+  cols <- names(newgrid)
+  coef_nms <- names(coef(m))
+  temp <- c()
+  
+  if(has_intercept == F){
+    
+    for(i in 1:length(cols)){
+      if(class(unlist(newgrid[, cols[i], with = F])) %in% c("factor", "character")){
+        temp <- paste0(names(newgrid[, cols[i], with = F]),
+                       unlist(newgrid[, cols[i], with = F]))
+        newgrid <- newgrid[temp %in% coef_nms, ]
+      }
+    }
+    
+  }
+  
+  newgrid
+  
+  # Create prediction matrix
+  predgrid <- (model.matrix(m$formula.mods, data=newgrid))
+  predgrid
+  
+  if(any(grepl("intercept", colnames(predgrid), 
+               ignore.case = TRUE))){
+    #if intercept is present, remove it?
+    predgrid <- predgrid[, -1]
+  }
+  
+  # predict onto the new model matrix
+  pred.out <- as.data.frame(predict(m, newmods=predgrid))
+  
+  #attach predictions to variables for plotting
+  final.pred <- cbind(newgrid, pred.out)
+  
+  return(final.pred)
+}
+
+
+# >>> Plotting constants --------------------------------------------------
+
+tertiary_palette <- c("Introduced" = "#57b7db",
+                      "Invasive" = "#F0C808", #green: "#60A561", yellow: "#F0C808"
+                      "Native" = "#a7928c")
+
+
+theme_lundy <-   theme_bw()+
+  theme(legend.position = "bottom",
+        strip.background = element_blank(),
+        text = element_text(color = "black"),  #, family = "Liberation Sans")
+        axis.text = element_text(color = "black"), #, family = "Liberation Sans")
+        panel.grid = element_blank(),
+        panel.border = element_blank())
+
+# ~~~~~~~~~~~~~~~~~ -------------------------------------------------------
+# ~~~~~~~~~~~~~~~~~ -------------------------------------------------------
+# Load datasets and model guide -----------------------------------------------
+dat <- readRDS("builds/analysis_ready/analysis_ready_dataset.Rds")
+dat <- dat[eff_type == "smd" & !is.na(yi), ]
+
+master_guide <- fread("outputs/revision/summaries/model_comparison_table.csv")
+
+unique(master_guide$preferred_model)
+
+sub_guide <- master_guide[preferred_model == "yes" &
+                            effect_size == "smd" &
+                            filter_big_CVs == "no", ]
+
+unique(sub_guide$analysis_group)
+nrow(sub_guide)
+
+length(unique(sub_guide$analysis_group))
+unique(sub_guide$analysis_group)
+
+#
+unique(sub_guide$nativeness_var)
+unique(sub_guide$analysis_group_category)
+
+sub_guide$analysis_group
+
+# >>> Calculate effective N -----------------------------------------------
+
+dat[, eff_N := (4*N_High_Megafauna*N_Low_Megafauna) / (N_High_Megafauna + N_Low_Megafauna)]
+dat
+
+# 1/sqrt(eff_N) for testing for publication bias. If slope is significant == BIAS
+dat[, inv_sqrt_eff_N := 1/sqrt(eff_N)]
+
+# If there is bias, use 1/eff_N. The intercept of this is an unbiased estimate of true effect (use alpha = 0.01)
+dat[, inv_eff_N := 1/(eff_N)]
+
+
+
+# >>> Create model guide ------------------------------------------------------
+
+bias_guide <- sub_guide[,  .(model_id_null, model_path_null, 
+                            nativeness_var, random_effect, exclusion,
+                            analysis_group_category,
+                            analysis_group)]
+
+
+bias_guide[, `:=` (predictor1 = "inv_sqrt_eff_N", predictor2 = "inv_eff_N")]
+bias_guide[duplicated(model_id_null), ]
+# So we can use model_id_nativeness to compare these two predictors
+
+bias_guide.mlt <- melt(bias_guide,
+                        measure.vars = c("predictor1", "predictor2"),
+                        value.name = "response")
+bias_guide.mlt$variable <- NULL
+bias_guide.mlt
+
+bias_guide.mlt[, formula := paste("~", response)]
+bias_guide.mlt
+
+bias_guide.mlt[, model_id := paste0("bias_model_", 1:.N)]
+bias_guide.mlt
+
+bias_guide.mlt[, model_path := file.path("outputs/publication_bias/models", paste0(model_id, ".Rds"))]
+bias_guide.mlt
+
+saveRDS(bias_guide.mlt, "outputs/publication_bias/data/bias_guide.Rds")
+
+guide <- copy(bias_guide.mlt)
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ----------------------------------
+# Run bias models ---------------------------------------------------------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ---------------------------------------
+
+#  Load guide and data -------------------------------------------------
+
+clust_out <- prepare_cluster(n = nrow(guide))
+
+guide
+m <- c()
+sub.dat <- c()
+i <- 1
+
+# file.remove(list.files("outputs/publication_bias/models/", full.names = T))
+
+# >>> foreach -------------------------------------------------------------
+
+success <- foreach(i = 1:nrow(guide), 
+                   .options.snow = clust_out$options,
+                   .errorhandling = "pass",
+                   .packages = c("data.table", "metafor")) %dopar% {
+                     
+                     if(!file.exists(guide[i, ]$model_path)){
+                       sub.dat <- dat[eval(parse(text = guide[i, ]$exclusion)), ]
+                       
+                       #
+                       m <- rma.mv(yi = yi,
+                                   V = vi,
+                                   mods = as.formula(guide[i, ]$formula),
+                                   random = eval(parse(text = guide[i, ]$random_effect)),
+                                   dfs = "contain",
+                                   test = "t",
+                                   method = "ML",
+                                   struct = "AR",
+                                   data = sub.dat)
+                       
+                       saveRDS(m, guide[i, ]$model_path)
+                     }
+                     
+                     setTxtProgressBar(clust_out$progress, i)
+                   }
+
+stopCluster(clust_out$cluster)
+
+# >>> Load models --------------------------------
+guide[!file.exists(model_path)]
+
+guide <- guide[file.exists(model_path), ]
+
+ms <- lapply(guide$model_path, readRDS)
+
+names(ms) <- guide$model_id
+
+# >>> Tidy models ---------------------------------------------------
+
+ms.tidy <- lapply(ms, tidy_with_CIs)
+
+ms.tidy.dat <- rbindlist(ms.tidy, idcol = "model_id")
+
+ms.tidy.dat
+
+ms.tidy.dat.mrg <- merge(ms.tidy.dat,
+                         guide[, .(model_id, analysis_group_category,
+                                   nativeness_var, response,
+                                   response, model_id_null, model_path_null,
+                                   analysis_group, model_path)],
+                         by = "model_id")
+
+ms.tidy.dat.mrg[, type := ifelse(response == "inv_sqrt_eff_N", "Testing for bias", "Corrected estimate")]
+
+ms.tidy.dat.mrg[, bias := ifelse(.SD[term == "inv_sqrt_eff_N"]$p.value < 0.05, "yes", "no"),
+                by = .(model_id_null)]
+ms.tidy.dat.mrg
+
+ms.tidy.dat.mrg[p.value < 0.05 & term == "inv_sqrt_eff_N"]
+
+# Whoa, that's surprising huh?
+
+ms.tidy.dat.mrg
+
+ms.tidy.dat.mrg[bias == "yes" & type == "Testing for bias" & term == "inv_sqrt_eff_N", ]
+# OK, so Soil pH has publication bias. The only one that does. Surprising
+# estimate = 7.6, p = 0.035
+
+ms.tidy.dat.mrg[bias == "yes" & type == "Corrected estimate" & term == "intercept", ]
+# estimate = -1.014, p=0.04. But alpha should 0.01 for this. So non-significant negative effect
+
+
+
+

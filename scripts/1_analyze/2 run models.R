@@ -20,7 +20,6 @@ libs <- c("metafor", "broom", "data.table",
           "foreach", "doSNOW")
 groundhog.library(libs, groundhog.day)
 
-
 # >>> Helper functions ----------------------------------------------------
 
 prepare_cluster <- function(n){
@@ -49,17 +48,18 @@ prepare_cluster <- function(n){
 # ~~~~~~~~~~~~~~~~~~~~~~~~ ------------------------------------------------
 # Load raw model guide & prepared data------------------------------------------------------------------
 
-master_guide <- readRDS("outputs/main_text/data/master_guide.Rds")
+master_guide <- readRDS("outputs/revision/data/master_guide.Rds")
 master_guide
 
-dat <- fread("data/master_data.csv")
+dat <- readRDS("builds/analysis_ready/analysis_ready_dataset.Rds")
 
 # For I2 calculation with orchaRdr, we need to specify formulas with mods instead 
 # of formulas:
-master_guide[, mods := gsub("yi_smd ", "", formula)]
+
+unique(master_guide$analysis_group)
 
 # Run models -------------------------------------------------------
-file.remove(list.files("outputs/main_text/models/", full.names = T))
+file.remove(list.files("outputs/revision/models/", full.names = T))
 
 clust_out <- prepare_cluster(n = nrow(master_guide))
 
@@ -67,6 +67,7 @@ master_guide
 m <- c()
 sub.dat <- c()
 i <- 1
+
 #' *Note that some models won't run because there is insufficient N for their random effects*
 
 success <- foreach(i = 1:nrow(master_guide), 
@@ -77,9 +78,9 @@ success <- foreach(i = 1:nrow(master_guide),
   sub.dat <- dat[eval(parse(text = master_guide[i, ]$exclusion)), ]
   
   #
-  m <- rma.mv(yi = yi_smd,
-              V = vi_smd,
-              mods = as.formula(master_guide[i, ]$mods),
+  m <- rma.mv(yi = yi,
+              V = vi,
+              mods = as.formula(master_guide[i, ]$formula),
               random = eval(parse(text = master_guide[i, ]$random_effect)),
               dfs = "contain",
               test = "t",
@@ -91,6 +92,7 @@ success <- foreach(i = 1:nrow(master_guide),
   
   setTxtProgressBar(clust_out$progress, i)
 }
+
 stopCluster(clust_out$cluster)
 
 master_guide[!file.exists(model_path), ]
