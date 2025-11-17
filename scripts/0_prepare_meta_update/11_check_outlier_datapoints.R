@@ -637,7 +637,7 @@ raw[data_point_ID %in% pts,
     .(Herbivore_nativeness, experimental_mechanism, Fig_Num, Response, Mean_Type, Error_bar,Species_Class, Species,
       Raw_Mean_High_Megafauna, Raw_Mean_Low_Megafauna, Error_High_Megafauna, Error_Low_Megafauna,
       N_High_Megafauna, N_Low_Megafauna, Plot_Covariate)]
-# fine i guess
+# good
 
 
 

@@ -13,7 +13,6 @@ groundhog.library(pkg = c("data.table", "tidyverse",
 
 full_dat <- readRDS("data/literature_update/preliminary/updated_dataset.Rds")
 
-
 # Create a response file for manual tagging of responses ------------------
 
 
@@ -68,6 +67,8 @@ dat[Response_Highest_Level == "ABUNDANCE" & is.na(eco_response_coarse)]
 
 #
 dat[analysis_group_category == "Soil" & is.na(eco_response_coarse)]
+
+sort(unique(dat[analysis_group_category == "Soil" ]$eco_response_coarse))
 
 
 # Merge -------------------------------------------------------------------
@@ -262,6 +263,9 @@ full_dat.mrg.mlt <- full_dat.mrg.mlt[!analysis_group %in% c("Aboveground_Primary
 # >>> Save ----------------------------------------------------------------
 
 saveRDS(full_dat.mrg.mlt, "data/final_data/updated_dataset_with_responses.Rds")
+
+
+full_dat.mrg.mlt[grepl("Mg", analysis_group), ]$analysis_group
 
 # >>> Test ----------------------------------------------------------------
 

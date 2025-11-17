@@ -2,7 +2,7 @@
 #' *Updated November 4th, 2025*
 #
 #
-#' [Produce funnel plot figures]
+#' [Egger's test]
 #
 #
 #
@@ -17,7 +17,7 @@ groundhog.day <- "2025-04-15"
 libs <- c("metafor", "broom", "data.table",
           "ggplot2", "tidyr", "multcomp",
           "shades", "patchwork", "dplyr",
-          "scico", "stringr",
+          "scico", "stringr", "gt",
           "plotly", "nlme", 
           "ggtext")#"ggh4x", "ggstance"
 groundhog.library(libs, groundhog.day)
@@ -136,15 +136,12 @@ theme_lundy <-   theme_bw()+
 # ~~~~~~~~~~~~~~~~~ -------------------------------------------------------
 # Load datasets and model guide -----------------------------------------------
 dat <- readRDS("builds/analysis_ready/analysis_ready_dataset.Rds")
-dat <- dat[eff_type == "smd" & !is.na(yi), ]
 
 master_guide <- fread("outputs/revision/summaries/model_comparison_table.csv")
 
 unique(master_guide$preferred_model)
 
-sub_guide <- master_guide[preferred_model == "yes" &
-                            effect_size == "smd" &
-                            filter_big_CVs == "no", ]
+sub_guide <- master_guide[preferred_model == "yes", ]
 
 unique(sub_guide$analysis_group)
 nrow(sub_guide)
@@ -265,7 +262,7 @@ ms.tidy.dat
 
 ms.tidy.dat.mrg <- merge(ms.tidy.dat,
                          guide[, .(model_id, analysis_group_category,
-                                   nativeness_var, response,
+                                   nativeness_var,
                                    response, model_id_null, model_path_null,
                                    analysis_group, model_path)],
                          by = "model_id")
@@ -289,6 +286,96 @@ ms.tidy.dat.mrg[bias == "yes" & type == "Testing for bias" & term == "inv_sqrt_e
 ms.tidy.dat.mrg[bias == "yes" & type == "Corrected estimate" & term == "intercept", ]
 # estimate = -1.014, p=0.04. But alpha should 0.01 for this. So non-significant negative effect
 
+
+
+
+
+# >>> Make a table --------------------------------------------------------
+
+lvls <- c("Primary_Productivity",
+          "Aboveground_Primary_Productivity",
+          "Dead_Vegetation",
+          "Litter_Cover", "Bare_Ground",
+          "Soil_Compaction", "Soil_Moisture",
+          "Soil_Temperature", 
+          "Soil_Respiration", "CO2_Respiration",
+          "Soil_Decomposition_Rate",
+          "Root_Biomass",
+          "Soil_Organic_Matter",
+          "Soil_Organic_C", 
+          "Soil_Total_C",
+          "Soil_C:N", "Soil_Total_N", "Soil_Temperature",
+          "Soil_Labile_N", "Soil_Total_P",
+          "Soil_Total_Ca", "Soil_Total_Mg", "Soil_K",
+          "Soil_pH", "Microbe_Abundance", "Fungi_Abundance",
+          
+          "Plant_C:N", "Plant_C", "Plant_N", 
+          
+          "Invertebrate_Diversity", "Invertebrate_Abundance",
+          "Invert_Herbivore_Diversity", "Invert_Herbivore_Abundance",
+          "Invert_Predator_Diversity", "Invert_Predator_Abundance",
+          "Invert_Detritivore_Abundance",
+          
+          "Vertebrate_Diversity", "Vertebrate_Abundance",
+          "Vert_Herb_Diversity", "Vert_Herb_Abundance",
+          "Vert_Carn_Diversity", "Vert_Carn_Abundance",
+          "Mammal_Abundance", "Mammal_Diversity",
+          "Small_Mammal_Abundance", "Mamm_SmallHerb_Abundance",
+          "TerrestrialBird_Abundance",
+          "Bird_Diversity", "Bird_Abundance", "Bird_Carnivore_Abundance",
+          "Bird_Omnivore_Abundance", "Herpetofauna_Abundance")
+lvls <- unique(lvls)
+
+ms.tidy.dat.mrg[bias == "yes", 
+                `:=` (corrected_estimate = .SD[type == "Corrected estimate" & term == "intercept"]$estimate,
+                      corrected_lwr.ci = .SD[type == "Corrected estimate" & term == "intercept"]$ci.lb,
+                      corrected_upper.ci = .SD[type == "Corrected estimate" & term == "intercept"]$ci.ub,
+                      corrected_t = .SD[type == "Corrected estimate" & term == "intercept"]$statistic,
+                      corrected_p = .SD[type == "Corrected estimate" & term == "intercept"]$p.value)]
+ms.tidy.dat.mrg[bias == "yes"]
+
+tidy_table <- ms.tidy.dat.mrg[type == "Testing for bias", ]
+tidy_table[bias == "yes"]
+# Fuck that
+
+tidy_table <- tidy_table[, .(analysis_group_category, analysis_group, nativeness_var, term, estimate, std.error, ci.lb, ci.ub, statistic, p.value,
+               bias)]
+tidy_table$analysis_group_category <- factor(tidy_table$analysis_group_category,
+                                             levels = c("Vertebrates", "Invertebrates", "Ecosystem"))
+
+tidy_table$analysis_group <- factor(tidy_table$analysis_group,
+                                             levels = lvls)
+#
+tidy_table[, analysis_group_label := gsub("_", " ", analysis_group)]
+tidy_table[, nativeness_var_label := fcase(nativeness_var == "Herbivore_nativeness", "Nativeness",
+                                           nativeness_var == "Invasive", "Invasiveness",
+                                           nativeness_var == "Africa_Comparison", "Africa comparison")]
+
+tidy_table[term == "inv_sqrt_eff_N", term := "1/sqrt effective N"]
+
+#
+gt_table <- tidy_table |>
+  mutate(estimate = round(estimate, 2),
+         std.error = round(std.error, 2),
+         ci.lb = round(ci.lb, 2),
+         ci.ub = round(ci.ub, 2),
+         statistic = round(statistic, 2),
+         p.value = round(p.value, 4)) %>%
+  arrange(analysis_group_category, analysis_group, nativeness_var) |>
+  group_by(analysis_group_label, nativeness_var_label) |>
+  gt() |>
+  cols_hide(columns = c("analysis_group_category", "nativeness_var",
+                       "analysis_group")) |>
+  cols_label(std.error = "SE",
+             ci.lb = "lower CI",
+             ci.ub = "upper CI",
+             statistic = "t",
+             p.value = "p")
+
+
+gt_table
+
+gtsave(gt_table, "figures/revision/supplement/Table SX Publication bias.rtf")
 
 
 

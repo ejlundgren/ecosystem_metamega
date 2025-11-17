@@ -40,7 +40,7 @@ dat.m <- merge(dat,
   merge(ids[, .(data_point_ID, experiment_id, site_id, species_response_tag)],
         by = "data_point_ID",
         all.x = T) |>
-  merge(effects,
+  merge(effects[, .(data_point_ID, yi_smd, vi_smd)],
         by = "data_point_ID",
         all.x = T,
         all.y = F)
@@ -54,14 +54,10 @@ dat.m[is.na(experiment_id)]
 dat.m[is.na(time_series_clean), ]
 class(dat.m$time_series_clean)
 
+
 # Filtering ---------------------------------------------------------------
 
-
-# Drop NAs for both rom and smd:
-dat.m[!is.na(yi_smd) & !is.na(yi_rom)]
-dat.m[is.na(yi_smd) & is.na(yi_rom)]
-
-dat.m <- dat.m[!is.na(yi_smd) & !is.na(yi_rom)]
+dat.m <- dat.m[!is.na(yi_smd), ]
 
 
 # >>> Total number of observations and citations --------------------------
@@ -69,6 +65,9 @@ dat.m <- dat.m[!is.na(yi_smd) & !is.na(yi_rom)]
 dat.m[, .(n = uniqueN(data_point_ID), refs = uniqueN(Citation))]
 
 length(unique(dat.m$analysis_group))
+
+unique(dat.m$Lit_Source)
+dat.m[Lit_Source != "Web of Science October 2025", .(n = uniqueN(Citation), refs = uniqueN(data_point_ID))]
 
 # >>> Filter out low inference experimental mechanisms --------------------
 
@@ -95,7 +94,6 @@ dat.m <- dat.m[!Citation %in% "Lundgren et al 2022 Journal of Animal Ecology"]
 
 dat.m <- dat.m
 
-
 unique(dat.m$EXCLUSION)
 nrow(dat.m)
 dat.m <- dat.m[is.na(EXCLUSION)]
@@ -119,6 +117,7 @@ dat.m <- dat.m[!Citation %in% "Influence of Grazing by Bison and Cattle on Deer 
 dat.m <- dat.m[!Citation %in% "Vegetational and Faunal Changes in an Area of Heavily Grazed Woodland Following Relief of Grazing" ]
 
 dat.m[grepl("Kansas", Site)]$Site
+unique(dat.m[grepl("Kansas", Site)]$Citation)
 dat.m <- dat.m[Site != "Konza Prairie Biological Station, Kansas, USA"]
 # All of Konza is in small paddocks
 
@@ -161,23 +160,26 @@ dat.m <- dat.m[!age_class %in% c("Seeds", "seed", "Seed", "seeds", "Seedbank", "
 unique(dat.m[analysis_group_category == "Plants"]$analysis_group)
 
 
+dat.m[Lit_Source == "Web of Science October 2025", .(n = uniqueN(data_point_ID),
+                                                     refs = uniqueN(Citation))]
+
+dat.m[, .(n = uniqueN(data_point_ID),
+          refs = uniqueN(Citation))]
+
 dat.m <- dat.m[analysis_group_category != "Plants", ]
 dat.m
 
-# >>> Melt so that ROM and SMD are long -----------------------------------
 
-dat.m.mlt <- melt(dat.m,
-                  measure.vars = c("yi_smd", "vi_smd", "yi_rom", "vi_rom"))
-dat.m.mlt[, var := ifelse(grepl("yi", variable), "yi", "vi")]
-dat.m.mlt[, eff_type := ifelse(grepl("smd", variable), "smd", "rom")]
-dat.m.mlt$variable <- NULL
+dat.m[, .(n = uniqueN(data_point_ID),
+          refs = uniqueN(Citation))]
 
-dat.m.mlt.cst <- dcast(dat.m.mlt,
-                       ... ~ var,
-                       value.var = "value")
-dat.m.mlt.cst
+
+
+# >>> Rename yi/vi columns -----------------------------------
+
+setnames(dat.m, c("yi_smd", "vi_smd"), c("yi", "vi"))
 
 # >>> Save ----------------------------------------------------------------
-saveRDS(dat.m.mlt.cst, "builds/analysis_ready/analysis_ready_dataset.Rds")
+saveRDS(dat.m, "builds/analysis_ready/analysis_ready_dataset.Rds")
 
-dat.m.mlt.cst[, .(n = uniqueN(Citation), obs = uniqueN(data_point_ID))]
+dat.m[, .(n = uniqueN(Citation), obs = uniqueN(data_point_ID))]

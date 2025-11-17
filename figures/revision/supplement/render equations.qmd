@@ -1,0 +1,46 @@
+---
+title: "Render equations"
+format: html
+editor: visual
+---
+
+## Equation 1. Reduction in total model variance
+
+$$
+
+\frac{sum(\sigma^2_{null}) - sum(\sigma^2_{model})}{sum(\sigma^2_{null})}
+
+$$
+
+## Equation 2. Conditional R2
+
+$$
+
+s^2_{fixed-effect} = Var(\beta_1 x)\\\\
+
+s^2_{total-variance} = s^2_{fixed-effect} + sum(\sigma^2) + \tau^2 \\\\
+
+R^2_{conditional} = \frac{s^2_{fixed-effect}}{s^2_{total-variance}}
+
+$$
+
+## Equation 3. R2 \*
+
+$$
+\begin{flalign*}
+
+s^2_{fixed-effect} = Var(\beta_1 x)\\\\
+
+s^2_{yi} = Var(yi) \\\\
+
+R^2_{conditional}* = \frac{s^2_{fixed-effect}}{s^2_{yi}}
+
+\end{flalign*}
+
+$$
+
+## Equation 4. Effective N
+
+$$
+N_{effective} = \frac{4n_{1i}4n_{2i}}{(n_{1i} + n_{2i})}
+$$

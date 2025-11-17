@@ -25,9 +25,7 @@ dat <- readRDS("builds/analysis_ready/analysis_ready_dataset.Rds")
 #' *Cross join of analysis groups, nativeness vars (the predictors), and random effects*
 names(dat)
 
-guide <- CJ(effect_size = c("smd", "rom"),
-            filter_big_CVs = c("yes", "no"),
-            analysis_group = unique(dat$analysis_group), 
+guide <- CJ(analysis_group = unique(dat$analysis_group), 
             nativeness_var = c("Herbivore_nativeness", "Invasive", "Africa_Comparison"),
             site_id = c("yes", "no"),
             species_response = c("yes", "no"),
@@ -37,8 +35,6 @@ guide
 # The model comparison ID is for comparing random effect sizes
 guide[, model_comparison_id := paste(analysis_group, 
                                      nativeness_var,
-                                     effect_size,
-                                     filter_big_CVs,
                                      sep = "_")]
 
 # Merge in analysis_group_category
@@ -70,12 +66,6 @@ unique(guide.m$exclusion)
 unique(guide.m[nativeness_var == "Africa_Comparison"]$exclusion)
 
 names(dat)
-guide.m[, exclusion := paste0(exclusion, " & eff_type == '", effect_size, "' & !is.na(yi)")]
-guide.m
-
-guide.m$filter_big_CVs
-unique(dat$filter)
-guide.m[filter_big_CVs == "yes", exclusion := paste0(exclusion, " & filter == 'keep'")]
 
 unique(guide.m$exclusion)
 

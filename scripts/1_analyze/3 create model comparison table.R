@@ -65,13 +65,38 @@ I2 <- function(mod){
   
 }
 
+# Some times there's no heterogeneity. All of it is from the sampling variance
+# In these cases R2 is 100 and I2 normally calculated is nearly 0
+# So we calculate the variance in yi and the fixed effect variance.
+I2_star <- function(m){
+  # 
+  var_yi <- var(m$data$yi)
+  
+  df <- m$data
+  df
+  setDT(df)
+  
+  mod <- as.character(m$formula.mods)[2]
+  setnames(df, mod, "mod")
+  df$mod <- factor(df$mod)
+  df$mod_numeric <- as.numeric(df$mod)-1
+  
+  fixed_effect_variance <- var(m$b[2] * df$mod_numeric) |> unlist()
+  fixed_effect_variance 
+  
+  fixed_effect_variance <- var(m$b[2] * df$mod_numeric) |> unlist()
+  fixed_effect_variance 
+  
+  return((fixed_effect_variance / var_yi) * 100)
+  
+}
+
 prop_change_in_variance <- function(mod1, mod2){
   # https://stackoverflow.com/questions/22356450/getting-r-squared-from-a-mixed-effects-multilevel-model-in-metafor
   # I was surprised to see this as a difference between 2 models....
-  r2 <- (sum(mod1$sigma2) - sum(mod2$sigma2)) / 
-    sum(mod1$sigma2)
+  r2 <- (sum(mod1$sigma2) - sum(mod2$sigma2)) /  sum(mod1$sigma2)
   return(r2)
-  
+  # Though this is marginal R2 I think??
 }
 
 tidy_with_CIs <- function(m){
@@ -80,6 +105,36 @@ tidy_with_CIs <- function(m){
   return(x)
 }
 
+# I2 is leftover heterogeneity
+# conditional_R2 is hetereogenety explained by moderators, excluding sampling variance
+conditional_R2 <- function(m){
+  df <- m$data
+  df
+  setDT(df)
+  
+  mod <- as.character(m$formula.mods)[2]
+  setnames(df, mod, "mod")
+  df$mod <- factor(df$mod)
+  df$mod_numeric <- as.numeric(df$mod)-1
+  
+  fixed_effect_variance <- var(m$b[2] * df$mod_numeric) |> unlist()
+  fixed_effect_variance 
+  
+  #
+  total_variance <- sum(m$sigma2) + fixed_effect_variance
+  
+  # Not sure if rho and tau need to be added
+  if("tau2" %in% names(m)){
+    total_variance <- total_variance + m$tau2
+  }
+  # Just tau2 not rho
+  
+  # So this is the proportion of variance accounted for by nativeness or invasiveness
+  R2 <- 100 * (fixed_effect_variance / total_variance)
+  return(R2)
+}
+
+# Then divide this by sum of sigma/var()
 # ~~~~~~~~~~~~~~~~~~~~~~~~ ------------------------------------------------
 # 0. Load data ------------------------------------------------------------
 
@@ -92,16 +147,20 @@ guide[file.exists(model_path), ]
 length(list.files("outputs/revision/models/"))
 
 guide <- guide[file.exists(model_path), ]
+guide
 
 # test:
-m1 <- readRDS(guide[400, ]$model_path)
+m1 <- readRDS(guide[model_id == "model_1068", ]$model_path)
 m1
 
+m1$sigma2
+
 I2(m1)
+conditional_R2(m1) # This doesn't work on an intercept only model.
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 1. Extract model level information ----------------------------------------------
-# Extract I2, BIC, min_sigma (to flag overfitting)
+# Extract I2, R2, BIC, min_sigma (to flag overfitting)
 
 guide
 
@@ -121,6 +180,7 @@ model_info <- foreach(i = 1:nrow(guide),
     return(data.table(model_id = guide[i, ]$model_id,
                       i2 = I2(m),
                       BIC = BIC(m),
+                      sum_sigma = sum(m$sigma2),
                       min_sigma = min(m$sigma2)))    
     setTxtProgressBar(clust_out$progress, i)
     
@@ -148,8 +208,8 @@ unique(guide.mrg$model_type)
 
 guide.wide <- dcast(guide.mrg,
                     ... ~ model_type,
-                    value.var = c("formula", "model_path", "i2", "BIC", "min_sigma", "model_id"))
-guide.wide[is.na(formula_nativeness), ]
+                    value.var = c("formula", "model_path", "i2", "BIC", "min_sigma", "sum_sigma", "model_id"))
+guide.wide[!is.na(formula_nativeness), ]
 
 # These are the models that didn't run
 guide.wide <- guide.wide[!is.na(formula_nativeness), ]
@@ -237,8 +297,6 @@ unique(posthoc_final$contrast)
 unique(posthoc_final$term)
 unique(guide.wide$nativeness_var)
 
-posthoc_final[preferred_model == "yes" & p.value < 0.05, ]
-
 posthoc_final
 
 posthoc_final[intercept_df != contrast_df, ]
@@ -299,6 +357,8 @@ model_comp_out <- foreach(i = 1:nrow(guide.wide),
      out <- data.table(model_id_nativeness = guide.wide[i, ]$model_id_nativeness,
                        LRT = temp$LRT,
                        LRT_pval = temp$pval,
+                       I2_star = I2_star(m.native),
+                       R2_cond = conditional_R2(m.native),
                        prop_variance_reduced = prop_change_in_variance(mod1 = m.null,
                                                                         mod2 = m.native))
      
@@ -318,6 +378,18 @@ guide.wide.mrg <- merge(guide.wide,
                         all.x = T)
   
 guide.wide.mrg
+
+range(guide.wide.mrg[preferred_model == "yes", ]$R2_cond)
+guide.wide.mrg[preferred_model == "yes" & R2_cond > 50, ]
+hist(guide.wide.mrg[preferred_model == "yes"]$R2_cond)
+
+# So I2_star is interpreted just like R2_cond. Which is confusing.
+
+wtf <- readRDS(guide.wide.mrg[preferred_model == "yes" & R2_cond > 50, ]$model_path_nativeness[1])
+wtf
+
+
+# unique(dat[analysis_group == "Root_Biomass"]$yi)
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 5. Save final model comparison table -----------------------------------------

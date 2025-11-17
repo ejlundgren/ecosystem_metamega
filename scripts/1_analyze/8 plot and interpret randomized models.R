@@ -372,6 +372,7 @@ rando_plot <- function(grp, xlim){
     theme_bw()+
     theme(panel.grid = element_blank(),
           legend.position = "right",
+          text = element_text(color = "black"),
           # axis.title.x = element_markdown(),
           strip.placement = "outside",
           strip.background = element_blank(),
@@ -387,7 +388,6 @@ p2
 
 p3 <- rando_plot(c("Ecosystem"), c(-1, 1))
 p3
-
 
 
 #
@@ -407,8 +407,8 @@ right
 left & theme(panel.border = element_blank()) | right & theme(panel.border = element_blank())
 
 # object is too big, too many points to annotate in Inkscape. So save as both PNG and PDF
-ggsave("figures/revision/main_text/Fig 4 raw.png", width = 15, height = 8, dpi = 300)
-ggsave("figures/revision/main_text/Fig 4 raw.pdf", width = 15, height = 8)
+ggsave("figures/revision/main_text/raw/Fig 4 raw.png", width = 12, height = 7, dpi = 300)
+ggsave("figures/revision/main_text/raw/Fig 4 raw.pdf", width = 12, height = 7)
 
 # 
 # supp.p5
@@ -423,9 +423,11 @@ mean(percentiles.mrg$obs_var_reduced)
 
 # So this is the percent of random models that the observed models outperformed...
 range(percentiles.mrg$percentile_var_reduced)
+percentiles.mrg[percentile_var_reduced > 97.5]
+
 
 # and this is the % of randomized models that outperformed observed:
-100-range(percentiles.mrg$percentile_var_reduced)
+100-range(percentiles.mrg[percentile_var_reduced <= 97.5]$percentile_var_reduced)
 100-mean(percentiles.mrg$percentile_var_reduced)
 100-mean(percentiles.mrg$percentile_var_reduced)
 
