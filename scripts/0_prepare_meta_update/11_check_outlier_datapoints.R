@@ -22,6 +22,17 @@ raw <- readRDS("data/literature_update/preliminary/updated_dataset.Rds")
 #' 2. with ROM: Carnivore_Abundance, Bird_Abundance
 
 
+unique(dat[analysis_group == "Vertebrate_Diversity" & Herbivore_nativeness == "Introduced"]$Citation)
+dat[analysis_group == "Vertebrate_Diversity" & Herbivore_nativeness == "Introduced" &
+      Citation == "Beever and Brussard 2004 Journal of Arid Environments", ]$yi
+
+
+unique(dat[analysis_group == "Vertebrate_Abundance" & Herbivore_nativeness == "Introduced", .(Title, Citation, 
+                                                                                              Herbivores_Manipulated, yi)])
+
+# These are domestic horses, cattle, and fallow deer:
+dat <- dat[Citation != "Putman et al. 1989 Biological Conservation"]
+
 # Dead_Vegetation ---------------------------------------------------------
 
 range(dat[analysis_group == "Dead_Vegetation" & eff_type == "smd", ]$yi)

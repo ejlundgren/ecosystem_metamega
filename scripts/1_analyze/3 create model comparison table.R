@@ -150,13 +150,13 @@ guide <- guide[file.exists(model_path), ]
 guide
 
 # test:
-m1 <- readRDS(guide[model_id == "model_1068", ]$model_path)
+m1 <- readRDS(guide[model_id == "model_5", ]$model_path)
 m1
 
 m1$sigma2
 
 I2(m1)
-conditional_R2(m1) # This doesn't work on an intercept only model.
+# conditional_R2(m1) # This doesn't work on an intercept only model.
 
 # ~~~~~~~~~~~~~~~~~~~~ ----------------------------------------------------
 # 1. Extract model level information ----------------------------------------------

@@ -42,5 +42,5 @@ $$
 ## Equation 4. Effective N
 
 $$
-N_{effective} = \frac{4n_{1i}4n_{2i}}{(n_{1i} + n_{2i})}
+N_{effective} = \frac{4n_{1i}n_{2i}}{(n_{1i} + n_{2i})}
 $$

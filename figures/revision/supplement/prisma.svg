@@ -5,13 +5,16 @@
 <!-- Title: TD Pages: 1 -->
 
 <svg
-   width="868.06964pt"
-   height="694.84375pt"
-   viewBox="0 0 867.70029 694.75613"
+   width="868.0697pt"
+   height="713.59222pt"
+   viewBox="0 0 867.70035 713.50224"
    version="1.1"
    id="svg74"
    sodipodi:docname="prisma.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:export-filename="prisma.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -19,44 +22,6 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs74">
-    <marker
-       style="overflow:visible"
-       id="marker66"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Dart arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         d="M 0,0 5,-5 -12.5,0 5,5 Z"
-         transform="scale(-0.5)"
-         id="path66" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="DartArrow"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Dart arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         d="M 0,0 5,-5 -12.5,0 5,5 Z"
-         transform="scale(-0.5)"
-         id="path65" />
-    </marker>
     <marker
        style="overflow:visible"
        id="ConcaveTriangle"
@@ -75,25 +40,6 @@
          d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
          style="fill:context-stroke;fill-rule:evenodd;stroke:none"
          id="path7" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Triangle"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Triangle arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135" />
     </marker>
     <rect
        x="489.53976"
@@ -332,6 +278,24 @@
        width="203.88422"
        height="28.991297"
        id="rect10-9-1" />
+    <rect
+       x="489.53976"
+       y="688.00183"
+       width="278.72894"
+       height="216.10313"
+       id="rect16-9-9" />
+    <rect
+       x="489.53976"
+       y="688.00183"
+       width="278.72894"
+       height="216.10313"
+       id="rect77-4" />
+    <rect
+       x="489.53976"
+       y="688.00183"
+       width="278.72894"
+       height="216.10313"
+       id="rect65" />
   </defs>
   <sodipodi:namedview
      id="namedview74"
@@ -343,11 +307,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="0.42223245"
-     inkscape:cx="396.70091"
-     inkscape:cy="549.46037"
+     inkscape:zoom="0.42447825"
+     inkscape:cx="384.00083"
+     inkscape:cy="467.63291"
      inkscape:window-width="1512"
-     inkscape:window-height="863"
+     inkscape:window-height="864"
      inkscape:window-x="0"
      inkscape:window-y="38"
      inkscape:window-maximized="1"
@@ -356,7 +320,7 @@
   <path
      fill="#ffc125"
      stroke="#ffc125"
-     d="m 298.06218,1.779809 c 0,0 -245.100861,0 -245.100861,0 -2.2753,0 -4.55055,9.592705 -4.55055,19.185645 0,0 0,19.18542 0,19.18542 0,9.59294 2.27525,19.18564 4.55055,19.18564 0,0 245.100861,0 245.100861,0 2.2753,0 4.55054,-9.5927 4.55054,-19.18564 0,0 0,-19.18541 0,-19.18541 0,-9.59294 -2.27524,-19.185655 -4.55054,-19.185655"
+     d="m 298.09256,1.779809 c 0,0 -245.100859,0 -245.100859,0 -2.2753,0 -4.55055,9.592705 -4.55055,19.185645 0,0 0,19.18542 0,19.18542 0,9.59294 2.27525,19.18564 4.55055,19.18564 0,0 245.100859,0 245.100859,0 2.2753,0 4.55054,-9.5927 4.55054,-19.18564 0,0 0,-19.18541 0,-19.18541 0,-9.59294 -2.27524,-19.185655 -4.55054,-19.185655"
      id="path71"
      style="stroke-width:0.966588"
      inkscape:export-filename="PRISMA October 2025.png"
@@ -365,12 +329,12 @@
   <path
      fill="#bcd2ee"
      stroke="#bcd2ee"
-     d="m 19.740285,184.31816 c 0,0 -9.8012963,0 -9.8012963,0 -4.9007502,0 -9.80139899,1.69273 -9.80139899,3.3855 0,0 0,144.52488 0,144.52488 0,1.69276 4.90064879,3.38549 9.80139899,3.38549 0,0 9.8012963,0 9.8012963,0 4.900751,0 9.8014,-1.69273 9.8014,-3.38549 0,0 0,-144.52488 0,-144.52488 0,-1.69277 -4.900649,-3.3855 -9.8014,-3.3855"
+     d="m 19.770667,184.31816 c 0,0 -9.8012967,0 -9.8012967,0 -4.9007502,0 -9.80139896,1.69273 -9.80139896,3.3855 0,0 0,144.52488 0,144.52488 0,1.69276 4.90064876,3.38549 9.80139896,3.38549 0,0 9.8012967,0 9.8012967,0 4.900751,0 9.8014,-1.69273 9.8014,-3.38549 0,0 0,-144.52488 0,-144.52488 0,-1.69277 -4.900649,-3.3855 -9.8014,-3.3855"
      id="path18"
      style="stroke-width:0.595905" />
   <g
      id="a_graph0"
-     transform="translate(0.33963771,694.25612)">
+     transform="translate(0.37001934,694.25612)">
     <a
        xlink:title="Click the boxes for further information"
        id="a1" />
@@ -378,14 +342,14 @@
   <g
      id="edge3"
      class="edge"
-     transform="translate(0.33963771,766.24704)">
+     transform="translate(0.37001934,766.24704)">
     <title
        id="title2">4-&gt;5</title>
   </g>
   <g
      id="edge5"
      class="edge"
-     transform="translate(0.33963771,766.24704)">
+     transform="translate(0.37001934,766.24704)">
     <title
        id="title4">6-&gt;7</title>
     <path
@@ -396,13 +360,13 @@
     <polygon
        fill="#000000"
        stroke="#000000"
-       points="328.3459,-536.5001 328.346,-543.5001 338.346,-540 "
+       points="328.346,-543.5001 338.346,-540 328.3459,-536.5001 "
        id="polygon4" />
   </g>
   <g
      id="edge6"
      class="edge"
-     transform="translate(0.33963771,766.24704)">
+     transform="translate(0.37001934,766.24704)">
     <title
        id="title5">6-&gt;8</title>
     <path
@@ -413,13 +377,13 @@
     <polygon
        fill="#000000"
        stroke="#000000"
-       points="173.0001,-496.7292 180.0001,-496.7291 176.5,-486.7292 "
+       points="180.0001,-496.7291 176.5,-486.7292 173.0001,-496.7292 "
        id="polygon5" />
   </g>
   <g
      id="edge7"
      class="edge"
-     transform="translate(0.33963771,769.24666)">
+     transform="translate(0.37001934,769.24666)">
     <title
        id="title6">8-&gt;9</title>
     <path
@@ -430,13 +394,13 @@
     <polygon
        fill="#000000"
        stroke="#000000"
-       points="328.3459,-464.5001 328.346,-471.5001 338.346,-468 "
+       points="328.346,-471.5001 338.346,-468 328.3459,-464.5001 "
        id="polygon6" />
   </g>
   <g
      id="edge7-4"
      class="edge"
-     transform="translate(-2.4262813,869.12758)">
+     transform="translate(-2.3958997,869.12758)">
     <title
        id="title6-0">8-&gt;9</title>
     <path
@@ -447,13 +411,13 @@
     <polygon
        fill="#000000"
        stroke="#000000"
-       points="328.346,-471.5001 338.346,-468 328.3459,-464.5001 "
+       points="338.346,-468 328.3459,-464.5001 328.346,-471.5001 "
        id="polygon6-8" />
   </g>
   <g
      id="edge7-4-3"
      class="edge"
-     transform="matrix(-1,0,0,1,1003.3357,856.81577)">
+     transform="matrix(-1,0,0,1,1003.3661,856.81577)">
     <title
        id="title6-0-6">8-&gt;9</title>
     <path
@@ -465,18 +429,18 @@
     <polygon
        fill="#000000"
        stroke="#000000"
-       points="328.3459,-464.5001 328.346,-471.5001 338.346,-468 "
+       points="328.346,-471.5001 338.346,-468 328.3459,-464.5001 "
        id="polygon6-8-1" />
   </g>
   <path
      fill="#bcd2ee"
      stroke="#bcd2ee"
-     d="m 19.672937,62.744954 c 0,0 -9.666599,0 -9.666599,0 -4.8334003,0 -9.66670029,4.8334 -9.66670029,9.6667 0,0 0,70.666696 0,70.666696 0,4.8333 4.83329999,9.6666 9.66670029,9.6666 0,0 9.666599,0 9.666599,0 4.8334,0 9.6667,-4.8333 9.6667,-9.6666 0,0 0,-70.666696 0,-70.666696 0,-4.8333 -4.8333,-9.6667 -9.6667,-9.6667"
+     d="m 19.703319,62.744954 c 0,0 -9.666599,0 -9.666599,0 -4.8334007,0 -9.66670066,4.8334 -9.66670066,9.6667 0,0 0,70.666696 0,70.666696 0,4.8333 4.83329996,9.6666 9.66670066,9.6666 0,0 9.666599,0 9.666599,0 4.8334,0 9.6667,-4.8333 9.6667,-9.6666 0,0 0,-70.666696 0,-70.666696 0,-4.8333 -4.8333,-9.6667 -9.6667,-9.6667"
      id="path17" />
   <text
      text-anchor="middle"
      x="-107.94124"
-     y="19.090614"
+     y="19.120995"
      font-family="Helvetica, sans-Serif"
      font-size="12px"
      fill="#000000"
@@ -485,43 +449,47 @@
   <text
      text-anchor="middle"
      x="-355.84476"
-     y="16.839638"
+     y="16.870018"
      font-family="Helvetica, sans-Serif"
      font-size="12px"
      fill="#000000"
      transform="rotate(-90)"
      id="text18" />
   <g
-     id="node3"
-     class="node"
-     transform="translate(0.33963771,694.25612)">
-    <title
-       id="title19">included</title>
+     id="g69"
+     transform="translate(0,18.312247)">
     <g
-       id="a_node3">
-      <a
-         xlink:title="Blue included box"
-         id="a19">
-        <path
-           fill="#bcd2ee"
-           stroke="#bcd2ee"
-           d="m 19.3333,-108 c 0,0 -9.6666,0 -9.6666,0 C 4.8333,-108 0,-103.1667 0,-98.3333 c 0,0 0,88.6666 0,88.6666 C 0,-4.8333 4.8333,0 9.6667,0 c 0,0 9.6666,0 9.6666,0 C 24.1667,0 29,-4.8333 29,-9.6667 c 0,0 0,-88.6666 0,-88.6666 C 29,-103.1667 24.1667,-108 19.3333,-108"
-           id="path19" />
-        <text
-           text-anchor="middle"
-           x="50.400002"
-           y="18.707031"
-           font-family="Helvetica, sans-Serif"
-           font-size="12px"
-           fill="#000000"
-           transform="rotate(-90)"
-           id="text19">Included</text>
-      </a>
+       id="node3"
+       class="node"
+       transform="translate(0.37001934,694.25612)">
+      <title
+         id="title19">included</title>
+      <g
+         id="a_node3">
+        <a
+           xlink:title="Blue included box"
+           id="a19">
+          <path
+             fill="#bcd2ee"
+             stroke="#bcd2ee"
+             d="m 19.3333,-108 c 0,0 -9.6666,0 -9.6666,0 C 4.8333,-108 0,-103.1667 0,-98.3333 c 0,0 0,88.6666 0,88.6666 C 0,-4.8333 4.8333,0 9.6667,0 c 0,0 9.6666,0 9.6666,0 C 24.1667,0 29,-4.8333 29,-9.6667 c 0,0 0,-88.6666 0,-88.6666 C 29,-103.1667 24.1667,-108 19.3333,-108"
+             id="path19" />
+          <text
+             text-anchor="middle"
+             x="53.803711"
+             y="18.707031"
+             font-family="Helvetica, sans-Serif"
+             font-size="12px"
+             fill="#000000"
+             transform="rotate(-90)"
+             id="text19">Included</text>
+        </a>
+      </g>
     </g>
   </g>
   <text
      text-anchor="middle"
-     x="175.65823"
+     x="175.68861"
      y="34.853088"
      font-family="Helvetica, sans-Serif"
      font-size="12px"
@@ -530,7 +498,7 @@
   <g
      id="node5"
      class="node"
-     transform="translate(0.33963771,779.74533)">
+     transform="translate(0.37001934,779.74533)">
     <title
        id="title21">4</title>
     <g
@@ -564,7 +532,7 @@
   </g>
   <g
      id="g74"
-     transform="translate(18.284967)">
+     transform="translate(18.315349)">
     <path
        fill="#ffc125"
        stroke="#ffc125"
@@ -602,36 +570,36 @@
      xml:space="preserve"
      style="font-size:11.9985px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:0.471125;stroke-width:5.61189;stroke-linecap:round;stroke-opacity:0.67451"
      x="-259.55597"
-     y="17.871485"
+     y="17.901865"
      id="text2-8"
      transform="rotate(-90)"><tspan
        sodipodi:role="line"
        id="tspan2-1"
        style="font-size:11.9985px;fill:#000000;fill-opacity:1;stroke-width:5.61189"
        x="-259.55597"
-       y="17.871485">Abstract screening</tspan></text>
+       y="17.901865">Abstract screening</tspan></text>
   <path
      fill="#bcd2ee"
      stroke="#bcd2ee"
-     d="m 19.73097,380.3721 c 0,0 -9.7826653,0 -9.7826653,0 -4.8914368,0 -9.78277109,2.02899 -9.78277109,4.05802 0,0 0,173.2342 0,173.2342 0,2.02902 4.89133429,4.058 9.78277109,4.058 0,0 9.7826653,0 9.7826653,0 4.891437,0 9.782771,-2.02898 9.782771,-4.058 0,0 0,-173.2342 0,-173.2342 0,-2.02903 -4.891334,-4.05802 -9.782771,-4.05802"
+     d="m 19.761352,380.3721 c 0,0 -9.7826657,0 -9.7826657,0 -4.8914368,0 -9.78277106,2.02899 -9.78277106,4.05802 0,0 0,173.2342 0,173.2342 0,2.02902 4.89133426,4.058 9.78277106,4.058 0,0 9.7826657,0 9.7826657,0 4.891437,0 9.782771,-2.02898 9.782771,-4.058 0,0 0,-173.2342 0,-173.2342 0,-2.02903 -4.891334,-4.05802 -9.782771,-4.05802"
      id="path18-6"
      style="stroke-width:0.651793" />
   <text
      xml:space="preserve"
      style="font-size:11.9985px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:0.471125;stroke-width:5.61189;stroke-linecap:round;stroke-opacity:0.67451"
      x="-471.13803"
-     y="17.871485"
+     y="17.901865"
      id="text2-8-5"
      transform="rotate(-90)"><tspan
        sodipodi:role="line"
        id="tspan2-1-3"
        style="font-size:11.9985px;fill:#000000;fill-opacity:1;stroke-width:5.61189"
        x="-471.13803"
-       y="17.871485">Full text screening</tspan></text>
+       y="17.901865">Full text screening</tspan></text>
   <g
      id="node6"
      class="node"
-     transform="translate(0.35758671,794.74344)">
+     transform="translate(0.38796834,794.74344)">
     <title
        id="title23">5</title>
     <g
@@ -690,7 +658,7 @@
   <g
      id="node7"
      class="node"
-     transform="translate(0.33963771,766.24704)">
+     transform="translate(0.37001934,766.24704)">
     <title
        id="title28">6</title>
     <g
@@ -725,7 +693,7 @@
   <g
      id="node8"
      class="node"
-     transform="matrix(1.0218934,0,0,0.99972111,-7.0661654,766.09644)">
+     transform="matrix(1.0218934,0,0,0.99972111,-7.0357838,766.09644)">
     <title
        id="title30">7</title>
     <g
@@ -761,7 +729,7 @@
   <g
      id="node9"
      class="node"
-     transform="translate(0.33963771,769.24666)">
+     transform="translate(0.37001934,769.24666)">
     <title
        id="title32">8</title>
     <g
@@ -798,11 +766,11 @@
      stroke="#000000"
      points="50.5,-449.6994 302.5,-449.6994 302.5,-486.3005 50.5,-486.3005 "
      id="polygon32-8"
-     transform="matrix(0.99913461,0,0,1.4850026,8.3411587,1221.5038)" />
+     transform="matrix(0.99913461,0,0,1.4850026,8.3715403,1221.5038)" />
   <g
      id="node10"
      class="node"
-     transform="matrix(0.93060033,0,0,1.0009525,23.813993,769.69245)">
+     transform="matrix(0.93060033,0,0,1.0009525,23.844375,769.69245)">
     <title
        id="title34">9</title>
     <g
@@ -837,7 +805,7 @@
   <g
      id="node11"
      class="node"
-     transform="translate(-1.5489068,686.74382)">
+     transform="translate(-1.5185252,686.74382)">
     <title
        id="title36">10</title>
     <g
@@ -872,111 +840,119 @@
   <polygon
      fill="none"
      stroke="#000000"
-     points="50.5,-90 50.5,-18 302.5,-18 302.5,-90 "
+     points="302.5,-18 302.5,-90 50.5,-90 50.5,-18 "
      id="polygon52"
-     transform="matrix(0.99970139,0,0,1.1565066,0.39234211,708.37934)" />
-  <text
-     text-anchor="middle"
-     x="176.83965"
-     y="622.25616"
-     font-family="Helvetica, sans-Serif"
-     font-size="12px"
-     fill="#000000"
-     id="text53">Total</text>
-  <text
-     text-anchor="middle"
-     x="176.5"
-     y="-57.599998"
-     font-family="Helvetica, sans-Serif"
-     font-size="12px"
-     fill="#000000"
-     id="text54"
-     style="white-space:pre;inline-size:196.098;display:inline"
-     transform="translate(0.33963771,694.25612)"
-     xml:space="preserve"><tspan
+     transform="matrix(0.99910192,0,0,1.5050382,0.52853095,739.84043)" />
+  <g
+     id="g68"
+     transform="translate(-4.3354481e-5)">
+    <text
+       text-anchor="middle"
+       x="176.87007"
+       y="617.75671"
+       font-family="Helvetica, sans-Serif"
+       font-size="12px"
+       fill="#000000"
+       id="text53">Total</text>
+    <text
+       text-anchor="middle"
        x="176.5"
        y="-57.599998"
-       id="tspan5">(n=384 articles, 8,554 observations)</tspan></text>
-  <text
-     text-anchor="middle"
-     x="176.5"
-     y="-57.599998"
-     font-family="Helvetica, sans-Serif"
-     font-size="12px"
-     fill="#000000"
-     id="text74"
-     style="white-space:pre;inline-size:196.098;display:inline"
-     transform="translate(0.33963771,727.25195)"
-     xml:space="preserve"><tspan
-       x="176.5"
-       y="-57.599998"
-       id="tspan6">(n=243 articles, 3,574 observations)</tspan></text>
+       font-family="Helvetica, sans-Serif"
+       font-size="12px"
+       fill="#000000"
+       id="text54"
+       style="white-space:pre;inline-size:196.098;display:inline"
+       transform="translate(0.37006269,689.75669)"
+       xml:space="preserve"><tspan
+         x="176.5"
+         y="-57.599998"
+         id="tspan11">(n=384 articles, 8,554 observations)</tspan></text>
+  </g>
   <text
      xml:space="preserve"
-     transform="matrix(0.74990539,0,0,0.74990539,-270.32842,0.76554801)"
+     transform="matrix(0.74990539,0,0,0.74990539,-270.29804,0.76554801)"
      id="text10-9"
      style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect10-9);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
      x="-32.730469"
      y="0"><tspan
        x="544.79395"
        y="692.41402"
-       id="tspan7">Final number </tspan></text>
+       id="tspan12">Final number </tspan></text>
   <text
      xml:space="preserve"
-     transform="matrix(0.74990539,0,0,0.74990539,-32.839619,-156.99485)"
+     transform="matrix(0.74990539,0,0,0.74990539,-32.809237,-156.99485)"
      id="text10-9-2"
      style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect10-9-2);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
      x="-32.730469"
      y="0"><tspan
        x="500.60645"
        y="692.41402"
-       id="tspan9"><tspan
+       id="tspan14"><tspan
          style="font-weight:bold"
-         id="tspan8">Excluded from 2025 update</tspan></tspan></text>
-  <text
-     xml:space="preserve"
-     transform="matrix(0.74990539,0,0,0.74990539,-287.66944,136.50275)"
-     id="text10-2"
-     style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect10-5);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
-     x="-32.730469"
-     y="0"><tspan
-       x="575.98242"
-       y="692.41402"
-       id="tspan18">Final non-plant</tspan></text>
+         id="tspan13">Excluded from 2025 update</tspan></tspan></text>
+  <g
+     id="g66"
+     transform="translate(-4.3354481e-5,5.1016778)">
+    <text
+       text-anchor="middle"
+       x="176.5"
+       y="-57.599998"
+       font-family="Helvetica, sans-Serif"
+       font-size="12px"
+       fill="#000000"
+       id="text74"
+       style="white-space:pre;inline-size:196.098;display:inline"
+       transform="translate(0.37006269,721.25271)"
+       xml:space="preserve"><tspan
+         x="176.5"
+         y="-57.599998"
+         id="tspan15">(n=236 articles, 3,532 observations)</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.74990539,0,0,0.74990539,-287.63902,130.50351)"
+       id="text10-2"
+       style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect10-5);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
+       x="-32.730469"
+       y="0"><tspan
+         x="491.4707"
+         y="692.41402"
+         id="tspan16">Responses not in Lundgren et al. 2024</tspan></text>
+  </g>
   <rect
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.25065;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
      id="rect64"
      width="327.13605"
      height="289.15314"
-     x="337.46515"
+     x="337.49554"
      y="339.01489" />
   <path
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.39982;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
-     d="m 176.83973,421.41032 v 67.9876"
+     d="m 176.87011,421.41032 v 67.9876"
      id="path64" />
   <path
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.39982;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
-     d="m 176.83973,323.97773 v 45.32506"
+     d="m 176.87011,323.97773 v 45.32506"
      id="path67"
      sodipodi:nodetypes="cc" />
   <path
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.39982;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle-5)"
-     d="m 176.83973,554.72422 v 38.90731"
+     d="m 176.87011,554.72422 v 38.90731"
      id="path67-4"
      sodipodi:nodetypes="cc" />
   <path
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.39982;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle-1)"
-     d="m 306.10427,100.38398 h 22.79474"
+     d="m 306.13465,100.38398 h 22.79474"
      id="path67-7"
      sodipodi:nodetypes="cc" />
   <path
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.39982;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle-9)"
-     d="M 740.21558,70.579514 V 347.12873"
+     d="M 740.24596,70.579514 V 347.12873"
      id="path67-1"
      sodipodi:nodetypes="cc" />
   <g
      id="g81"
-     transform="translate(0.01551349,5.9992435)">
+     transform="translate(0.04589512,5.9992435)">
     <text
        xml:space="preserve"
        transform="matrix(0.74990539,0,0,0.74990539,-23.989176,-141.38429)"
@@ -986,9 +962,9 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan20"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan19">Excluded (total n=174)
+         id="tspan18"><tspan
+           style="text-align:start"
+           id="tspan17">Excluded (total n=174)
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -999,15 +975,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan22"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan21">Livestock (n=35)
+         id="tspan20"><tspan
+           style="text-align:start"
+           id="tspan19">Livestock (n=35)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan25"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan24">
+         id="tspan58"><tspan
+           style="text-align:start"
+           id="tspan23">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1018,15 +994,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan27"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan26">Wrong study design (n=29)
+         id="tspan62"><tspan
+           style="text-align:start"
+           id="tspan61">Wrong study design (n=29)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan29"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan28">
+         id="tspan67"><tspan
+           style="text-align:start"
+           id="tspan63">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1037,15 +1013,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan31"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan30">No error (n=20)
+         id="tspan69"><tspan
+           style="text-align:start"
+           id="tspan68">No error (n=20)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan33"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan32">
+         id="tspan73"><tspan
+           style="text-align:start"
+           id="tspan70">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1056,15 +1032,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan35"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan34">Model estimates only (n=17)
+         id="tspan75"><tspan
+           style="text-align:start"
+           id="tspan74">Model estimates only (n=17)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan37"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan36">
+         id="tspan77"><tspan
+           style="text-align:start"
+           id="tspan76">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1075,15 +1051,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan39"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan38">Wrong response (n=31)
+         id="tspan79"><tspan
+           style="text-align:start"
+           id="tspan78">Wrong response (n=31)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan41"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan40">
+         id="tspan113"><tspan
+           style="text-align:start"
+           id="tspan112">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1094,15 +1070,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan43"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan42">Managed population (n=13)
+         id="tspan115"><tspan
+           style="text-align:start"
+           id="tspan114">Managed population (n=13)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan45"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan44">
+         id="tspan117"><tspan
+           style="text-align:start"
+           id="tspan116">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1113,15 +1089,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan47"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan46">Exclosure too small (3x3m) (n=11)
+         id="tspan119"><tspan
+           style="text-align:start"
+           id="tspan118">Exclosure too small (3x3m) (n=11)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan49"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan48">
+         id="tspan121"><tspan
+           style="text-align:start"
+           id="tspan120">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1132,15 +1108,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan51"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan50">Already digitized (n=10)
+         id="tspan123"><tspan
+           style="text-align:start"
+           id="tspan122">Already digitized (n=10)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan53"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan52">
+         id="tspan125"><tspan
+           style="text-align:start"
+           id="tspan124">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1151,15 +1127,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan55"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan54">Meta-analysis (n=2)
+         id="tspan127"><tspan
+           style="text-align:start"
+           id="tspan126">Meta-analysis (n=2)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan59"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan56">
+         id="tspan129"><tspan
+           style="text-align:start"
+           id="tspan128">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1170,15 +1146,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan64"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan60">Wrong herbivore species (n=3)
+         id="tspan131"><tspan
+           style="text-align:start"
+           id="tspan130">Wrong herbivore species (n=3)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan66"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan65">
+         id="tspan133"><tspan
+           style="text-align:start"
+           id="tspan132">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1189,15 +1165,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan72"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan71">Plantation / transplant (n=10)
+         id="tspan135"><tspan
+           style="text-align:start"
+           id="tspan134">Plantation / transplant (n=10)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan81"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan80">
+         id="tspan137"><tspan
+           style="text-align:start"
+           id="tspan136">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1208,15 +1184,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan83"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan82">Herbivore species unspecified (n=1)
+         id="tspan139"><tspan
+           style="text-align:start"
+           id="tspan138">Herbivore species unspecified (n=1)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan85"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan84">
+         id="tspan141"><tspan
+           style="text-align:start"
+           id="tspan140">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1227,15 +1203,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan87"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan86">Results already digitized (n=1)
+         id="tspan143"><tspan
+           style="text-align:start"
+           id="tspan142">Results already digitized (n=1)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan89"><tspan
-           style="text-align:start;text-anchor:start"
-           id="tspan88">
+         id="tspan145"><tspan
+           style="text-align:start"
+           id="tspan144">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1246,15 +1222,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan91"><tspan
+         id="tspan147"><tspan
            style="text-align:start"
-           id="tspan90">Insufficient system details (n=1)
+           id="tspan146">Insufficient system details (n=1)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan93"><tspan
+         id="tspan149"><tspan
            style="text-align:start"
-           id="tspan92">
+           id="tspan148">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1265,40 +1241,40 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan95"><tspan
+         id="tspan151"><tspan
            style="text-align:start"
-           id="tspan94">Limiting resource (n=1)
+           id="tspan150">Limiting resource (n=1)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan97"><tspan
+         id="tspan153"><tspan
            style="text-align:start"
-           id="tspan96">
+           id="tspan152">
 </tspan></tspan></text>
   </g>
   <path
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.39982;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
-     d="m 176.83973,134.94642 v 60.85677"
+     d="m 176.87011,134.94642 v 60.85677"
      id="path72"
      sodipodi:nodetypes="cc" />
   <path
      style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.5948;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle-9)"
-     d="M 743.33768,421.35995 V 662.90922 H 315.54055"
+     d="M 743.36806,421.35995 V 662.90922 H 315.57093"
      id="path73"
      sodipodi:nodetypes="ccc" />
   <text
      xml:space="preserve"
-     transform="matrix(0.74990539,0,0,0.74990539,-293.005,21.762894)"
+     transform="matrix(0.74990539,0,0,0.74990539,-292.97462,21.762894)"
      id="text73"
      style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect73);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
      x="-32.730469"
      y="0"><tspan
        x="499.33398"
        y="692.41402"
-       id="tspan98">(n=90 articles, 1,778 observations)</tspan></text>
+       id="tspan154">(n=90 articles, 1,778 observations)</tspan></text>
   <g
      id="g80"
-     transform="translate(0.0155135,-6.7969186)">
+     transform="translate(0.04589513,-6.7969186)">
     <text
        xml:space="preserve"
        transform="matrix(0.74990539,0,0,0.74990539,177.85473,-130.85244)"
@@ -1308,15 +1284,15 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan100"><tspan
+         id="tspan156"><tspan
            style="text-align:start"
-           id="tspan99">Managed population
+           id="tspan155">Managed population
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan102"><tspan
+         id="tspan158"><tspan
            style="text-align:start"
-           id="tspan101">
+           id="tspan157">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1327,20 +1303,62 @@
        y="0"><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan104"><tspan
+         id="tspan160"><tspan
            style="text-align:start"
-           id="tspan103">(n=17)
+           id="tspan159">(n=18)
 </tspan></tspan><tspan
          x="489.53906"
          y="692.41402"
-         id="tspan106"><tspan
+         id="tspan162"><tspan
            style="text-align:start"
-           id="tspan105">
+           id="tspan161">
+</tspan></tspan></text>
+  </g>
+  <g
+     id="g80-0"
+     transform="translate(-0.38056139,20.882833)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.74990539,0,0,0.74990539,177.85473,-130.85244)"
+       id="text16-6-2"
+       style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect16-9-9);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
+       x="-32.730469"
+       y="0"><tspan
+         x="489.53906"
+         y="692.41402"
+         id="tspan164"><tspan
+           style="text-align:start"
+           id="tspan163">Improper design
+</tspan></tspan><tspan
+         x="489.53906"
+         y="692.41402"
+         id="tspan166"><tspan
+           style="text-align:start"
+           id="tspan165">
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.74990539,0,0,0.74990539,179.64849,-118.26604)"
+       id="text77-0"
+       style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect77-4);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
+       x="-32.730469"
+       y="0"><tspan
+         x="489.53906"
+         y="692.41402"
+         id="tspan168"><tspan
+           style="text-align:start"
+           id="tspan167">(n=2)
+</tspan></tspan><tspan
+         x="489.53906"
+         y="692.41402"
+         id="tspan170"><tspan
+           style="text-align:start"
+           id="tspan169">
 </tspan></tspan></text>
   </g>
   <g
      id="g79"
-     transform="translate(-6.9090508,-8.9988651)">
+     transform="translate(-6.8786692,-8.9988651)">
     <text
        xml:space="preserve"
        transform="matrix(0.74990539,0,0,0.74990539,147.12218,-156.99485)"
@@ -1350,9 +1368,9 @@
        y="0"><tspan
          x="549.07129"
          y="692.41402"
-         id="tspan108"><tspan
+         id="tspan172"><tspan
            style="font-weight:bold"
-           id="tspan107">Excluded from</tspan></tspan></text>
+           id="tspan171">Excluded from</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.74990539,0,0,0.74990539,147.12218,-143.49656)"
@@ -1362,13 +1380,13 @@
        y="0"><tspan
          x="540.59863"
          y="692.41402"
-         id="tspan110"><tspan
+         id="tspan174"><tspan
            style="font-weight:bold"
-           id="tspan109">Trepel et al. 2024</tspan></tspan></text>
+           id="tspan173">Trepel et al. 2024</tspan></tspan></text>
   </g>
   <g
      id="g82"
-     transform="translate(15.013622)">
+     transform="translate(15.044004)">
     <text
        xml:space="preserve"
        transform="matrix(0.74990539,0,0,0.74990539,281.57652,-126.00002)"
@@ -1378,7 +1396,7 @@
        y="0"><tspan
          x="546.56738"
          y="692.41402"
-         id="tspan111">Rescreening</tspan></text>
+         id="tspan175">Rescreening</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.999874;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
        id="rect81"
@@ -1386,5 +1404,33 @@
        height="47.651539"
        x="674.37366"
        y="366.38739" />
+  </g>
+  <g
+     id="g65"
+     transform="translate(-4.3354481e-5)">
+    <text
+       text-anchor="middle"
+       x="176.5"
+       y="-57.599998"
+       font-family="Helvetica, sans-Serif"
+       font-size="12px"
+       fill="#000000"
+       id="text39"
+       style="white-space:pre;inline-size:196.098;display:inline"
+       transform="translate(0.37006269,763.24739)"
+       xml:space="preserve"><tspan
+         x="176.5"
+         y="-57.599998"
+         id="tspan176">(n=213 articles, 2,741 observations)</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.74990539,0,0,0.74990539,-287.63902,172.49819)"
+       id="text60"
+       style="font-size:16px;line-height:0px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;white-space:pre;shape-inside:url(#rect65);display:inline;fill:#000000;fill-opacity:1;stroke-width:7.48346;stroke-linecap:round;stroke-opacity:0.67451"
+       x="-32.730469"
+       y="0"><tspan
+         x="549.45117"
+         y="692.41402"
+         id="tspan177">Sufficient N to analyze</tspan></text>
   </g>
 </svg>

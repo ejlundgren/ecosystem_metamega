@@ -2,12 +2,13 @@
 #' *Updated November 4th, 2025*
 #
 #
-#' [Egger's test]
+#' [Multilevel publication bias tests]
 #
 #
 #
 # Prepare workspace ---------------------------------------
 #
+
 rm(list = ls())
 gc()
 
@@ -22,13 +23,6 @@ libs <- c("metafor", "broom", "data.table",
           "ggtext")#"ggh4x", "ggstance"
 groundhog.library(libs, groundhog.day)
 library("orchaRd")
-
-# 
-#' [Tried bias per nativeness group. No go. Ask Shinichi about itneractions of bias with categorical or continuous variables]
-#' [BUT, let's redo simpler. Bias should be done with sqrt(1/eff_N) as predictor]
-#' [IF the N coefficient is NOT significant, the intercept is an adjusted estimate of impact without bias]
-#' [IF the N coefficient IS significant, then do (1/eff_N), whose intercept provides a less bias estimate of overall effect]
-#' [REF: Nakagawa 2022 MEE]
 
 # >>> Helper functions ----------------------------------------------------
 
@@ -167,7 +161,6 @@ dat[, inv_sqrt_eff_N := 1/sqrt(eff_N)]
 dat[, inv_eff_N := 1/(eff_N)]
 
 
-
 # >>> Create model guide ------------------------------------------------------
 
 bias_guide <- sub_guide[,  .(model_id_null, model_path_null, 
@@ -199,6 +192,9 @@ saveRDS(bias_guide.mlt, "outputs/publication_bias/data/bias_guide.Rds")
 
 guide <- copy(bias_guide.mlt)
 
+guide[, .(n = .N), by = .(model_id_null, response)][n > 1, ]
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ----------------------------------
 # Run bias models ---------------------------------------------------------
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ---------------------------------------
@@ -212,7 +208,7 @@ m <- c()
 sub.dat <- c()
 i <- 1
 
-# file.remove(list.files("outputs/publication_bias/models/", full.names = T))
+file.remove(list.files("outputs/publication_bias/models/", full.names = T))
 
 # >>> foreach -------------------------------------------------------------
 
@@ -269,7 +265,11 @@ ms.tidy.dat.mrg <- merge(ms.tidy.dat,
 
 ms.tidy.dat.mrg[, type := ifelse(response == "inv_sqrt_eff_N", "Testing for bias", "Corrected estimate")]
 
-ms.tidy.dat.mrg[, bias := ifelse(.SD[term == "inv_sqrt_eff_N"]$p.value < 0.05, "yes", "no"),
+ms.tidy.dat.mrg[term == "inv_sqrt_eff_N", .(.N), by = .(model_id_null)]
+ms.tidy.dat.mrg[model_id_null == "model_457", ]
+
+ms.tidy.dat.mrg[, bias := ifelse(.SD[term == "inv_sqrt_eff_N"]$p.value < 0.05, 
+                                 "yes", "no"),
                 by = .(model_id_null)]
 ms.tidy.dat.mrg
 
@@ -285,9 +285,6 @@ ms.tidy.dat.mrg[bias == "yes" & type == "Testing for bias" & term == "inv_sqrt_e
 
 ms.tidy.dat.mrg[bias == "yes" & type == "Corrected estimate" & term == "intercept", ]
 # estimate = -1.014, p=0.04. But alpha should 0.01 for this. So non-significant negative effect
-
-
-
 
 
 # >>> Make a table --------------------------------------------------------
@@ -326,20 +323,49 @@ lvls <- c("Primary_Productivity",
           "Bird_Omnivore_Abundance", "Herpetofauna_Abundance")
 lvls <- unique(lvls)
 
-ms.tidy.dat.mrg[bias == "yes", 
-                `:=` (corrected_estimate = .SD[type == "Corrected estimate" & term == "intercept"]$estimate,
-                      corrected_lwr.ci = .SD[type == "Corrected estimate" & term == "intercept"]$ci.lb,
-                      corrected_upper.ci = .SD[type == "Corrected estimate" & term == "intercept"]$ci.ub,
-                      corrected_t = .SD[type == "Corrected estimate" & term == "intercept"]$statistic,
-                      corrected_p = .SD[type == "Corrected estimate" & term == "intercept"]$p.value)]
-ms.tidy.dat.mrg[bias == "yes"]
+# Let's report the test for bias (just the term) and the corrected estimate:
+tab_1 <- ms.tidy.dat.mrg[term == "inv_sqrt_eff_N", ]
+tab_2 <- ms.tidy.dat.mrg[term == "intercept" & type == "Corrected estimate", ]
 
-tidy_table <- ms.tidy.dat.mrg[type == "Testing for bias", ]
-tidy_table[bias == "yes"]
-# Fuck that
+tidy_table <- rbind(tab_1, tab_2)
+tidy_table
 
-tidy_table <- tidy_table[, .(analysis_group_category, analysis_group, nativeness_var, term, estimate, std.error, ci.lb, ci.ub, statistic, p.value,
-               bias)]
+tidy_table <- tidy_table[, .(analysis_group_category, analysis_group, nativeness_var, type, term, 
+                             estimate, 
+                             std.error, ci.lb, ci.ub, statistic, p.value, bias)]
+
+# Load original estimates:
+paths <- unique(ms.tidy.dat.mrg$model_path_null)
+
+intercepts <- lapply(paths, readRDS)
+intercepts <- lapply(intercepts, tidy_with_CIs)
+
+length(intercepts) == length(paths)
+
+names(intercepts) <- unique(ms.tidy.dat.mrg$model_id_null)
+
+intercepts <- rbindlist(intercepts, idcol = "model_id_null")
+
+intercepts <- merge(intercepts,
+                    unique(ms.tidy.dat.mrg[, .(model_id_null, analysis_group, nativeness_var,
+                                                  analysis_group_category)]),
+                    by = "model_id_null")
+
+intercepts
+
+unique(intercepts$analysis_group)
+#
+setdiff(names(intercepts), names(tidy_table))
+setdiff(names(tidy_table), names(intercepts))
+intercepts[, type := "Uncorrected estimate"]
+
+tidy_table[type == "Corrected estimate", bias := ""]
+intercepts[, bias := ""]
+
+
+tidy_table <- rbind(tidy_table, intercepts[, !c("model_id_null"), with = F])
+# Bind:
+
 tidy_table$analysis_group_category <- factor(tidy_table$analysis_group_category,
                                              levels = c("Vertebrates", "Invertebrates", "Ecosystem"))
 
@@ -361,6 +387,7 @@ gt_table <- tidy_table |>
          ci.ub = round(ci.ub, 2),
          statistic = round(statistic, 2),
          p.value = round(p.value, 4)) %>%
+  select(-term) %>%
   arrange(analysis_group_category, analysis_group, nativeness_var) |>
   group_by(analysis_group_label, nativeness_var_label) |>
   gt() |>
@@ -370,12 +397,20 @@ gt_table <- tidy_table |>
              ci.lb = "lower CI",
              ci.ub = "upper CI",
              statistic = "t",
-             p.value = "p")
-
-
+             p.value = "p") |>
+  tab_header(md("**Table S3**. Multilevel publication bias tests revealed two 
+                models (soil pH and vertebrate diversity in models with African megafauna versus 
+                introduced megafauna) with significant evidence of publication bias. 
+                Publication bias tests were based on (Nakagawa et al. 2022) and used 
+                multilevel error structures to test whether effect sizes were a 
+                function of the inverse of the square root of effective sample size. 
+                We then used a similar model with 1/effective N to estimate bias-corrected estimates (reported in second row).
+                We also report intercept-only model results to provide comparison (from main text models).")) |>
+  opt_align_table_header(align = c("left")) 
+  
 gt_table
 
-gtsave(gt_table, "figures/revision/supplement/Table SX Publication bias.rtf")
+gtsave(gt_table, "figures/revision/supplement/Table SX Publication bias.pdf")
 
 
 

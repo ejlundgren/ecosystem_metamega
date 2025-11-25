@@ -59,6 +59,7 @@ class(dat.m$time_series_clean)
 
 dat.m <- dat.m[!is.na(yi_smd), ]
 
+dat.m[grepl("Pollinator", analysis_group)]$analysis_group
 
 # >>> Total number of observations and citations --------------------------
 
@@ -82,10 +83,11 @@ unique(dat.m$experimental_mechanism)
 dat.m <- dat.m[!experimental_mechanism %in% c("unknown mechanism", "landscape scale density gradient",
                                               "before after seasonal migration", "before after exclosure",
                                               "distance to water", "on trail vs off trail",
+                                              "distal comparison with and without",
                                               "used vs unused patches", "before after range expansion")]
-
-unique(dat.m[experimental_mechanism == "distal comparison with and without"]$Citation)
-dat.m[experimental_mechanism == "distal comparison with and without"]
+unique(dat.m$experimental_mechanism)
+# unique(dat.m[experimental_mechanism == "distal comparison with and without"]$Citation)
+# dat.m[experimental_mechanism == "distal comparison with and without"]
 # dat.m[Citation == ]
 
 # Lundgren et al 2022 was at a limiting resource (desert wetlands), which have already been excluded from primary dataset:
@@ -139,6 +141,9 @@ nrow(dat.m) - nrow(dat.m[!(Title == "The effect of ungulate grazing on a small m
 dat.m <- dat.m[!(Title == "The effect of ungulate grazing on a small mammal community in southeastern Botswana" &
           Response == "Biomass")]
 
+# This paper is dominantly domestic horses and livestock
+dat.m <- dat.m[Citation != "Putman et al. 1989 Biological Conservation"]
+
 # Exclude < 1 year -------------------------------------------
 dat.m$treatment_duration_days
 
@@ -166,6 +171,12 @@ dat.m[Lit_Source == "Web of Science October 2025", .(n = uniqueN(data_point_ID),
 dat.m[, .(n = uniqueN(data_point_ID),
           refs = uniqueN(Citation))]
 
+
+# >>> Save full dataset (including plants) --------------------------------
+
+saveRDS(dat.m, "builds/analysis_ready/full_meta_analysis_including_plants.Rds")
+
+
 dat.m <- dat.m[analysis_group_category != "Plants", ]
 dat.m
 
@@ -174,12 +185,9 @@ dat.m[, .(n = uniqueN(data_point_ID),
           refs = uniqueN(Citation))]
 
 
-
 # >>> Rename yi/vi columns -----------------------------------
 
 setnames(dat.m, c("yi_smd", "vi_smd"), c("yi", "vi"))
 
 # >>> Save ----------------------------------------------------------------
 saveRDS(dat.m, "builds/analysis_ready/analysis_ready_dataset.Rds")
-
-dat.m[, .(n = uniqueN(Citation), obs = uniqueN(data_point_ID))]

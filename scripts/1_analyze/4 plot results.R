@@ -149,6 +149,7 @@ unique(master_dat$analysis_group)
 master_dat[is.na(yi)]
 master_dat[, .(n = uniqueN(data_point_ID), refs = uniqueN(Citation))]
 
+
 master_guide <- fread("outputs/revision/summaries/model_comparison_table.csv")
 master_guide
 sort(unique(master_guide$analysis_group))
@@ -163,7 +164,15 @@ posthocs <- master_posthocs[preferred_model == "yes", ]
 sort(unique(master_guide$analysis_group))
 
 dat <- copy(master_dat)
-dat[yi > 10, ]
+unique(master_dat$Lit_Source)
+
+# fwrite(unique(dat[Lit_Source == "Web of Science October 2025", .(Citation, Title)]),
+#        "builds/temp/new_literature_for_bibliography.csv")
+
+
+dat <- dat[analysis_group %in% sub_guide$analysis_group, ]
+
+dat[, .(n = uniqueN(data_point_ID), refs = uniqueN(Citation))]
 
 file_epithet <- "smd_no_filtering"
 
@@ -1106,6 +1115,11 @@ sub_guide[LRT_pval < 0.05 & nativeness_var != "Africa_Comparison", ]
 
 posthocs[p.value < 0.05 & nativeness_var != "Africa_Comparison", ]
 
+posthocs[p.value < 0.05 & nativeness_var == "Africa_Comparison", ]
+
+range(posthocs[p.value >= 0.05 & nativeness_var == "Africa_Comparison", ]$p.value)
+# unique(posthocs[p.value < 0.07, .(nativeness_var, analysis_group)])
+
 # ------------  Animals ------------------------------------------------!
 unique(sub_guide$analysis_group_category)
 
@@ -1129,6 +1143,14 @@ range(sub_guide[analysis_group_category %in% c("Vertebrates", "Invertebrates")
                 & nativeness_var != "Africa_Comparison", ]$LRT)
 range(sub_guide[analysis_group_category %in% c("Vertebrates", "Invertebrates")
                 & nativeness_var != "Africa_Comparison", ]$LRT_pval)
+
+
+
+
+posthocs[analysis_group_category %in% c("Vertebrates", "Invertebrates") &
+           p.value < 0.1 
+         & nativeness_var != "Africa_Comparison", ]
+
 
 
 # ------------  Vertebrates ------------------------------------------------!
@@ -1176,20 +1198,72 @@ range(sub_guide[analysis_group_category == "Invertebrates"
 # ------------  Ecosystems ------------------------------------------------!
 length(unique(sub_guide$analysis_group))
 
-range(posthocs[analysis_group_category == "Ecosystem"
-               & nativeness_var != "Africa_Comparison", ]$statistic)
+posthocs[analysis_group_category == "Ecosystem"
+         & nativeness_var != "Africa_Comparison" & p.value < 0.05, ]
+mods[analysis_group == "Soil_Compaction" & nativeness_var == "Invasive"]
+mods[analysis_group == "Soil_Compaction" & nativeness_var == "Herbivore_nativeness"]
 
-range(posthocs[analysis_group_category == "Ecosystem"
-               & nativeness_var != "Africa_Comparison", ]$contrast_df)
 
-range(posthocs[analysis_group_category == "Ecosystem"
-               & nativeness_var != "Africa_Comparison", ]$p.value)
+#
+posthocs[analysis_group_category == "Ecosystem"
+         & nativeness_var != "Africa_Comparison" & p.value < 0.1, ]
+
+sub_guide[analysis_group_category == "Ecosystem"
+          & nativeness_var != "Africa_Comparison" & 
+            model_id_nativeness %in% posthocs[analysis_group_category == "Ecosystem"
+                                              & nativeness_var != "Africa_Comparison" & 
+                                                p.value < 0.05, ]$model_id_nativeness, 
+          .(analysis_group, LRT, LRT_pval)]
+
+sub_guide[analysis_group_category == "Ecosystem"
+                & nativeness_var != "Africa_Comparison" & 
+                  model_id_nativeness %in% posthocs[analysis_group_category == "Ecosystem"
+                                                    & nativeness_var != "Africa_Comparison" & 
+                                                      p.value > 0.05 &
+                                                      p.value < 0.1, ]$model_id_nativeness, 
+                .(analysis_group, LRT, LRT_pval)]
 
 range(sub_guide[analysis_group_category == "Ecosystem"
-                & nativeness_var != "Africa_Comparison", ]$LRT)
-range(sub_guide[analysis_group_category == "Ecosystem"
-                & nativeness_var != "Africa_Comparison", ]$LRT_pval)
+          & nativeness_var != "Africa_Comparison" & 
+            model_id_nativeness %in% posthocs[analysis_group_category == "Ecosystem"
+                                              & nativeness_var != "Africa_Comparison" & 
+                                                p.value > 0.05 &
+                                                p.value < 0.1, ]$model_id_nativeness, ]$LRT)
 
+range(sub_guide[analysis_group_category == "Ecosystem"
+                & nativeness_var != "Africa_Comparison" & 
+                  model_id_nativeness %in% posthocs[analysis_group_category == "Ecosystem"
+                                                    & nativeness_var != "Africa_Comparison" & 
+                                                      p.value > 0.05 &
+                                                      p.value < 0.1, ]$model_id_nativeness, ]$LRT_pval)
+#
+length(unique(posthocs[analysis_group_category == "Ecosystem"
+                       & nativeness_var != "Africa_Comparison" & 
+                         p.value >= 0.1, ]$analysis_group))
+range(posthocs[analysis_group_category == "Ecosystem"
+               & nativeness_var != "Africa_Comparison" & 
+                 p.value >= 0.1, ]$statistic)
+
+range(posthocs[analysis_group_category == "Ecosystem"
+               & nativeness_var != "Africa_Comparison" & 
+                 p.value >= 0.1, ]$contrast_df)
+
+range(posthocs[analysis_group_category == "Ecosystem"
+               & nativeness_var != "Africa_Comparison" & 
+                 p.value >= 0.1, ]$p.value)
+
+
+range(sub_guide[analysis_group_category == "Ecosystem"
+                & nativeness_var != "Africa_Comparison" & 
+                  model_id_nativeness %in% posthocs[analysis_group_category == "Ecosystem"
+                                                    & nativeness_var != "Africa_Comparison" & 
+                                                      p.value > 0.1 , ]$model_id_nativeness, ]$LRT)
+
+range(sub_guide[analysis_group_category == "Ecosystem"
+                & nativeness_var != "Africa_Comparison" & 
+                  model_id_nativeness %in% posthocs[analysis_group_category == "Ecosystem"
+                                                    & nativeness_var != "Africa_Comparison" & 
+                                                      p.value > 0.1 , ]$model_id_nativeness, ]$LRT_pval)
 
  # ----------- AFRICA -----------------------------------------!
 
@@ -1204,26 +1278,25 @@ range(posthocs[nativeness_var == "Africa_Comparison" &
 range(posthocs[nativeness_var == "Africa_Comparison" &
                  p.value < 0.05, ]$p.value)
 sub_guide[nativeness_var == "Africa_Comparison" &
-            LRT_pval < 0.05, ]
+            LRT_pval < 0.05, .(analysis_group, LRT, LRT_pval)]
 mods[nativeness_var == "Africa_Comparison" & analysis_group == "Soil_Mg"]
-sub_guide[nativeness_var == "Africa_Comparison" & analysis_group == "Primary_Productivity"]
 
 
+posthocs[nativeness_var == "Africa_Comparison" &
+           p.value >= 0.05 & p.value < 0.1, ]
+
+
+#
 range(posthocs[nativeness_var == "Africa_Comparison" &
-                 p.value >= 0.05, ]$statistic)
+                 p.value >= 0.1, ]$statistic)
 range(posthocs[nativeness_var == "Africa_Comparison" &
-                 p.value>=0.05, ]$contrast_df)
+                 p.value>=0.1, ]$contrast_df)
 range(posthocs[nativeness_var == "Africa_Comparison" &
-                 p.value >= 0.05, ]$p.value)
+                 p.value >= 0.1, ]$p.value)
 range(sub_guide[nativeness_var == "Africa_Comparison" &
                   LRT_pval >= 0.05, ]$LRT)
 range(sub_guide[nativeness_var == "Africa_Comparison" &
                   LRT_pval >= 0.05, ]$LRT_pval)
-
-
-mods[model_id_nativeness %in% posthocs[nativeness_var == "Africa_Comparison" &
-                                         p.value <= 0.05, ]$model_id_nativeness, ]
-
 
 # >>> Overall effects from intercept-only models --------------------------
 paths <- sub_guide$model_path_null
@@ -1264,7 +1337,6 @@ intercepts[analysis_group_category == "Vertebrates" & pval < 0.05
 intercepts[analysis_group_category == "Invertebrates" & pval < 0.05 
            & nativeness_var == "Herbivore_nativeness", ]
 
-
 range(intercepts[analysis_group_category == "Invertebrates"
                  & nativeness_var == "Herbivore_nativeness"]$pred)
 range(intercepts[analysis_group_category == "Invertebrates"
@@ -1274,7 +1346,6 @@ intercepts[analysis_group_category == "Ecosystem" &
              nativeness_var == "Herbivore_nativeness"& pval < 0.05, ]
 round(intercepts[analysis_group_category == "Ecosystem" & 
                    nativeness_var == "Herbivore_nativeness" & pval < 0.05, ]$pval, 5)
-
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -----------------------------------------
 # Table S1 ----------------------------------------------------------------
@@ -1461,19 +1532,8 @@ table.m[, random_effect := gsub("species_response_tag", "Species ID", random_eff
 table.m[, random_effect := gsub("time_series_clean", "Time Series", random_effect)]
 table.m[, random_effect := gsub("experiment_id", "Experiment ID", random_effect)]
 
-# Add empty rows to make it easier to clean this up in Excel...
 nrow(table.m)
-# table.m[, scaffold := seq(from=1, to=(69*6), by = 6)]
-# 
-# table.m2 <- merge(data.table(scaffold = seq(from = 1, to = max(table.m$scaffold))),
-#                   table.m,
-#                   by = "scaffold",
-#                   all.x = T)
-# table.m[, random_effect := paste("Random effect:", random_effect)]
-# table.m[, N_string := paste("N:", N_string)]
 
-
-# table.m[, `Contrast±95%CIs` := paste("Contrast±95%CIs:", `Contrast±95%CIs`)]
 
 table.m[, `Contrast±95%CIs` := paste0(`Contrast±95%CIs`, ", df=", df, ", t=", `t-value`, ", p=", p.value)]
 
@@ -1485,8 +1545,6 @@ table.m
 #        "figures/revision/supplement/Table S1.csv")
 
 # Let's try melting this to make formatting easier
-# table.m[, spacer := ""]
-# table.m
 
 table.m.mlt <- melt(table.m[, !c("df", "t-value", "p.value")],
                     measure.vars = c("N_string", "random_effect",
@@ -1507,8 +1565,7 @@ setorder(table.m.mlt, analysis_group_order,
 table.m.mlt
 
 
-
-# >>> Final -------------------------------------------------------------
+# >>> Final, with gt package -------------------------------------------------------------
 table.m.mlt
 
 table.m.mlt.cst <- dcast(table.m.mlt[, !c("variable_ord")],
@@ -1529,15 +1586,10 @@ gt_table <- table.m.mlt.cst |>
   mutate(model_comparison_string = gsub("p=", "", model_comparison_string)) |>
   mutate(model_comparison_string = gsub("p<", "", model_comparison_string)) |>
   mutate(N_string = gsub("N: ", "", N_string)) |>
-  # mutate(`Contrast±95%CIs` = gsub(", ", "<br>", `Contrast±95%CIs`)) |>
-  # mutate(fit_string1 = gsub(", ", "<br>", fit_string1)) |>
   relocate(N_string, random_effect, model_comparison_string, `Contrast±95%CIs`) |>
   dplyr::select(-nativeness_order, -analysis_group_order) |>
   group_by(analysis_group_category, analysis_group) |>
   gt(rowname_col = "nativeness_var") |>
-  # cols_hide(columns = c("analysis_group_category", "nativeness_var",
-  #                       "analysis_group")) |>
-  # tab_header(title="Table S1") |>
   tab_header(#title = ,
     md("**Table S1**. Final model results and statistics for all main text models. 
               Sample sizes are given as number of observations with number of studies in parentheses. 
@@ -1557,13 +1609,14 @@ gt_table <- table.m.mlt.cst |>
   fmt_markdown(fit_string1) |>
   fmt_markdown(fit_string2) |>
   fmt_markdown(fit_string3) |>
-  tab_options(table.font.size = px(7),
-              column_labels.font.size = px(10),
-              heading.title.font.size = px(12))
+  tab_options(table.font.size = px(10),
+              column_labels.font.size = px(12),
+              heading.title.font.size = px(13))
 # fmt_markdown(fit_string3) 
 
 gt_table
 
+# gtsave(gt_table, "figures/revision/supplement/Table S1 Model results.html")
 gtsave(gt_table, "figures/revision/supplement/Table S1 Model results.pdf")
 # library("kableExtra")
 # gt_table %>%
@@ -1572,7 +1625,7 @@ gtsave(gt_table, "figures/revision/supplement/Table S1 Model results.pdf")
 
 # kable::kableExtra()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ---------------------------------------
-# R2/I2/variance figure ------------------------------------------------
+# R2/I2/variance figures ------------------------------------------------
 tertiary_palette <- c("Herbivore_nativeness" = "#57b7db",
                       "Invasive" = "#faae6b", 
                       "Africa_Comparison" = "#d7a4a3")
@@ -1847,62 +1900,162 @@ ggsave("figures/revision/supplement/conditional R2_star.png", dpi = 300,#device 
        width = 10, height = 9)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ---------------------------------------------
-# Distribution of research effort -----------------------------------------
+# Sample size table -------------------------------------
+#' [Create a supp figure of sample sizes]
 
-dat
-dat.long <- melt(dat,
+master_dat
+dat.long <- melt(master_dat[, .(Citation, data_point_ID, analysis_group_category, analysis_group,
+                                Herbivore_nativeness, Invasive, Africa_Comparison)],
                  measure.vars = c("Herbivore_nativeness", "Invasive", "Africa_Comparison"),
                  value.name = "Megafauna")
 dat.long
+
 dat.long[Megafauna == "Native" & variable == "Invasive", Megafauna := NA]
 dat.long[Megafauna == "Africa_Comparison" & variable == "Introduced", Megafauna := NA]
-
 
 dat.long <- dat.long[!is.na(Megafauna), ]
 dat.long
 
-
-# this is total across all analysis groups.
-dat.long[, `:=` (total_references = uniqueN(Citation),
-                 total_observations = uniqueN(data_point_ID)),
-         by = .(Megafauna)]
-dat.long
-
-
-Ns <- dat.long[analysis_group %in% sub_guide$analysis_group, 
-          .(Observations = uniqueN(data_point_ID), References = uniqueN(Citation)),
+Ns <- dat.long[, 
+          .(Observations = uniqueN(data_point_ID), 
+            References = uniqueN(Citation)),
     by = .(analysis_group, analysis_group_category,
-           Megafauna, total_references, total_observations)]
+           Megafauna)]
 
-Ns[, observation_percent := Observations / total_observations * 100]
-Ns[, references_percent := References / total_references * 100]
 
+Ns[, N := paste0(Observations, "(", References, ")")]
 Ns
 
+#
+Ns.wide <- dcast(Ns[, !c("Observations", "References")],
+                 ... ~ Megafauna,
+                 value.var = c("N"),
+                 fill = "0(0)")
+
+Ns.wide[, sufficient_N := ifelse(analysis_group %in% master_guide$analysis_group,
+                                 "Yes", "No")]
+Ns.wide[, analysis_group := gsub("_", " ", analysis_group)]
+
+gt_table <- Ns.wide |>
+  group_by(analysis_group_category) |>
+  arrange(desc(sufficient_N)) |>
+  gt() |>
+  cols_label(analysis_group = ("Response"),
+             Intact_Africa = "Intact African assemblages",
+             sufficient_N = "Sufficient N")
+
+gt_table
+
+gtsave(gt_table, "figures/revision/supplement/Table SX Sample Size.rtf")
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -----------------------------------------
+
+# Response categories table -----------------------------------------------
+
+responses <- read.csv("builds/temp/responses_for_double_checking_workup.csv")
+setDT(responses)
+
+# We were never going to analyze these:
+responses <- responses[!grepl("Relative", eco_response_coarse)]
+responses[analysis_group_category == "Plants" & eco_response_coarse == "Plant_N", analysis_group_category := "Plant_Nutrients"]
+responses[eco_response_coarse == "Primary_Productivity", eco_response_coarse := "Plant_Growth_Rates"]
+responses[analysis_group_category == "Ecosystem" &
+            eco_response_coarse == "Soil_Respiration", analysis_group_category := "Soil"]
+responses[analysis_group_category == "Ecosystem" &
+            eco_response_coarse == "Soil", ]
+responses[analysis_group_category == "Ecosystem" &
+            eco_response_coarse == "Soil", `:=` (eco_response_coarse = "CO2_Respiration",
+                                                 analysis_group_category = "Soil")]
+
+responses
+names(responses)
+responses <- unique(responses[, .(analysis_group_category, eco_response_coarse, eco_response_fine,
+                                  eco_response_fine2, eco_response_fine3, eco_response_fine4)])
+responses <- responses[analysis_group_category != "Exclude"]
+
+responses <- responses[analysis_group_category != "" & eco_response_coarse != "", ]
+
+# Let's cast, melt, and cast back to make this cleaner? Maybe. Maybe not. Cause rows wont align...
+# Dangit
+# No, we can :) Yes, we can! Thanks Obama
+responses.mlt <- melt(responses,
+                      measure.vars = c("eco_response_fine", "eco_response_fine2", 
+                                       "eco_response_fine3", "eco_response_fine4"))
+responses.mlt <- responses.mlt[!is.na(value), ]
+responses.mlt
+responses.mlt.sum <- responses.mlt[, .(includes = paste(unique(.SD[value != "", ]$value), collapse = ", ")),
+                                   by = .(analysis_group_category, eco_response_coarse)]
+responses.mlt.sum
+
+responses.mlt[eco_response_coarse == "CO2_Respiration"]
+responses[eco_response_coarse == "CO2_Respiration"]
+# How did this happen...That's freaking weird
+
+responses.mlt.sum[eco_response_coarse == includes]
+
+responses.mlt.sum <- responses.mlt.sum[eco_response_coarse != "", ]
+responses.mlt.sum[eco_response_coarse == "CO2_Respiration"]
+
+responses.mlt.sum
+
+unique(responses.mlt.sum$analysis_group_category)
+responses.mlt.sum[, analysis_group_category := factor(analysis_group_category,
+                                                      levels = c("Vertebrates", "Invertebrates",
+                                                                 "Ecosystem", "Soil", "Microbes",
+                                                                 "Plants", "Plant_Nutrients"))]
+responses.mlt.sum[, cat_order := as.numeric(analysis_group_category)]
+
+#
+Ns.sum <- Ns[, .(article_N = sum(References)), by = .(analysis_group)]
+
+responses.mlt.sum.mrg <- merge(responses.mlt.sum,
+                               Ns.sum,
+                               all.x = T,
+                               all.y = F,
+                               by.x = "eco_response_coarse",
+                               by.y = "analysis_group")
+responses.mlt.sum.mrg
+
+#
+setorder(responses.mlt.sum.mrg, cat_order, article_N)
+
+
+responses.mlt.sum.mrg[, `:=` (eco_response_coarse = gsub("_", " ", eco_response_coarse),
+                          includes = gsub("_", " ", includes))]
+
+
+# setorder(responses.mlt.sum, analysis_group_category, eco_response_coarse, eco_response_fine,
+#          eco_response_fine2, eco_response_fine3, eco_response_fine4)
 # 
-# Ns.wide <- dcast(Ns, ... ~ Herbivore_nativeness,
-#                  value.var = c("n", "refs"),
-#                  fill = 0)
+# responses[eco_response_fine4 != "", ]
+# responses$eco_response_fine4 <- NULL
 # 
-# Ns.wide
+# responses[eco_response_fine3 != "", ]
+# responses[!is.na(eco_response_fine3), ]
+# responses$eco_response_fine3 <- NULL
 # 
-# setorder(Ns.wide, refs_Introduced)
-# Ns.wide
+# # responses[eco_response_fine4 != "", ]
+# any("Native_Plant_Diversity" %in% responses$eco_response_fine)
+# any("Native_Plant_Diversity" %in% responses$eco_response_fine2)
+# any("Native_Plant_Diversity" %in% responses$eco_response_fine3)
+# 
+# responses[analysis_group_category == "Ecosystem" & eco_response_coarse == "Dead_Vegetation",
+#           analysis_group_category := "Soil"]
 
-Ns.long <- melt(Ns,
-                measure.vars = c("observation_percent", "references_percent"),
-                variable.name = "N_type",
-                value = "Percent")
+gt_table <- responses.mlt.sum.mrg |>
+  filter(analysis_group_category != "Plants") |>
+  dplyr::select(-article_N, -cat_order) |>
+  group_by(analysis_group_category) |>
+  gt() |>
+  cols_label(eco_response_coarse = "Coarse Response",
+             includes = "Finer Responses"
+             )
 
-Ns.long[analysis_group == "Invert_Detritivore_Abundance", ]
+gt_table
 
-Ns.long$analysis_group <- factor(Ns.long$analysis_group ,
-                                   levels = lvls)
-Ns.long
-
-setorder(Ns.long, Megafauna, -Percent)
-
-Ns.long[, head(.SD, 3), by = .(Megafauna)]
+gtsave(gt_table, "figures/revision/supplement/Table SX Response Hierarchy.rtf")
 
 
-Ns.long[analysis_group == "Bare_Ground" & N_type == "references_percent"]
+

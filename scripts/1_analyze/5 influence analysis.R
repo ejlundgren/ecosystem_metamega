@@ -155,23 +155,13 @@ master_guide
 master_guide <- master_guide[preferred_model == "yes", ]
 nrow(master_guide)
 
-master_guide[, obs_level_three_mean_path := paste0("outputs/influence_analysis/revision/models/",
-                                         model_id_nativeness, 
-                                         "__obs_lvl_3_mean_exclusion.Rds")]
-
 master_guide[, obs_level_four_n_path := paste0("outputs/influence_analysis//revision/models/",
                                      model_id_nativeness, 
                                      "__obs_lvl_4_N_exclusion.Rds")]
 
-
-master_guide[, study_level_three_mean_path := paste0("outputs/influence_analysis/revision/models/",
-                                                   model_id_nativeness, 
-                                                   "__study_lvl_3_mean_exclusion.Rds")]
-
 master_guide[, study_level_four_n_path := paste0("outputs/influence_analysis//revision/models/",
                                                model_id_nativeness, 
                                                "__study_lvl_4_N_exclusion.Rds")]
-file.remove(list.files("outputs/influence_analysis/revision/models/", full.names = T))
 
 master_guide[, outlier_dat_path := paste0("outputs/influence_analysis/revision/cook_distance/",
                                                  model_id_nativeness, 
@@ -238,12 +228,12 @@ if(rerun){
   i <- 1
   
   success <- foreach(i = 1:nrow(master_guide), 
-                      .options.snow = clust_out$opts,
+                      .options.snow = clust_out$options,
                       .errorhandling = "pass",
                       .packages = c("data.table", "metafor", 
                                     "dplyr", "broom")) %dopar% {
       
-    if(!file.exists(master_guide[i, ]$outlier_dat_path) ){
+    if(! file.exists(master_guide[i, ]$outlier_dat_path) ){
       
       dat <- citation_outliers(master_guide[i, ]$model_path_nativeness)
       
@@ -263,11 +253,10 @@ master_guide[!file.exists(outlier_dat_path), ]
 # 
 # saveRDS(dat, master_guide[!file.exists(outlier_dat_path), ]$outlier_dat_path)
 # 
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ------------------------------------
 
 # Run Models with excluded data points ------------------------------------
-rerun <- F
+rerun <- T
 if(rerun){
   
   clust_out <- prepare_cluster(n=nrow(master_guide))
@@ -275,49 +264,14 @@ if(rerun){
   i <- 1
   
   success <- foreach(i = 1:nrow(master_guide), 
-                     .options.snow = clust_out$opts,
+                     .options.snow = clust_out$options,
                      .errorhandling = "pass",
                      .packages = c("data.table", "metafor", 
                                    "dplyr", "broom")) %dopar% {
     
                                      
      dat <- master_guide[i, ]$outlier_dat_path |> readRDS()
-
-     # 3 mean study-level
-     if(!file.exists(master_guide[i, ]$study_level_three_mean_path) ){
-       sub.dat <- dat[study_level_threshold_3meancook == "keep"]
-       
-       m <- rma.mv(yi = yi,
-                   V = vi,
-                   mods = as.formula(gsub("yi_smd", "", master_guide[i, ]$formula_nativeness)),
-                   random = eval(parse(text = master_guide[i, ]$random_effect)),
-                   dfs = "contain",
-                   test = "t",
-                   method = "ML",
-                   struct = "AR",
-                   data = sub.dat)
-       
-       saveRDS(m, master_guide[i, ]$study_level_three_mean_path)
-       
-     }
-     # 3 mean observation level
-     if(!file.exists(master_guide[i, ]$obs_level_three_mean_path) ){
-       sub.dat <- dat[obs_level_threshold_3meancook == "keep"]
-       
-       m <- rma.mv(yi = yi,
-                   V = vi,
-                   mods = as.formula(gsub("yi_smd", "", master_guide[i, ]$formula_nativeness)),
-                   random = eval(parse(text = master_guide[i, ]$random_effect)),
-                   dfs = "contain",
-                   test = "t",
-                   method = "ML",
-                   struct = "AR",
-                   data = sub.dat)
-       
-       saveRDS(m, master_guide[i, ]$obs_level_three_mean_path)
-       
-     }
-                                     
+                        
      # 4/N study level
      if(!file.exists(master_guide[i, ]$study_level_four_n_path) ){
        sub.dat <- dat[study_level_threshold_4.N == "keep"]
@@ -357,7 +311,6 @@ if(rerun){
                                      
    }
   stopCluster(clust_out$cluster)
-  
 
 }
 
@@ -366,13 +319,13 @@ if(rerun){
 # Load and do posthoc tests on outlier removed models  -------------------------------------------------
 
 
-rerun <- F
+rerun <- T
 if(rerun){
   
   # Make dataset long for this
   outlier_guide <- melt(master_guide,
-                        measure.vars = c("obs_level_three_mean_path", "obs_level_four_n_path",
-                                         "study_level_three_mean_path", "study_level_four_n_path"),
+                        measure.vars = c("obs_level_four_n_path",
+                                         "study_level_four_n_path"),
                         variable.name = "outlier_threshold",
                         value.name = "model_path")
   outlier_guide[!file.exists(model_path), ]
@@ -381,7 +334,6 @@ if(rerun){
   
   saveRDS(outlier_guide, "outputs/influence_analysis/revision/summaries/outlier_model_guide.Rds")
   
-
   outlier_guide
   i <- 1#
   clust <- prepare_cluster(n = nrow(outlier_guide))
@@ -475,10 +427,12 @@ range(posthocs[p.value < 0.05 & analysis_group_category %in% c("Vertebrates", "I
            nativeness_var != "Africa_Comparison", 
          .(analysis_group, outlier_threshold, contrast, estimate, 
            statistic, ci.lb, ci.ub, p.value)]$statistic)
+
 range(posthocs[p.value < 0.05 & analysis_group_category %in% c("Vertebrates", "Invertebrates") &
                  nativeness_var != "Africa_Comparison", 
                .(analysis_group, outlier_threshold,contrast_df, contrast, estimate, 
                  statistic, ci.lb, ci.ub, p.value)]$contrast_df)
+
 range(posthocs[p.value < 0.05 & analysis_group_category %in% c("Vertebrates", "Invertebrates") &
                  nativeness_var != "Africa_Comparison", 
                .(analysis_group, outlier_threshold, contrast, estimate, 
@@ -506,6 +460,22 @@ posthocs[p.value < 0.05 & #analysis_group_category == "Ecosystem" &
          by = .(analysis_group)]
 
 
+posthocs[nativeness_var == "Invasive" & analysis_group == "Soil_Compaction"]
+
+posthocs[nativeness_var == "Herbivore_nativeness" & 
+           analysis_group %in% c("Growth_Rates", "Bare_Ground", "Dead_Vegetation", "Litter_Cover") &
+           p.value > 0.1]
+posthocs[nativeness_var == "Invasive" & 
+           analysis_group %in% c("Soil_Mg") &
+           p.value > 0.1]
+
+posthocs[nativeness_var == "Africa_Comparison" & 
+           analysis_group %in% c("Soil_Mg") &
+           p.value > 0.1]
+
+posthocs[nativeness_var == "Africa_Comparison" & 
+           analysis_group %in% c("Growth_Rates") &
+           p.value > 0.1]
 # >>> Prepare to plot -----------------------------------------------------
 
 posthocs[, p.value.rounded := as.character(round(p.value, 2))]
@@ -615,7 +585,7 @@ p.post.vert <- ggplot()+
   scale_color_manual(values = c("Introduced-Native" = "#57b7db",
                                 "Invasive-Native" = "#faae6b"))+
   guides(color = "none")+
-  facet_grid(outlier_type~outlier_scale)+
+  facet_wrap(~outlier_scale)+
   scale_y_discrete(labels = group_labels)+
   ylab(NULL)+
   xlab("Difference relative to native megafauna\n(Hedges' g ± CIs)")+
@@ -664,7 +634,7 @@ p.post.invert <- ggplot()+
   scale_color_manual(values = c("Introduced-Native" = "#57b7db",
                                 "Invasive-Native" = "#faae6b"))+
   guides(color = "none")+
-  facet_grid(outlier_type~outlier_scale)+
+  facet_wrap(~outlier_scale)+
   scale_y_discrete(labels = group_labels)+
   ylab(NULL)+
   xlab("Difference relative to native megafauna\n(Hedges' g ± CIs)")+
@@ -713,7 +683,7 @@ p.post.ecos <- ggplot()+
   scale_color_manual(values = c("Introduced-Native" = "#57b7db",
                                 "Invasive-Native" = "#faae6b"))+
   guides(color = "none")+
-  facet_grid(outlier_type~outlier_scale)+
+  facet_wrap(~outlier_scale)+
   scale_y_discrete(labels = group_labels)+
   ylab(NULL)+
   xlab("Difference relative to native megafauna\n(Hedges' g ± CIs)")+
@@ -722,9 +692,9 @@ p.post.ecos <- ggplot()+
 p.post.ecos
 
 ggsave("figures/revision/supplement/Ecosystem influential studies excluded.pdf", 
-       width = 10, height = 14)
+       width = 10, height = 10)
 ggsave("figures/revision/supplement/Ecosystem influential studies excluded.png", 
-       width = 10, height = 14,
+       width = 10, height = 10,
        dpi = 300)
 
 p.post.africa.1 <- ggplot()+
@@ -761,7 +731,7 @@ p.post.africa.1 <- ggplot()+
   scale_color_manual(values = c("Introduced-Intact_Africa" = "#57b7db"))+
   guides(color = "none")+
   scale_y_discrete(labels = group_labels)+
-  facet_grid(outlier_type~outlier_scale)+
+  facet_wrap(~outlier_scale)+
   ylab(NULL)+
   xlab("Difference relative to intact African assemblages\n(Hedges' g ± CIs)")+
   coord_cartesian(xlim = c(-4, 4), clip = "off")+
@@ -769,6 +739,7 @@ p.post.africa.1 <- ggplot()+
   theme(strip.placement = "outside")
 
 p.post.africa.1
+
 
 p.post.africa.2 <- ggplot()+
   geom_vline(xintercept = 0, color = "grey50", linetype = "dashed")+
@@ -800,7 +771,7 @@ p.post.africa.2 <- ggplot()+
   scale_color_manual(values = c("Introduced-Intact_Africa" = "#57b7db"))+
   guides(color = "none")+
   scale_y_discrete(labels = group_labels)+
-  facet_grid(outlier_type~outlier_scale)+
+  facet_wrap(~outlier_scale)+
   ylab(NULL)+
   xlab("Difference relative to intact African assemblages\n(Hedges' g ± CIs)")+
   coord_cartesian(xlim = c(-4, 4), clip = "off")+
@@ -840,14 +811,13 @@ p.post.africa.3 <- ggplot()+
   scale_color_manual(values = c("Introduced-Intact_Africa" = "#57b7db"))+
   guides(color = "none")+
   scale_y_discrete(labels = group_labels)+
-  facet_grid(outlier_type~outlier_scale)+
+  facet_wrap(~outlier_scale)+
   ylab(NULL)+
   xlab("Difference relative to intact African assemblages\n(Hedges' g ± CIs)")+
   coord_cartesian(xlim = c(-4, 4), clip = "off")+
   theme_lundy+
   theme(strip.placement = "outside")
 p.post.africa.3
-
 
 
 posthocs[nativeness_var == "Africa_Comparison", .(n = uniqueN(analysis_group)),
@@ -868,7 +838,8 @@ p.post.africa.1 + theme(axis.text.x = element_blank(),
 
 
 ggsave("figures/revision/supplement/Africa influential studies excluded.pdf", 
-       width = 10, height = 12)
+       width = 10, height = 10)
 ggsave("figures/revision/supplement/Africa influential studies excluded.png", 
-       width = 10, height = 12,
+       width = 10, height = 10,
        dpi = 300)
+
