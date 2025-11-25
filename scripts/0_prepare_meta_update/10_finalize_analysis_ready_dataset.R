@@ -191,3 +191,6 @@ setnames(dat.m, c("yi_smd", "vi_smd"), c("yi", "vi"))
 
 # >>> Save ----------------------------------------------------------------
 saveRDS(dat.m, "builds/analysis_ready/analysis_ready_dataset.Rds")
+
+# And save CSV version:
+fwrite(dat.m, "builds/analysis_ready/analysis_ready_dataset.csv")
