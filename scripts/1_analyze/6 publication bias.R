@@ -398,7 +398,7 @@ gt_table <- tidy_table |>
              ci.ub = "upper CI",
              statistic = "t",
              p.value = "p") |>
-  tab_header(md("**Table S3**. Multilevel publication bias tests revealed two 
+  tab_header(md("**Table S5**. Multilevel publication bias tests revealed two 
                 models (soil pH and vertebrate diversity in models with African megafauna versus 
                 introduced megafauna) with significant evidence of publication bias. 
                 Publication bias tests were based on (Nakagawa et al. 2022) and used 
